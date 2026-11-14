@@ -1,8 +1,8 @@
 {
-  "preparedAt": "2026-11-14T23:11:36.589234+00:00",
+  "preparedAt": "2026-11-14T23:16:52.048238+00:00",
   "published": true,
   "provenance": {
-    "privateBaseCommit": "cbda9661f50c2d7d56af8402f8606ad69648e5ba",
+    "privateBaseCommit": "5ea290affb783613b989f4c97c7868c1f90d2495",
     "includesWorkingTreeChanges": true,
     "note": "Source snapshot includes the closing UI update, public documentation and demonstration media. The video records the initial submission build.",
     "initialPublicCommit": "7b2dbe06ecc47beac319a8a0fa85c6c59ec31c1a",
@@ -147,8 +147,8 @@
     },
     {
       "name": "index.html",
-      "bytes": 45194,
-      "sha256": "ba9918d64a4762cbf0724455ab280a6f00a963b4e843ea7abc7d96a22fe61c0e"
+      "bytes": 44968,
+      "sha256": "4292f4cacc2a508f8d15a6eb2042321fd657a6d19722d016d6c5112e19524aee"
     },
     {
       "name": "judges-expedition.mjs",
@@ -717,8 +717,8 @@
     },
     {
       "name": "src/captain-menu.css",
-      "bytes": 6662,
-      "sha256": "e7d31166b902694f950613d34e0cc37c09c51a1cd8343c5b211e94a6318e0852"
+      "bytes": 7176,
+      "sha256": "e7585cbc2f0ee8f10e01674892ddf8be634f7abc56a8179dfb4a59962f0f5b38"
     },
     {
       "name": "src/captain-menu.js",
@@ -832,13 +832,13 @@
     },
     {
       "name": "src/main.js",
-      "bytes": 99559,
-      "sha256": "e796ac5c158d9de9a29e1ba427be10333946afe75414de5bc66f8dbc06003e7a"
+      "bytes": 98965,
+      "sha256": "734ef3ed31ee7a56317abd842fa97111b4c2c6de084bac86c34625e3b316cfc0"
     },
     {
       "name": "src/mobile-essential.css",
-      "bytes": 7890,
-      "sha256": "fcbda4b36763b3545fba69efd0bf6319b0690554d884c92578d89f5762731bdd"
+      "bytes": 7299,
+      "sha256": "999656ff129c2c1d7e9fca7932c4fbe9fa40c1fb2bbe30b87c68579d4733585d"
     },
     {
       "name": "src/near-wallet.js",
@@ -1022,8 +1022,8 @@
     },
     {
       "name": "test/fixtures/main-arena-dom.mjs",
-      "bytes": 21273,
-      "sha256": "55b6ab2ccf0394fb8ee47d75c32fbc4bb0c69677ec362ab7d9f6baaa002764c9"
+      "bytes": 21239,
+      "sha256": "49c0c39f45dc60ce0dd7364cadd35f55bb2a5fd993b9cca2b4ea316e0afb5191"
     },
     {
       "name": "test/game-session-recovery.test.mjs",

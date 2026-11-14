@@ -43,19 +43,6 @@ const HAZARD_ICONS = { broadside: 'cannon', parrots: 'parrot', collapse: 'break'
 mountInterfaceLayout();
 renderGameIcons();
 const byId = (id) => document.getElementById(id);
-const mobileTools = byId('mobile-tools-toggle');
-function closeMobileTools() { mobileTools.setAttribute('aria-expanded', 'false'); }
-mobileTools.addEventListener('click', () => {
-  mobileTools.setAttribute('aria-expanded', String(mobileTools.getAttribute('aria-expanded') !== 'true'));
-});
-byId('header-extra').addEventListener('click', event => {
-  if (event.target.closest('button')) closeMobileTools();
-});
-document.addEventListener('pointerdown', event => {
-  if (!event.target.closest('.head-actions')) closeMobileTools();
-});
-window.addEventListener('keydown', event => { if (event.key === 'Escape') closeMobileTools(); });
-window.addEventListener('resize', closeMobileTools, { passive: true });
 function updateWorldTheme() {
   const night = String(room?.match ? room.match.night === true : bayDarkness() >= .5);
   if (document.body.dataset.night !== night) document.body.dataset.night = night;
@@ -2024,8 +2011,12 @@ ui.sound.addEventListener('click', () => setAudioPreference('effects', !soundOn)
 byId('music').addEventListener('click', () => setAudioPreference('music', !musicOn));
 const nativeFullscreen = document.documentElement.requestFullscreen ?? document.documentElement.webkitRequestFullscreen;
 const fullscreenActive = () => document.fullscreenElement || document.webkitFullscreenElement;
-byId('rotate-screen').addEventListener('click', async () => {
+function dismissDisplayHint() {
   byId('display-hint').hidden = true;
+  byId('fullscreen').parentElement.removeAttribute('data-tip');
+}
+byId('rotate-screen').addEventListener('click', async () => {
+  dismissDisplayHint();
   const orientation = window.screen?.orientation;
   try {
     if (!orientation?.lock) throw new Error('Orientation unavailable');
@@ -2041,7 +2032,7 @@ if (!nativeFullscreen) {
   ui.fullscreen.title = 'Fullscreen tips';
 }
 ui.fullscreen.addEventListener('click', async () => {
-  byId('display-hint').hidden = true;
+  dismissDisplayHint();
   try {
     if (!nativeFullscreen) { byId('display-help').showModal(); return; }
     if (fullscreenActive()) await (document.exitFullscreen ?? document.webkitExitFullscreen).call(document);

@@ -78,10 +78,9 @@ if (process.argv.includes('--touch')) {
   assert.equal(get('music').getAttribute('aria-pressed'), 'false');
 }
 accessibilityDialog.close();
-await click('mobile-tools-toggle');
-assert.equal(get('mobile-tools-toggle').getAttribute('aria-expanded'),'true');
-window.dispatchEvent(Object.assign(new window.Event('keydown'),{key:'Escape'}));
-assert.equal(get('mobile-tools-toggle').getAttribute('aria-expanded'),'false','Escape closes secondary mobile controls');
+assert.equal(get('mobile-tools-toggle'), null, 'game controls have no overflow menu');
+assert.ok(get('feature-help').closest('.header-tools'), 'tutorial is directly in the controls bar');
+assert.equal(get('fullscreen').parentElement.getAttribute('aria-describedby'), 'display-hint');
 assert.equal(JSON.parse(localStorage.getItem('afloat-accessibility-v1')).seen, true);
 assert.match(document.body.dataset.night, /^(true|false)$/);
 assert.equal(get('night-mode'), null);

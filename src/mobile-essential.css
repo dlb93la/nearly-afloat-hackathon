@@ -1,7 +1,5 @@
 /* Compact mobile compositions use content height, not a scaled desktop window. */
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-.header-extra { display: contents; }
-.cabinet .masthead .header-tools #mobile-tools-toggle { display: none; }
 .captain-preferences > summary { display: none; }
 .mobile-copy { display: none; }
 body[data-ui-layout="mobile"] .mobile-copy { display: inline; }
@@ -59,23 +57,6 @@ body[data-ui-layout="mobile"] .cabinet .head-actions {
   gap: .15rem;
 }
 body[data-ui-layout="mobile"] .cabinet .header-tools { position: relative; }
-body[data-ui-layout="mobile"] .cabinet .header-tools #mobile-tools-toggle {
-  display: inline-flex;
-  order: 5;
-  font-size: 1.6rem;
-}
-body[data-ui-layout="mobile"] .cabinet .header-extra {
-  position: absolute;
-  display: none;
-  z-index: 6;
-  right: 0;
-  top: 48px;
-  padding: .2rem;
-  background: #30291ff5;
-  border: 1px solid #bc955f;
-  border-radius: 4px;
-}
-body[data-ui-layout="mobile"] .cabinet #mobile-tools-toggle[aria-expanded="true"] ~ .header-extra { display: flex; }
 body[data-ui-layout="mobile"] .cabinet .captain-trigger { width: 44px; padding: 0; }
 body[data-ui-layout="mobile"] .cabinet #captain-menu-label,
 body[data-ui-layout="mobile"] .cabinet #back-label {
