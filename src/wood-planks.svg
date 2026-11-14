@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470">
+  <defs>
+    <filter id="fiber">
+      <feTurbulence type="fractalNoise" baseFrequency=".017 .46" numOctaves="2" seed="73" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .74 0 0 0 0 .61 0 0 0 0 .45 3 0 0 0 -1.38"/>
+    </filter>
+    <g id="nail">
+      <circle r="3.2" fill="#27221d" opacity=".8"/>
+      <path d="M-1.6 0 0-1.5l1.5 1" stroke="#817769" stroke-width="1" fill="none"/>
+    </g>
+    <g id="split" fill="none" stroke-linecap="round">
+      <path d="m0 0 23-1 16 3 27-2 23 3 35-3 48 1" stroke="#1a1611" stroke-width="2"/>
+      <path d="m2 2 23-1 15 3 26-2 22 3 36-3" stroke="#a08b6d" opacity=".45"/>
+    </g>
+  </defs>
+  <rect width="880" height="470" fill="#211b16"/>
+  <g stroke="#211b16" stroke-width="3" stroke-linejoin="round">
+    <path fill="#665441" d="M-4-4H578l-5 26 4 26-6 30-145 1-136-4-178 2L-4 75Z"/>
+    <path fill="#544d40" d="M579-4H884V78l-155 1-155-1 6-29-5-25Z"/>
+    <path fill="#5b4b3c" d="M-4 78l124 1 87-2-4 24 6 31-4 43-106-2-103 3Z"/>
+    <path fill="#73604b" d="M210 77l121 2 98 1 145-1 141 1 169-1v95l-149-3-195 5-131-3-201 2 4-43-5-32Z"/>
+    <path fill="#514d40" d="M-4 177l121-2 143 3 155-3 25 1-5 28 6 32-4 34-170 2-154-3-117 1Z"/>
+    <path fill="#63503e" d="M442 177l103 1 179-5 160 3v92l-123 3-113-1-208 1 4-35-5-33Z"/>
+    <path fill="#72604b" d="M-4 272l117-1 159 4 169-3 195-1 52 1-6 26 4 21-7 39-110-1-147 3-136-3-124 3L-4 358Z"/>
+    <path fill="#564338" d="M689 273l81 1 114-4v87l-118 3-84-2 7-39-4-20Z"/>
+    <path fill="#645446" d="M-4 360l148 2 146-2 4 28-5 32 4 55H-4Z"/>
+    <path fill="#534a3e" d="M293 360l129 2 146-3 112 2 98 1 106-3v116H297l-5-55 5-32Z"/>
+  </g>
+  <rect width="880" height="470" filter="url(#fiber)" opacity=".27"/>
+  <g fill="none" stroke="#b3a082" stroke-opacity=".29" stroke-linecap="round">
+    <path d="m0 79 122 2 80-2m15 2 210 1 148-1 304 2M0 178l110-1 94 2 202-1m42 1 112 1 164-5 154 3M0 274l114-2 161 4 161-3 246-1m12 3 78 1 108-4M0 362l140 2 144-2m16 1 120 2 149-4 203 3 108-3"/>
+    <path d="M14 29q83-5 143 0t163 2l85-3m211 14q75-6 131-2t96 1M32 137q73-8 128-3m121 10q124-6 202-1t160 0m60-29 135-3M19 226q91 5 179 0l110 1m212 13q94-9 184-1l121-1M79 319q89-3 154 3t198-2m99 12 112-1M19 414q86-8 205-1m139 18q78-5 151-2t162 0l128 2"/>
+  </g>
+  <g opacity=".52">
+    <use href="#split" x="20" y="62"/><use href="#split" x="385" y="17"/>
+    <use href="#split" x="224" y="101"/><use href="#split" x="661" y="156"/>
+    <use href="#split" x="69" y="194"/><use href="#split" x="702" y="217"/>
+    <use href="#split" x="285" y="346"/><use href="#split" x="706" y="292"/>
+    <use href="#split" x="91" y="443"/><use href="#split" x="449" y="391"/>
+  </g>
+  <g opacity=".72">
+    <use href="#nail" x="558" y="14"/><use href="#nail" x="551" y="61"/><use href="#nail" x="596" y="57"/>
+    <use href="#nail" x="186" y="93"/><use href="#nail" x="189" y="158"/><use href="#nail" x="230" y="156"/>
+    <use href="#nail" x="420" y="195"/><use href="#nail" x="460" y="251"/>
+    <use href="#nail" x="668" y="291"/><use href="#nail" x="703" y="342"/>
+    <use href="#nail" x="268" y="378"/><use href="#nail" x="317" y="443"/>
+  </g>
+</svg>

@@ -1,0 +1,86 @@
+.head-actions {
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: .35rem; padding: .32rem; border: 1px solid #b28d555c; border-radius: 10px;
+  background: linear-gradient(155deg, #192f33f5, #10232bf0); box-shadow: 0 5px 18px #051a2345;
+  pointer-events: auto;
+}
+.header-tools, .header-account { display: flex; align-items: center; justify-content: flex-end; gap: .3rem; }
+.header-tools #music { order: 1; }
+.header-tools #sound { order: 0; }
+.header-tools #feature-help { order: 2; }
+.header-tools #fullscreen { order: 3; }
+.header-tools #rotate-screen { order: 4; }
+.header-tools #rotate-screen { display: none; }
+body[data-ui-input="touch"] .header-tools #rotate-screen { display: inline-flex; }
+.header-tools button[aria-pressed="false"] { opacity: .55; }
+.masthead { align-items: flex-start; }
+.head-actions #music .game-icon, .head-actions #rotate-screen .game-icon { width: 19px; height: 19px; }
+#pirate-name-dialog input { width: 100%; min-height: 44px; margin-block: .5rem 1rem; }
+#pirate-name-status { font-size: .75rem; }
+.head-actions button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; }
+.head-actions .connection { padding-inline: .4rem; margin: 0; font-size: .64rem; letter-spacing: .03em; }
+.head-actions .header-gold { display: inline-flex; align-items: center; gap: .35rem; padding: .3rem .5rem; color: #ffe1a0; white-space: nowrap; font-size: .8rem; border-left: 1px solid #bd95563b; }
+.head-actions #sound-label { display: none; }
+.head-actions .sound-icon { display: block; }
+.head-actions #sound[aria-pressed="false"] .sound-waves { display: none; }
+.head-actions #sound[aria-pressed="false"] .sound-muted { display: inline; }
+.head-actions .captain-trigger { border-color: #b99159; background: linear-gradient(#695039, #3e3329); color: #ffe5b6; font-size: .78rem; font-weight: 800; padding-inline: .65rem; }
+.head-actions .captain-trigger:hover { background: linear-gradient(#7d6042, #51402e); }
+.captain-trigger > [data-icon] { display: grid; place-items: center; color: #ffcf7f; }
+.captain-trigger[data-connected="true"] > [data-icon] { color: #9de5bc; }
+.captain-chevron { font-size: 16px; }
+dialog.captain-menu {
+  position: fixed; inset: max(.75rem, env(safe-area-inset-top)) max(.75rem, env(safe-area-inset-right)) auto auto;
+  margin: 0; width: min(350px, calc(100vw - 1.5rem)); max-height: calc(100dvh - 1.5rem); overflow: auto;
+  color: #ffedce; padding: 1.15rem; border: 1px solid #c69b61; border-radius: 10px;
+  background: repeating-linear-gradient(0deg, #342e28 0 47px, #49392b 48px, #342e28 50px);
+  box-shadow: inset 0 0 0 3px #a67c3f27, 0 18px 65px #041920a6; overscroll-behavior: contain;
+}
+.captain-menu::backdrop { background: #071c274d; }
+.captain-menu-heading { display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
+.captain-eyebrow { font-size: .61rem; letter-spacing: .15em; color: #d5b788; }
+.captain-menu h2 { font-family: Georgia, serif; font-size: 1.55rem; margin-top: .2rem; }
+.captain-menu .captain-close { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; }
+.captain-identity { display: flex; align-items: center; gap: .8rem; margin: 1.1rem 0 .7rem; }
+.captain-identity img { flex: none; }
+.captain-identity strong, .captain-identity span { display: block; overflow-wrap: anywhere; }
+.captain-identity strong { font-size: 1rem; }
+.captain-identity span { font-size: .75rem; color: #c5ccbd; margin-top: .12rem; }
+.captain-balance { display: flex; align-items: center; gap: .4rem; border: 1px solid #a17f454f; border-radius: 6px; padding: .7rem; background: #1c2f30; color: #ffdc97; }
+.captain-balance strong { font-size: 1.2rem; }
+.captain-balance > span:not([data-icon]) { font-size: .74rem; }
+.captain-test-badge { margin-left: auto; letter-spacing: .1em; color: #a6bdb5; }
+.captain-account-actions { margin-top: .75rem; }
+.captain-account-actions > p { margin: .2rem 0 .65rem; font-size: .8rem; color: #d2c7b0; }
+.captain-menu button { min-height: 44px; }
+.captain-menu details { margin-block: .6rem; font-size: .8rem; }
+.captain-menu summary { cursor: pointer; min-height: 36px; padding-block: .5rem; color: #d1c1a3; }
+.captain-menu details p { overflow-wrap: anywhere; user-select: text; font: .72rem/1.5 ui-monospace, monospace; }
+.captain-menu details button { width: 100%; margin: .3rem 0; }
+#gold-wallet form { display: grid; gap: .35rem; }
+#gold-wallet input, #gold-wallet select { width: 100%; min-height: 44px; }
+#gold-wallet-status { min-height: 1em; color: #ffdc97; }
+.captain-preferences { margin-top: .7rem; padding-top: .9rem; border-top: 1px solid #b38c4a42; }
+.captain-preferences label { display: block; font-size: .74rem; color: #d1c1a3; margin-bottom: .35rem; }
+.captain-preferences input { width: 100%; min-height: 44px; }
+.captain-option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; margin-top: .55rem; }
+.captain-option-grid button { font-size: .74rem; }
+.captain-backup { grid-column: 1 / -1; }
+.captain-menu .captain-signout { width: 100%; margin-top: .8rem; background: #50352c; border-color: #ac7650; color: #ffe3c3; }
+.captain-hint { font-size: .72rem; color: #e4bd88; margin-bottom: 0; }
+.captain-build { display: block; margin-top: .9rem; text-align: center; font: .65rem/1.4 ui-monospace, monospace; color: #c0aa87; }
+@media (max-width: 620px) {
+  .head-actions .connection > span { display: none; }
+  .head-actions .connection { padding-inline: .2rem; }
+  .head-actions .captain-chevron { display: none; }
+  .head-actions .captain-trigger { padding-inline: .6rem; }
+  .head-actions .header-gold { padding-inline: .3rem; font-size: .71rem; }
+  .head-actions { gap: .2rem; padding: .22rem; }
+  .brand-wordmark { width: min(20vw, 110px); }
+  .brand-emblem { width: 36px; }
+}
+@media (max-width: 370px) { .brand { display: none; } .head-actions { margin-left: auto; } }
+@media (max-width: 370px) {
+  .head-actions .connection { display: none; }
+  .head-actions .header-gold .game-icon { width: 14px; }
+}

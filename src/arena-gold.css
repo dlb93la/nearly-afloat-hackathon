@@ -1,0 +1,35 @@
+.arena-gold-effect {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+body[data-scene="countdown"] .arena-gold-effect[data-entry] { display: none; }
+
+.arena-gold-label, .arena-gold-coin {
+  position: absolute;
+  inset: 0 auto auto 0;
+  color: #ffe4a5;
+}
+
+.arena-gold-label {
+  padding: .28rem .65rem;
+  border: 1px solid #bc8950;
+  border-radius: .35rem;
+  background: #2d2119ee;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.arena-gold-coin {
+  display: grid;
+  width: 1.3rem;
+  height: 1.3rem;
+  place-items: center;
+  border: 2px solid #ffe1a0;
+  border-radius: 50%;
+  background: #c7842c;
+  box-shadow: 0 0 .65rem #ffb74388;
+  font-style: normal;
+  font-size: .75rem;
+}

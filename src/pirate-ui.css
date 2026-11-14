@@ -1,0 +1,153 @@
+/* Shared joinery for the harbor signs, panels and controls. Static CSS materials only. */
+:root {
+  --pirate-ink: #fff0cf;
+  --pirate-muted: #ddc7a6;
+  --pirate-brass: #c39a61;
+  --pirate-edge: #40281d;
+  --pirate-grain: repeating-linear-gradient(2deg, transparent 0 3px, #39200e26 4px, transparent 5px 9px);
+  --pirate-wood: linear-gradient(110deg, #482a1740, #281c1659), url('./wood-planks.svg');
+  --pirate-panel-color: #332a22;
+  --pirate-panel-grain: url('./wood-planks.svg') center top / 760px auto repeat;
+  --pirate-dark-wood: linear-gradient(120deg, #1d17134d, #1d17139c), var(--pirate-panel-grain), var(--pirate-panel-color);
+  --pirate-rivets:
+    radial-gradient(circle at 6px 6px, #f1c88e 0 1px, #4b3020 1.5px 2.5px, transparent 3px),
+    radial-gradient(circle at calc(100% - 6px) 6px, #f1c88e 0 1px, #4b3020 1.5px 2.5px, transparent 3px),
+    radial-gradient(circle at 6px calc(100% - 6px), #d3a56e 0 1px, #4b3020 1.5px 2.5px, transparent 3px),
+    radial-gradient(circle at calc(100% - 6px) calc(100% - 6px), #d3a56e 0 1px, #4b3020 1.5px 2.5px, transparent 3px);
+  --pirate-sign-shadow: inset 0 0 0 1px #d79d6099, inset 0 -4px #24160f66, 0 3px #251910, 0 5px 7px #100e0b35;
+}
+
+/* A single frame language, without putting a second frame around the embedded shop. */
+.cabinet :is(.pier-card, dialog.captain-menu):not([data-embedded="true"]),
+main.signin-panel {
+  color: var(--pirate-ink);
+  border: 2px solid #38241b;
+  border-radius: 5px;
+  background: var(--pirate-rivets), var(--pirate-dark-wood);
+  box-shadow: inset 0 0 0 1px #e0b579, inset 0 0 0 5px #281c15a6, inset 0 0 0 6px #a87a4545,
+    0 5px #211a16, 0 18px 42px #071b2675;
+  scrollbar-color: #c49a62 #2a211b;
+}
+.cabinet .near-workshop[data-embedded="true"] { border: 0; background: none; box-shadow: none; }
+.cabinet :is(.pier-heading, .captain-menu-heading) { padding-bottom: .75rem; border-bottom: 1px solid #b68a4e50; }
+.cabinet :is(.pier-heading h2, .captain-menu h2, .workshop-info h3), .signin-panel h1 {
+  color: #fff0cf; font-family: inherit; font-weight: 950;
+  text-shadow: 0 2px #2c1b15; letter-spacing: -.025em;
+}
+.cabinet .captain-menu h2 { font-size: 1.75rem; }
+.captain-eyebrow { color: #e5bb7e; letter-spacing: .18em; }
+
+/* The same carved planks as the building signs. Bare information hit areas stay bare. */
+.cabinet :is(.pier-card, .captain-menu, .bay-host) button:not(.item-info, .mode-help),
+.masthead .head-actions button,
+.signin-panel button {
+  --control-wood: var(--pirate-wood);
+  color: var(--pirate-ink);
+  background: var(--pirate-rivets), var(--control-wood);
+  border: 2px solid var(--pirate-edge);
+  border-radius: 3px;
+  box-shadow: var(--pirate-sign-shadow);
+  text-shadow: 0 2px #352016;
+  font-weight: 850;
+  min-height: 44px;
+  transition: filter .12s ease-out;
+}
+.cabinet :is(.pier-card, .captain-menu, .bay-host) button:not(.item-info, .mode-help):hover:not(:disabled),
+.masthead .head-actions button:hover:not(:disabled), .signin-panel button:hover:not(:disabled) {
+  background: var(--pirate-rivets), var(--control-wood);
+  filter: brightness(1.16);
+}
+.cabinet :is(.pier-card, .captain-menu, .bay-host) button:not(.item-info, .mode-help):active:not(:disabled),
+.masthead .head-actions button:active:not(:disabled), .signin-panel button:active:not(:disabled) {
+  box-shadow: inset 0 0 0 1px #d79d6099, inset 0 3px 5px #20130d70, 0 1px #251910;
+}
+.cabinet :is(.pier-card, .captain-menu) button.primary,
+.cabinet .workshop-order button.item-action,
+.cabinet .workshop-actions button.item-primary,
+.signin-panel button:not(.signin-quiet) {
+  --control-wood: var(--pirate-grain), linear-gradient(110deg, #edc78d, #d5a35b 58%, #bd8748);
+  color: #302014; text-shadow: 0 1px #ffe0aa6b;
+  box-shadow: inset 0 0 0 1px #ffe3ae, inset 0 -4px #96603555, 0 3px #4c3020, 0 5px 7px #100e0b35;
+}
+.cabinet :is(.pier-card, .captain-menu) button[aria-pressed="true"],
+.cabinet .pier-card button[aria-expanded="true"] {
+  --control-wood: var(--pirate-grain), linear-gradient(110deg, #3f716b, #2c514c 65%, #27433f);
+  color: #fff1c6;
+  border-color: #b68a4b;
+  box-shadow: inset 0 0 0 1px #f4ce8b, inset 0 -4px #102d286b, 0 3px #2b2019;
+}
+.cabinet .captain-menu .captain-signout,
+.cabinet .leave-actions button[value="leave"] {
+  --control-wood: var(--pirate-grain), linear-gradient(110deg, #82513b, #67382c 70%);
+  color: #ffe8c5;
+}
+.cabinet :is(.pier-card, .captain-menu, .bay-host) button:disabled,
+.signin-panel button:disabled { filter: saturate(.55); opacity: .54; }
+.cabinet :is(.pier-card, .captain-menu) :is(button, input, select, summary):focus-visible,
+.masthead button:focus-visible, .signin-panel :is(button, input, summary):focus-visible {
+  outline: 2px solid #ffe1a0; outline-offset: 3px;
+}
+
+/* Existing icons serve as small painted crests; nothing new is rendered in the 3D scene. */
+.cabinet :is(.captain-option-grid, .cottage-tabs, .workshop-tabs) button > span[data-icon],
+.head-actions .captain-trigger > span[data-icon] {
+  display: inline-grid; place-items: center; width: 1.45rem; min-height: 1.65rem; padding-bottom: .15rem;
+  color: #ffdda0; background: #324c45;
+  clip-path: polygon(0 0, 100% 0, 100% 77%, 50% 100%, 0 77%);
+  box-shadow: inset 0 2px #e7c48a4d;
+}
+.cabinet .cottage-tabs button[data-cottage-tab="decor"] > span[data-icon] { background: #6c4a69; }
+.cabinet .cottage-tabs button[data-cottage-tab="log"] > span[data-icon] { background: #765831; }
+.cabinet .workshop-tabs button > span[data-icon] { background: #626032; }
+.cabinet .captain-close { flex: none; }
+.cabinet .captain-identity { padding: .65rem; margin-top: .85rem; border: 1px solid #b28a5059; border-radius: 3px; background: #231c16aa; }
+.cabinet .captain-identity img { width: 64px; height: 64px; image-rendering: pixelated; }
+.cabinet .captain-balance { border: 1px solid #a47b43; border-radius: 3px; background: var(--pirate-grain), #30271e; box-shadow: inset 0 0 0 2px #211a14; }
+.cabinet .captain-preferences { border-color: #b68a4e50; }
+.cabinet .captain-menu summary { color: #eed0a0; }
+.cabinet .captain-menu details[open] { padding: .2rem .6rem .5rem; border: 1px solid #ad834a52; border-radius: 3px; background: #211a156b; }
+.masthead .head-actions { border: 2px solid #39271e; border-radius: 4px; background: var(--pirate-grain), #31291ff5; box-shadow: inset 0 0 0 1px #bb8f587d, 0 3px #211a16; }
+.head-actions .header-gold { border-left-color: #d4aa6840; }
+
+/* Recessed fields and shelves keep text and item artwork readable. */
+.cabinet :is(.pier-card, .captain-menu) :is(input, select), .signin-panel input {
+  color: #fff0d4; background: #211d18; border: 1px solid #a9824e; border-radius: 3px;
+  box-shadow: inset 0 2px 4px #100c0980, 0 1px #dcb07822;
+}
+.cabinet :is(.pier-card, .captain-menu) input::placeholder, .signin-panel input::placeholder { color: #ad9b81; opacity: 1; }
+.cabinet .workshop-item {
+  background: linear-gradient(145deg, #3b3129, #2b2521);
+  border: 1px solid #997649; border-radius: 3px; box-shadow: inset 0 0 0 2px #201b1559;
+}
+.cabinet .workshop-item:is(.equipped, .unlocked) { border-color: #add199; box-shadow: inset 0 0 0 1px #91b87c66; }
+/* Rarity frames belong to real item displays, never tutorial illustrations. */
+.cabinet :is(.workshop-item, .item-art, .workshop-info:not(.near-workshop), .cottage-options,
+  .cottage-treasure, .merchant-poster, .expedition-cargo) .workshop-thumb[data-rarity] {
+  outline: 1px solid var(--item-rarity); outline-offset: -1px;
+}
+.cabinet .workshop-item > .rarity-label { color: var(--item-rarity); font-size: .68rem; font-weight: 800; }
+body[data-night="true"] :is(.cabinet :is(.pier-card, .captain-menu):not([data-embedded="true"]), main.signin-panel) {
+  --pirate-dark-wood: linear-gradient(120deg, #19172770, #111522bc), var(--pirate-panel-grain), #211e2a;
+}
+.cabinet :is(.expedition-cargo, .first-brawl-reward, .training-frame, .adventure-previews > div) {
+  background: var(--pirate-grain), linear-gradient(125deg, #3b4233, #292d26);
+  border-color: #a78450; border-radius: 3px;
+}
+.cabinet :is(.expedition-totals, .round-gold-breakdown) > div,
+.cabinet .pier-options { background: #241e19a3; border-radius: 3px; }
+.cabinet .expedition-stage { color: #ffdea2; }
+.cabinet .pier-play .play-numbers {
+  color: inherit;
+  opacity: 1;
+  font-weight: 900;
+  text-shadow: inherit;
+}
+.cabinet :is(.workshop-item .item-info, .mode-help) { box-shadow: none; }
+.cabinet :is(.workshop-item .item-info, .mode-help):is(:hover, :focus-visible) { background: transparent; }
+.signin-panel .signin-quiet { --control-wood: var(--pirate-grain), linear-gradient(110deg, #5e4835, #443023); }
+.signin-panel details { color: #e3cda6; opacity: 1; }
+.signin-panel .signin-brand { margin-top: .3rem; }
+@media (prefers-reduced-motion: reduce) {
+  .cabinet :is(.pier-card, .captain-menu, .bay-host) button,
+  .masthead .head-actions button, .signin-panel button { transition: none; }
+}

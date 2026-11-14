@@ -1,0 +1,151 @@
+{
+  "checkedAt": "2026-11-14T12:36:33.140Z",
+  "network": "testnet",
+  "purpose": "Shared judges rehearsal; isolated demo accounts, GOLD and ledger; no personal assets",
+  "contract": "j-d2033107.afloat-judges-342fddfbac.testnet",
+  "token": "t-d2033107.afloat-judges-342fddfbac.testnet",
+  "codeHash": "CKhaaY9E7yXoQFX2Laoe3f9RJeV44izNjY15ahBZ4D4A",
+  "manual": true,
+  "normalGameContract": "r-f08ea9c0.afloat-proof-44f848902e.testnet",
+  "normalGameToken": "g-f08ea9c0.afloat-proof-44f848902e.testnet",
+  "campaign": {
+    "id": 1,
+    "status": "settled",
+    "item_type": "pet-expedition-parrot",
+    "target": 3000,
+    "funded": 3000,
+    "contributor_count": 2,
+    "min_supporters": 2,
+    "funding_ends_at": 1794659326417,
+    "sails_at": 1794659384679,
+    "auction_starts_at": 1794659384680,
+    "auction_ends_at": 1794659384681,
+    "minimum_bid": 8100,
+    "highest_bid": 8000,
+    "highest_bidder": "p-d2033107.afloat-judges-342fddfbac.testnet",
+    "winner": "p-d2033107.afloat-judges-342fddfbac.testnet",
+    "sale": 8000,
+    "fee": 400,
+    "net": 7600,
+    "treasury": 73866,
+    "needs_advance": false,
+    "prize_rarity": "mythic",
+    "prize_units": 1,
+    "prize_supply_scope": "one_per_campaign_not_globally_unique"
+  },
+  "crews": [
+    {
+      "id": "c-d2033107.afloat-judges-342fddfbac.testnet",
+      "contribution": 2000,
+      "contribution_nonce": 2,
+      "last_contribution": 2000,
+      "refund": 0,
+      "payout": 5067
+    },
+    {
+      "id": "p-d2033107.afloat-judges-342fddfbac.testnet",
+      "contribution": 1000,
+      "contribution_nonce": 2,
+      "last_contribution": 1000,
+      "refund": 0,
+      "payout": 2533
+    }
+  ],
+  "receipts": [
+    {
+      "action": "fund",
+      "hash": "ERpddRW2PFfmMkLYGuCfcDTmu95qUvM1zbD3PAQVoJgm",
+      "success": true
+    },
+    {
+      "action": "fund",
+      "hash": "seXKPSu9T5LpquT4tBkdRGD6fqiYTNJzW3z2RSnmLYK",
+      "success": true
+    },
+    {
+      "action": "advance",
+      "hash": "FKPMNvrh6XoPGdiQS27naH4xpBoXa8XzSckJnZLEnk1o",
+      "success": true
+    },
+    {
+      "action": "advance",
+      "hash": "FEoUgYBywDPkmxUMYab9b2MjfCTe8xxsBgQ6yPXpLGAb",
+      "success": true
+    },
+    {
+      "action": "bid",
+      "hash": "8yYYThaRFr6a9E7yxxv7cE2zHGzV4kqWRDtUyushUrNV",
+      "success": true
+    },
+    {
+      "action": "bid",
+      "hash": "BaEuRdBujBS8SvVRxTGTyZXYctSbhKzUELPrqN5BRPUz",
+      "success": true
+    },
+    {
+      "action": "advance",
+      "hash": "LWKVwD1MWXe6qb6vDEWK9scGQatkiTdcZFndFffMzvh",
+      "success": true
+    },
+    {
+      "action": "equip",
+      "hash": "GMTiHuqDrUbdcZmKZ78ojMz7iJZrcKBNyPHF2TMx5xzg",
+      "success": true
+    },
+    {
+      "action": "restart",
+      "hash": "9NeBzyQvERjXnwDLzk94hcYNeP9do2hbvBZjMdNpTa4P",
+      "success": true
+    }
+  ],
+  "reset": {
+    "id": 2,
+    "status": "funding",
+    "item_type": "pet-expedition-parrot",
+    "target": 3000,
+    "funded": 0,
+    "contributor_count": 0,
+    "min_supporters": 2,
+    "funding_ends_at": 0,
+    "sails_at": null,
+    "auction_starts_at": null,
+    "auction_ends_at": null,
+    "minimum_bid": 100,
+    "highest_bid": 0,
+    "highest_bidder": null,
+    "winner": null,
+    "sale": 0,
+    "fee": 0,
+    "net": 0,
+    "treasury": 73866,
+    "needs_advance": false,
+    "prize_rarity": "mythic",
+    "prize_units": 1,
+    "prize_supply_scope": "one_per_campaign_not_globally_unique"
+  },
+  "backing": "800000",
+  "claim": "Equipping confirmed before reset; ownership persists and never expires",
+  "interface": {
+    "desktop": true,
+    "mobilePortrait": true,
+    "mobileLandscape": true,
+    "errors": 0
+  },
+  "backingSnapshot": {
+    "block": 277657759,
+    "tokenBalance": "800000",
+    "treasury": 773866,
+    "crewBalances": [
+      16134,
+      10000
+    ],
+    "accountedCents": 800000,
+    "equalsTokenBalance": true
+  },
+  "reserveSupplement": {
+    "hash": "7xGD62bWJbFX5paXsVYcuJNuTezfejmegSe6ESzn4gky",
+    "amount": "700000",
+    "token": "t-d2033107.afloat-judges-342fddfbac.testnet",
+    "contract": "j-d2033107.afloat-judges-342fddfbac.testnet"
+  }
+}

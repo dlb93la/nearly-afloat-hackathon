@@ -1,0 +1,100 @@
+.harbor {
+  position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column;
+  gap: .7rem; overflow: auto; overscroll-behavior: contain; pointer-events: none;
+  padding: calc(var(--hud-top) + 3.75rem) max(var(--hud-right), 2.6vw) var(--hud-bottom) max(var(--hud-left), 2.6vw);
+}
+.harbor-head { display: flex; align-items: center; width: min(100%, 84rem); margin-inline: auto; text-shadow: 0 3px #102a31; }
+.harbor-head > div, .vault-console, .vault-board, .harbor dialog { pointer-events: auto; }
+.harbor-head h2 { margin: 0; font-size: clamp(1.3rem, 3vw, 2.35rem); line-height: 1.04; }
+.harbor-head .eyebrow { margin-bottom: .18rem; }
+.harbor-head { justify-content: space-between; gap: .6rem; }
+.vault-room {
+  flex: 1; width: min(100%, 84rem); margin-inline: auto; display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(16rem, 23vw, 21rem); gap: .9rem; align-items: start;
+}
+.vault-stage { min-width: 0; display: grid; place-items: center; }
+.harbor[data-activity="raid"] .vault-stage { display: none; }
+.harbor[data-activity="raid"] .vault-console { grid-column: 2; }
+.vault-board {
+  display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); grid-template-rows: repeat(19, minmax(0, 1fr));
+  width: min(100%, 47svh, 36rem); aspect-ratio: 13 / 19; padding: .32rem; gap: 2px;
+  border: 2px solid #b2895f; border-radius: 5px; background: #1a333d; box-shadow: 0 8px 26px #0b1725c0;
+}
+.vault-board button {
+  padding: 0; min-width: 0; min-height: 0; display: grid; place-items: center; border: 0; border-radius: 2px;
+  background: var(--piece, #50636a); color: #fff8db; text-shadow: 0 1px 2px #152127;
+  font-size: clamp(.65rem, 2.4vw, 1.08rem);
+}
+.vault-board button:hover { filter: brightness(1.24); }
+.vault-board button[aria-disabled="true"] { cursor: default; }
+.vault-board button.route { box-shadow: inset 0 0 0 2px #b6efb7; }
+.vault-console {
+  width: 100%; padding: clamp(.72rem, 1.65vw, 1.05rem); color: #f6ebd1;
+  background: linear-gradient(150deg, #29474a, #172c33 72%); border: 2px solid #947653; border-radius: 5px;
+  box-shadow: inset 0 0 0 3px #142a31, 0 5px #0d2229, 0 12px 28px #0b2029a8;
+}
+.fort-wallet { display: flex; justify-content: space-between; margin: 0 0 .5rem; font-size: .82rem; }
+.fort-wallet strong, #vault-code { color: #ffcf81; font-variant-numeric: tabular-nums; }
+.vault-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+.vault-tabs [aria-pressed="true"] { border-color: #c49c61; background: #654b37; }
+.vault-console button { min-height: 40px; }
+.vault-card { display: grid; gap: .5rem; margin-top: .7rem; }
+.vault-card p, .harbor-notice { margin: 0; font-size: .8rem; color: #e1dac7; }
+.vault-card p:empty, .harbor-notice:empty { display: none; }
+.harbor-notice { margin-top: .45rem; color: #ffcf81; }
+.vault-code { display: flex; justify-content: space-between; align-items: center; gap: .4rem; width: 100%; }
+.fort-field, .vault-form { display: grid; gap: .27rem; }
+.fort-field select, .vault-form input { width: 100%; min-width: 0; }
+.fort-guide { display: flex; align-items: center; gap: .35rem; font-size: .8rem; }
+.fort-guide input { accent-color: #76b598; }
+.fort-primary { border-color: #be8b54; background: #e0ab67; color: #251e1e; font-weight: 850; }
+.fort-training { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .28rem; }
+.fort-preset { display: grid; justify-items: center; gap: .28rem; padding: .3rem .12rem; min-width: 0; }
+.fort-preset canvas { width: min(100%, 48px); height: auto; image-rendering: pixelated; border: 1px solid #b18a65; border-radius: 3px; }
+.fort-preset .symbol-button { gap: .14rem; font-size: .7rem; color: #ffd49a; }
+.fort-inline { grid-template-columns: auto minmax(0, 1fr); align-items: center; color: #e4bd83; }
+.fort-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(44px, 1fr)); gap: .22rem; }
+.fort-tools button { min-height: 44px; padding: 0; background: var(--piece); font-size: 1.1rem; color: #fff4de; text-shadow: 0 1px 3px #171923; }
+.fort-tools button[aria-pressed="true"] { outline: 2px solid #ffe2a4; outline-offset: -3px; box-shadow: inset 0 0 0 4px #1c2533; }
+#vault-status { display: flex; align-items: center; gap: .33rem; color: #ffc99d; }
+#vault-status[data-valid="true"] { color: #b4e4a2; }
+.raid-cue { color: #ffcc8a; }
+.raid-cue > span:last-child { color: #ff9d8e; }
+
+.harbor[data-activity="running"] { overflow: hidden; }
+.harbor[data-activity="running"] :is(.harbor-head, .vault-console) { display: none; }
+.harbor[data-activity="running"] .vault-room { display: contents; }
+.fort-run { position: absolute; inset: 0; pointer-events: none; }
+.fort-hud, .fort-run-actions, #fort-event {
+  position: absolute; background: #102830e8; border: 1px solid #a7885b; border-radius: 5px; color: #ffe6b6;
+}
+.fort-hud {
+  top: calc(var(--hud-top) + 3.75rem); left: var(--hud-left); max-width: calc(100% - 10rem);
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .75rem; padding: .5rem .7rem;
+}
+#fort-hearts { color: #ff8c7d; letter-spacing: .12em; }
+#fort-time { font-weight: 850; font-variant-numeric: tabular-nums; }
+#fort-event { top: 24%; left: 50%; transform: translateX(-50%); padding: .55rem .75rem; font-weight: 850; text-align: center; }
+#fort-event:empty { display: none; }
+#fort-minimap {
+  position: absolute; top: calc(var(--hud-top) + 3.75rem); right: var(--hud-right); width: clamp(58px, 11vw, 104px); height: auto;
+  border: 2px solid #b5976d; border-radius: 4px; image-rendering: pixelated; box-shadow: 0 4px 14px #132331b5;
+}
+.vault-fallback #fort-minimap { top: 50%; left: 50%; width: min(53vw, 36vh); transform: translate(-50%, -50%); }
+.fort-run-actions {
+  right: var(--hud-right); bottom: var(--hud-bottom); padding: .35rem;
+  display: flex; align-items: center; gap: .5rem; font-size: .77rem;
+}
+@media (any-pointer: coarse) {
+  .vault-console button { min-height: 44px; }
+  #fort-help { display: none; }
+}
+@media (max-width: 680px) and (orientation: portrait) {
+  .harbor:not([data-activity="running"]) .vault-room { display: flex; flex-direction: column-reverse; gap: .65rem; }
+  .vault-stage, .vault-board { width: 100%; }
+  .fort-hud { max-width: calc(100% - 6rem); font-size: .79rem; }
+}
+@media (max-height: 460px) {
+  .vault-board { width: min(100%, 23rem); }
+  #fort-minimap { width: clamp(53px, 13svh, 74px); }
+}

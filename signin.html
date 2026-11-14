@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <title>Come aboard · NEARly Afloat</title>
+  <link rel="icon" href="/brand/favicon-v2.png">
+</head>
+<body>
+  <main class="signin-panel">
+    <img class="signin-brand" src="/brand/nearly-afloat-wordmark.webp" alt="NEARly Afloat">
+    <img class="signin-barrel" src="/brand/barrel-icon-v2.webp" alt="" width="76" height="76">
+    <h1>Come aboard!</h1>
+    <p>Keep your loot. Join the crew.</p>
+    <div id="signin-options" hidden>
+      <button id="signin-google" type="button">Continue with Google</button>
+      <span class="signin-or">or</span>
+      <form id="signin-email-form">
+        <label for="signin-email">Your email</label>
+        <input id="signin-email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com">
+        <button type="submit">Send code</button>
+      </form>
+      <form id="signin-code-form" hidden>
+        <label for="signin-code">Code from your email</label>
+        <input id="signin-code" inputmode="numeric" autocomplete="one-time-code" required pattern="[0-9]{6}" maxlength="6" placeholder="000000">
+        <button type="submit">Come aboard</button>
+        <button id="signin-change-email" class="signin-quiet" type="button">Use another email</button>
+      </form>
+    </div>
+    <p id="signin-status" role="status" aria-live="polite">Preparing your cabin…</p>
+    <button id="signin-retry" type="button" hidden>Try again</button>
+    <button id="signin-logout" type="button" class="signin-quiet" hidden>Use another account</button>
+    <details id="signin-account-options">
+      <summary>Account options</summary>
+      <p>Game permissions last up to 8 hours, cover this game only and allow up to 10,000 test GOLD in actions. Purchases and entries show their price before you confirm in the game.</p>
+      <a id="signin-previous" href="/near-social/start?provider=near-auth">Use previous sign-in</a>
+      <p><a href="https://www.privy.io/privacy-policy" target="_blank" rel="noopener noreferrer">Sign-in provider privacy</a></p>
+    </details>
+    <button id="signin-cancel" type="button" class="signin-quiet">Back to game</button>
+  </main>
+  <script type="module" src="/src/embedded-login.js"></script>
+</body>
+</html>

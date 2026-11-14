@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Expeditions · Judges rehearsal · NEARly Afloat</title></head>
+<body class="judges-expeditions">
+<main class="rehearsal-shell">
+  <header><a href="/?tour=1">← Judges Tour</a><span class="rehearsal-badge">NEAR testnet · shared demo crews</span></header>
+  <h1>Expeditions</h1><p class="rehearsal-intro">Your pace. Your next move.</p>
+  <p>This rehearsal uses a <strong>separate contract and separate demo GOLD</strong>. You control two demonstration crews. Your personal account, balance and inventory are untouched. Other judges share this voyage.</p>
+  <nav class="rehearsal-stages" aria-label="Voyage stages"><span data-stage="funding">1 · Fund</span><span data-stage="sailing">2 · Sail</span><span data-stage="auction">3 · Auction</span><span data-stage="settled">4 · Split & equip</span></nav>
+  <section class="rehearsal-card" aria-labelledby="stage-title">
+    <div class="rehearsal-cargo"><div id="cargo-picture"></div><div><small>MYTHIC · one edition per voyage</small><h2>Gilded Parrot</h2><h3 id="stage-title">Loading voyage…</h3><p id="stage-help"></p><strong id="voyage-progress"></strong></div></div>
+    <div id="rehearsal-actions" class="rehearsal-actions"></div>
+  </section>
+  <div id="demo-crews" class="demo-crews"></div>
+  <p id="rehearsal-status" role="status" aria-live="polite">Reading finalized testnet state…</p>
+  <button type="button" id="retry-confirmation" hidden>Retry confirmation</button>
+  <section class="rehearsal-card"><h2>Verified activity</h2><div id="rehearsal-receipts"></div><p id="rehearsal-contracts"></p></section>
+  <details class="rehearsal-card"><summary>How the normal game works</summary><p>In the live game, players use their own GOLD. At least two players fund the target; reaching it starts the voyage. A timed auction follows. The highest bidder gets the treasure, 5% of the sale goes to the house, and 95% goes to contributors in proportion to their funding. A higher bid releases the previous bidder's reserved GOLD. Funding that expires short of the target is refunded.</p><p>The current demo configuration allows 5 minutes for funding, an 8-second voyage, and a 5-minute auction. These are configurable testnet durations, not a promise of final production rules. Award ownership does not expire.</p><p><strong>Here:</strong> funding, sailing, auction and equipping have no time limit. Fund both demo crews, then press Sail, Open auction and Close & split when ready. Settlement requires at least one bid. GOLD and ownership changes are real testnet transactions, confirmed before being shown as final. This is a manual timing variant of the same economic contract, not a test of personal social login or live matchmaking.</p></details>
+</main><script type="module" src="/src/judges-expeditions.js"></script>
+</body></html>

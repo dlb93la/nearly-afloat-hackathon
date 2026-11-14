@@ -1,0 +1,597 @@
+{
+  "network": "testnet",
+  "agent": "a-9842391e.afloat-agent-0470958ec6.testnet",
+  "contract": "s-9842391e.afloat-agent-0470958ec6.testnet",
+  "codeHash": "FAbpKCCe32xBkWgKShYondMgMHszDS2h8zFpik4LvSfk",
+  "backing": {
+    "token": "g-9842391e.afloat-agent-0470958ec6.testnet",
+    "tokenCodeHash": "A8WVRkAB8aZz6doChAAzLHT4u7TgRfLR5RcAgVLYVreK",
+    "vault": "30000",
+    "supply": "1000000",
+    "treasury": 13066,
+    "botBank": 0,
+    "agentBalance": 9186,
+    "playerBalance": 7748
+  },
+  "cost": 563,
+  "revenue": 312,
+  "net": -251,
+  "concurrentExecutions": 1,
+  "permission": {
+    "block_hash": "G27PvUJ5uKuDjkfkAdFGHKQE1aWkkdhJFsBuGzGzbjiY",
+    "block_height": 277585336,
+    "nonce": "277585326000000",
+    "permission": {
+      "FunctionCall": {
+        "allowance": "250000000000000000000000",
+        "method_names": [
+          "agent_trade"
+        ],
+        "receiver_id": "s-9842391e.afloat-agent-0470958ec6.testnet"
+      }
+    }
+  },
+  "receipts": [
+    {
+      "label": "resumed prefunded GOLD deployment",
+      "codeHash": "FAbpKCCe32xBkWgKShYondMgMHszDS2h8zFpik4LvSfk",
+      "tokenCodeHash": "A8WVRkAB8aZz6doChAAzLHT4u7TgRfLR5RcAgVLYVreK"
+    },
+    {
+      "label": "grant_test_gold",
+      "hash": "niUfsnfNcmx1f3zrPV2QJEYKcSFGyVBmqqP1ZGqYLHt",
+      "success": true
+    },
+    {
+      "label": "grant_test_gold",
+      "hash": "BxKQiCkPdT3BSCarYjFiq2Dycd4KSsDLNzvtfk3tLqDR",
+      "success": true
+    },
+    {
+      "label": "configure_agent",
+      "hash": "DFVnZofJDYJvzKRqetzKJMDHabFyT7H9UFGYdGK3uF8V",
+      "success": true
+    },
+    {
+      "label": "replay",
+      "hash": "3xpbr3w8hH8mEaUbN2PwpdtCHUtahTDN6Qvyb2yhsPRS",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent nonce changed"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 1
+      },
+      "before": [
+        9437,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 0,
+          "nonce": 1,
+          "expires_at": 1794618860762,
+          "enabled": true
+        },
+        {
+          "owned": {
+            "pirate-5-1": 1
+          },
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "budget bypass",
+      "hash": "4ip5FTDpk1acqkmq1KDWabrJwdWFVNuvt7R5o2Y5WXwh",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent budget exceeded"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 2
+      },
+      "before": [
+        9437,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 0,
+          "nonce": 1,
+          "expires_at": 1794618860762,
+          "enabled": true
+        },
+        {
+          "owned": {
+            "pirate-5-1": 1
+          },
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "per-trade limit",
+      "hash": "8eiFfukyWEypdUkNXR3LKeerU6csMo5R5fdiFnobstrd",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent trade limit"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 564,
+        "nonce": 2
+      },
+      "before": [
+        9437,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 0,
+          "nonce": 1,
+          "expires_at": 1794618860762,
+          "enabled": true
+        },
+        {
+          "owned": {
+            "pirate-5-1": 1
+          },
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "unsupported action",
+      "hash": "7ucwmzCA7p6F29Xz1ZTihxSwBMH7uBTFgK9FGJ9nPSxy",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent action forbidden"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "withdraw",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 2
+      },
+      "before": [
+        9437,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 0,
+          "nonce": 1,
+          "expires_at": 1794618860762,
+          "enabled": true
+        },
+        {
+          "owned": {
+            "pirate-5-1": 1
+          },
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "forbidden item",
+      "hash": "HaYmfmhnHs6Z8JdFnLjyB7MWx5ofrxs9czsfQrBXEjH3",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent item forbidden"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "not-permitted",
+        "expected_price": 563,
+        "nonce": 2
+      },
+      "before": [
+        9437,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 0,
+          "nonce": 1,
+          "expires_at": 1794618860762,
+          "enabled": true
+        },
+        {
+          "owned": {
+            "pirate-5-1": 1
+          },
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "self escalation",
+      "layer": "protocol",
+      "reason": "Access key does not allow method configure_agent",
+      "method": "configure_agent",
+      "args": {
+        "agent": "a-9842391e.afloat-agent-0470958ec6.testnet",
+        "items": [
+          "pirate-5-1"
+        ],
+        "budget": 10000,
+        "per_trade": 563,
+        "expires_at": 1794618860762,
+        "enabled": true
+      },
+      "stateUnchanged": true
+    },
+    {
+      "label": "bypass wrapper",
+      "layer": "protocol",
+      "reason": "Access key does not allow method collection_action",
+      "method": "collection_action",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563
+      },
+      "stateUnchanged": true
+    },
+    {
+      "label": "wrong receiver",
+      "layer": "protocol",
+      "reason": "Access key receiver s-9842391e.afloat-agent-0470958ec6.testnet does not match transaction receiver alice.bb-1ff20598-arena.testnet",
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 1
+      },
+      "stateUnchanged": true
+    },
+    {
+      "label": "withdraw vault backing",
+      "layer": "protocol",
+      "reason": "Access key does not allow method withdraw_gold",
+      "method": "withdraw_gold",
+      "args": {
+        "amount": "100"
+      },
+      "stateUnchanged": true
+    },
+    {
+      "label": "transfer GOLD tokens",
+      "layer": "protocol",
+      "reason": "Access key receiver s-9842391e.afloat-agent-0470958ec6.testnet does not match transaction receiver g-9842391e.afloat-agent-0470958ec6.testnet",
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 1
+      },
+      "stateUnchanged": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "AojSSTr9vDSprLruZzdQdKaCMjLUt1wGfz7Ab6AZ61Ex",
+      "success": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "Ax1xXs8QdXPWsvxMaqJ4K2xy26NmMouFhTBDENa4hTYG",
+      "success": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "4Tj43dhWvoshR5H8aiNTU1tS8oF5aTdCMYbPuC5iJWig",
+      "success": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "4RoN3ZEpsmp89wQeByDVtqoVQd6fXqMs2pkVYSGtqykg",
+      "success": true
+    },
+    {
+      "label": "cumulative budget after resale",
+      "hash": "Fsyop8h5hStDoGzDZRhioiSYVgR4MuANMWCY7YNnp5vt",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent budget exceeded"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 3
+      },
+      "before": [
+        9749,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 312,
+          "nonce": 2,
+          "expires_at": 1794618860762,
+          "enabled": true
+        },
+        {
+          "owned": {},
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "configure_agent",
+      "hash": "Aq1cJYTTG1gLuCm5mc9DNVXi3y3TBDi2YPgYRVSfF6J",
+      "success": true
+    },
+    {
+      "label": "revoked policy",
+      "hash": "4kNcu8UNkqPWiWc7ddsX9Vyxox4hu1nSKmo15pyzucne",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent policy inactive"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 3
+      },
+      "before": [
+        9749,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 563,
+          "per_trade": 563,
+          "spent": 563,
+          "revenue": 312,
+          "nonce": 2,
+          "expires_at": 1794618860762,
+          "enabled": false
+        },
+        {
+          "owned": {},
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "configure_agent",
+      "hash": "4CpWpSUiCAGWKLRnvYiQNUqYcb3Zy9m4aP3WP8BrJpqx",
+      "success": true
+    },
+    {
+      "label": "concurrent economic nonce",
+      "hash": "AFrfPpPtbtBZyPEJNqxtGX5aJRrTJj8bqKjMA5V5kWk8",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent nonce changed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "concurrent economic nonce",
+      "hash": "C6LxP4HDo5bgcWz9tbDiCg2N5MMwV7n3X8NQyFuGAB11",
+      "outcome": {
+        "SuccessValue": "eyJpdGVtcyI6WyJwaXJhdGUtNS0xIl0sImJ1ZGdldCI6MTU2MywicGVyX3RyYWRlIjoxMDAwLCJzcGVudCI6MTEyNiwicmV2ZW51ZSI6MzEyLCJub25jZSI6MywiZXhwaXJlc19hdCI6MTc5NDYxOTA5MTkwNiwiZW5hYmxlZCI6dHJ1ZX0="
+      }
+    },
+    {
+      "label": "configure_agent",
+      "hash": "49eBTckAXPhySGiqwrVtWcdwpwDa5ESGtq6ooKLLtzMD",
+      "success": true
+    },
+    {
+      "label": "configure_agent",
+      "hash": "9g1j4acUmzMXeeUTRbqAsVFGtFqTJ7fRyhPsbkevu6Yg",
+      "success": true
+    },
+    {
+      "label": "expired policy",
+      "hash": "D7NbhXWmtJuwF9LBugkhTLGdqcUXaC3d4v2woEiTkuzb",
+      "success": false,
+      "layer": "contract",
+      "outcome": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: Agent policy inactive"
+              }
+            }
+          }
+        }
+      },
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 4
+      },
+      "before": [
+        9186,
+        {
+          "items": [
+            "pirate-5-1"
+          ],
+          "budget": 1563,
+          "per_trade": 1000,
+          "spent": 1126,
+          "revenue": 312,
+          "nonce": 3,
+          "expires_at": 1794617347176,
+          "enabled": true
+        },
+        {
+          "owned": {
+            "pirate-5-1": 1
+          },
+          "equipped": {}
+        }
+      ],
+      "stateUnchanged": true
+    },
+    {
+      "label": "gas allowance exhausted",
+      "layer": "protocol",
+      "allowance": "1"
+    },
+    {
+      "label": "removed key",
+      "layer": "protocol",
+      "reason": "Access key ed25519:2DuUd9DaJBZ4HGeUAZMtBBJ8jxuzqTy7jBWiqthTKfpm does not exist at block height 277585856",
+      "method": "agent_trade",
+      "args": {
+        "action": "buy",
+        "item": "pirate-5-1",
+        "expected_price": 563,
+        "nonce": 4
+      },
+      "stateUnchanged": true
+    }
+  ],
+  "buy": {
+    "action": "buy",
+    "item": "pirate-5-1",
+    "expected_price": 563,
+    "nonce": 1,
+    "reason": "Acquire discounted surplus for the merchant reserve",
+    "at": 1794617096959,
+    "hash": "7GvDz3sv4qrV8yhk6VWf5p2f2DKCcNTQc6GFko3TdS6Q",
+    "network": "testnet",
+    "status": "confirmed"
+  },
+  "release": {
+    "action": "sell",
+    "item": "pirate-5-1",
+    "expected_price": 312,
+    "nonce": 2,
+    "reason": "Release reserve into scarce shop stock",
+    "at": 1794617255307,
+    "hash": "22PYVUWDM1f1xrSBvkSboCJpjRFVif8SE6cq2tizkobi",
+    "network": "testnet",
+    "status": "confirmed"
+  },
+  "lostAcknowledgementRecovered": true
+}

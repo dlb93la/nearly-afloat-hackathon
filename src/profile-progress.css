@@ -1,0 +1,6 @@
+.profile-dialog { width: min(29rem, calc(100vw - 1rem)); }
+.profile-heading { display: flex; justify-content: space-between; align-items: center; gap: .6rem; }
+.profile-dialog h2 { margin: 0; }
+.profile-dialog input { display: block; width: 100%; min-width: 0; margin: .26rem 0 .45rem; }
+.profile-dialog label { display: block; margin-top: .7rem; }
+.profile-dialog button { min-height: 44px; }

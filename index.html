@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101d25">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/brand/favicon-v2.png">
+  <meta name="description" content="A fast, eight-player barrel brawl on a sinking pirate dock.">
+  <title>NEARly Afloat</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/favicon-v2.png">
+</head>
+<body>
+  <main class="cabinet">
+    <canvas id="arena" aria-label="NEARly Afloat harbor and arena"></canvas>
+    <header class="masthead">
+      <div class="brand" id="brand">
+        <img class="brand-emblem" src="/brand/barrel-icon-v2.webp" alt="">
+        <h1><img class="brand-wordmark" src="/brand/nearly-afloat-wordmark.webp" alt="NEARly Afloat"></h1>
+      </div>
+      <button class="bay-back" id="back-to-bay" type="button" hidden><span aria-hidden="true">←</span><span id="back-label">Back to bay</span></button>
+      <div class="head-actions" aria-label="Game controls">
+        <div class="header-tools">
+        <button class="quiet square" id="music" type="button" aria-label="Music on" aria-pressed="true" title="Music"><span data-icon="music"></span></button>
+        <button class="quiet square" id="mobile-tools-toggle" type="button" aria-label="More game controls" aria-expanded="false" aria-controls="header-extra" title="More controls"><span aria-hidden="true">⋯</span></button>
+        <div id="header-extra" class="header-extra">
+        <button class="quiet square" id="feature-help" type="button" aria-label="Show tutorial" title="Show tutorial">?</button>
+        <button class="quiet square" id="fullscreen" type="button" aria-label="Toggle fullscreen" title="Fullscreen"><span data-icon="fullscreen"></span></button>
+        <button class="quiet square" id="rotate-screen" type="button" aria-label="Rotate screen" title="Rotate screen"><span data-icon="rotate"></span></button>
+        </div>
+        <button class="quiet" id="sound" type="button" aria-label="Game sound" aria-pressed="true" title="Toggle game sound">
+          <svg class="sound-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M2 8h4l4-4v12l-4-4H2z"/><path class="sound-waves" d="M12 7a4 4 0 0 1 0 6m2-8a7 7 0 0 1 0 10"/>
+            <path class="sound-muted" d="m13 8 5 5m0-5-5 5"/>
+          </svg>
+          <span id="sound-label">Sound on</span>
+        </button>
+        </div>
+        <div class="header-account">
+        <span class="connection" id="connection" data-state="pending" role="status"><i></i><span>Connecting</span></span>
+        <button class="captain-trigger" id="captain-menu-open" type="button" aria-haspopup="dialog" aria-controls="captain-menu" aria-expanded="false"><span data-icon="person"></span><span id="captain-menu-label">Account</span><span class="captain-chevron" aria-hidden="true">⌄</span></button>
+        <span id="header-gold" class="header-gold" hidden><span data-icon="coin"></span><b id="header-gold-value"></b><span class="visually-hidden">gold</span></span>
+        </div>
+      </div>
+    </header>
+    <dialog id="captain-menu" class="captain-menu" aria-labelledby="captain-menu-title">
+      <header class="captain-menu-heading">
+        <div><span class="captain-eyebrow">THE CREW</span><h2 id="captain-menu-title">Your account</h2></div>
+        <button id="captain-menu-close" class="captain-close" type="button" aria-label="Close account menu" autofocus><span data-icon="close"></span></button>
+      </header>
+      <div class="captain-identity">
+        <img src="/brand/barrel-icon-v2.webp" alt="" width="56" height="56">
+        <div><strong id="captain-name">Deckhand</strong><span id="captain-account-state">Guest pirate</span></div>
+      </div>
+      <div id="captain-balance" class="captain-balance" hidden><span data-icon="coin"></span><strong id="captain-balance-value"></strong><span>gold</span><span class="captain-test-badge">TEST</span></div>
+      <section id="near-options" class="captain-account-actions" hidden>
+        <p id="captain-guest-hint">Sign in once to keep your loot.</p>
+        <button id="near-social-connect" class="primary symbol-button" type="button" hidden><span data-icon="person"></span>Sign in</button>
+        <details id="captain-account-details">
+          <summary>Account details</summary>
+          <p id="near-account"></p>
+          <button id="captain-copy-address" class="symbol-button" type="button" hidden><span data-icon="copy"></span>Copy address</button>
+          <p id="captain-copy-status" role="status" hidden></p>
+          <button id="near-connect" class="symbol-button" type="button"><span data-icon="link"></span>Use a wallet</button>
+          <small id="near-entry-summary" hidden>2.00 test gold per round · 20% fee</small>
+          <button id="create-near" type="button" hidden>Open room</button>
+        </details>
+      </section>
+      <details id="gold-wallet" hidden>
+        <summary>GOLD wallet</summary>
+        <p id="gold-wallet-balances"></p>
+        <form id="gold-wallet-form">
+          <label for="gold-wallet-action">Action</label>
+          <select id="gold-wallet-action"><option value="deposit">Move into game</option><option value="withdraw">Move to wallet</option><option value="buy">Buy with test NEAR</option></select>
+          <label for="gold-wallet-amount">GOLD amount</label>
+          <input id="gold-wallet-amount" required inputmode="decimal" autocomplete="off" maxlength="16" placeholder="0.00">
+          <button id="gold-wallet-submit" type="submit">Review</button>
+        </form>
+        <p id="gold-wallet-status" role="status"></p>
+      </details>
+      <details class="captain-preferences" id="captain-preferences" open>
+        <summary>Edit profile</summary>
+        <label for="nickname">Pirate name</label>
+        <input id="nickname" aria-label="Your pirate name" type="text" maxlength="20" autocomplete="off" spellcheck="false" placeholder="Deckhand">
+        <button id="pirate-name-save" type="button">Save name</button>
+        <p id="pirate-name-status" role="status"></p>
+        <div class="captain-option-grid">
+          <button id="profile-progress" class="symbol-button captain-backup" type="button" hidden><span data-icon="save"></span>Backup & restore</button>
+        </div>
+      </details>
+      <button id="near-social-logout" class="captain-signout symbol-button" type="button" hidden><span data-icon="exit"></span>Sign out</button>
+      <p id="captain-signout-hint" class="captain-hint" hidden>Finish this round before signing out.</p>
+      <small id="captain-build" class="captain-build"></small>
+    </dialog>
+    <dialog id="pirate-name-dialog" class="action-card pier-card leave-dialog" aria-labelledby="pirate-name-title">
+      <form method="dialog">
+        <h2 id="pirate-name-title">What shall we call you?</h2>
+        <label for="pirate-name-first">Your pirate name</label>
+        <input id="pirate-name-first" type="text" maxlength="20" autocomplete="off" spellcheck="false">
+        <div class="result-actions"><button value="keep">Keep pirate name</button><button class="primary" value="save">Save name</button></div>
+      </form>
+    </dialog>
+    <div id="bay-backdrop" class="bay-backdrop" aria-hidden="true" hidden></div>
+    <button id="accessibility-open" class="accessibility-open harbor-tool" type="button" aria-haspopup="dialog" aria-controls="accessibility-settings"><span class="harbor-tool-crest" data-icon="accessibility" aria-hidden="true"></span><span>Accessibility</span></button>
+    <dialog id="accessibility-settings" class="action-card pier-card accessibility-settings" aria-labelledby="accessibility-title">
+      <form method="dialog">
+        <h2 id="accessibility-title">Accessibility</h2>
+        <p>Choose what works for you. You can change these settings in the bay.</p>
+        <div class="accessibility-options">
+          <label><input type="checkbox" id="accessibility-effects"><span><strong>Sound effects</strong><small>Collisions, traps and character sounds.</small></span></label>
+          <label><input type="checkbox" id="accessibility-music"><span><strong>Music</strong><small>Background music in the bay and arena.</small></span></label>
+          <label><input type="checkbox" id="accessibility-text"><span><strong>Larger text</strong><small>Enlarge menu text and controls that use text.</small></span></label>
+          <label><input type="checkbox" id="accessibility-marker"><span><strong>Large player marker</strong><small>Use a bigger arrow and a brighter outline around your barrel.</small></span></label>
+          <label><input type="checkbox" id="accessibility-color"><span><strong>Identify barrels without color</strong><small>Show “You” above your barrel and numbers above the others.</small></span></label>
+          <label><input type="checkbox" id="accessibility-motion"><span><strong>Reduce motion</strong><small>Reduce camera movement, shake and decorative effects.</small></span></label>
+        </div>
+        <footer class="accessibility-footer"><button type="submit" class="primary" autofocus>Done</button></footer>
+      </form>
+    </dialog>
+
+    <div class="layout" id="arena-layout">
+      <section class="theater" aria-labelledby="arena-name">
+        <div class="theater-top">
+          <div><p class="eyebrow">ARENA 01 / THE DROWNED WHARF</p><h2 id="arena-name">The Last Plank</h2></div>
+        </div>
+        <div class="battle-strip" id="battle-strip" role="status" aria-live="polite" aria-atomic="true" hidden>
+          <strong id="battle-title"></strong><span id="battle-detail"></span>
+        </div>
+        <section id="drill-panel" class="drill-panel" aria-labelledby="drill-title" hidden>
+          <div class="drill-actions">
+            <h3 class="visually-hidden" id="drill-title">Impact lab</h3>
+            <div id="drill-scenario" class="drill-trials" role="group" aria-label="Impact lab trials">
+              <button type="button" class="symbol-button" data-scenario="free" data-icon="control" aria-label="Free steering" title="Free steering" aria-pressed="true"></button>
+              <button type="button" class="symbol-button" data-scenario="head-on" data-icon="impact" aria-label="Head-on" title="Head-on" aria-pressed="false"></button>
+              <button type="button" class="symbol-button" data-scenario="glancing" data-icon="glance" aria-label="Glancing blow" title="Glancing blow" aria-pressed="false"></button>
+              <button type="button" class="symbol-button" data-scenario="edge" data-icon="break" aria-label="Near the edge" title="Near the edge" aria-pressed="false"></button>
+              <button type="button" class="symbol-button" data-scenario="shuffle" data-icon="shuffle" aria-label="Shuffle trials" title="Shuffle trials" aria-pressed="false"></button>
+              <button id="drill-run" type="button" class="symbol-button" data-icon="replay" aria-label="Reset trial" title="Reset trial"></button>
+            </div>
+          </div>
+          <dl class="drill-readout">
+            <div title="Closing speed"><dt><span data-icon="impact"></span><span class="visually-hidden">Closing speed</span></dt><dd id="drill-force">—</dd></div>
+            <div title="Your recoil"><dt><span data-icon="barrel"></span><span aria-hidden="true">←</span><span class="visually-hidden">Your recoil</span></dt><dd id="drill-own">—</dd></div>
+            <div title="Target recoil"><dt><span data-icon="barrel"></span><span aria-hidden="true">→</span><span class="visually-hidden">Target recoil</span></dt><dd id="drill-dummy">—</dd></div>
+            <div title="Reduced steering"><dt><span data-icon="control"></span><span class="visually-hidden">Reduced steering</span></dt><dd id="drill-steering">—</dd></div>
+          </dl>
+        </section>
+        <div class="viewport">
+          <nav id="bay-map" class="bay-map" aria-label="Places in NEARly Afloat">
+            <button id="open-arena" class="bay-marker" data-place="arena" type="button"><span class="bay-crest" data-icon="sword"></span> Arena Pier<span class="bay-next-step" hidden></span></button>
+            <button id="drill" class="bay-marker" data-place="lab" type="button"><span class="bay-crest" data-icon="barrel"></span> Barrel Works<span class="bay-next-step" hidden></span></button>
+            <button id="open-home" class="bay-marker" data-place="home" type="button"><span class="bay-crest" data-icon="home"></span> Your Cottage</button>
+            <button id="open-expeditions" class="bay-marker" data-place="expeditions" type="button"><span class="bay-crest" data-icon="route"></span> Expeditions</button>
+            <button id="evaluation-mode" class="judges-entry harbor-tool" type="button" aria-label="NEAR Hackathon · Judges Tour" aria-haspopup="dialog" aria-controls="judges-welcome">
+              <span class="judges-pointer" aria-hidden="true"><span></span></span>
+              <span class="harbor-tool-crest" data-icon="flag" aria-hidden="true"></span>
+              <span><small>NEAR Hackathon</small><strong>Judges Tour</strong></span>
+            </button>
+          </nav>
+          <aside class="bay-host" id="bay-host" aria-label="Your pirate guides" hidden>
+            <div aria-live="polite"><strong></strong><p></p></div>
+            <span id="host-progress" aria-label="Tutorial progress"></span>
+            <div class="bay-host-actions">
+              <button type="button" data-host-voice aria-label="Play guide voice" title="Play guide voice"><span data-icon="replay" aria-hidden="true"></span></button>
+              <button type="button" data-host-close aria-label="Skip tutorial">Skip</button>
+              <button type="button" data-host-next></button>
+            </div>
+          </aside>
+          <div id="play-hud" class="play-hud" hidden>
+            <span><span data-icon="crew"></span><b id="alive" aria-label="8 players afloat">8</b></span>
+            <span class="tide" id="tide" role="img" aria-label="Low tide"><span id="tide-icon" data-icon="tide"></span><span id="tide-value"></span></span>
+            <span class="clock" id="clock" aria-label="Round clock">—</span>
+          </div>
+          <div class="overlay" id="overlay" data-screen="home">
+            <section class="action-card pier-card" id="home" aria-labelledby="pier-title" hidden>
+              <header class="pier-heading">
+                <h2 id="pier-title">Arena Pier</h2>
+              </header>
+              <div id="arena-menu" class="arena-menu">
+                <button type="button" class="primary pier-play" id="arena-play" aria-expanded="false" aria-controls="arena-play-options"><span class="play-mark" data-icon="play"></span><span><strong>Play</strong><small>Choose your brawl</small></span></button>
+                <button type="button" class="pier-play" id="practice"><span class="play-mark" data-icon="control"></span><span><strong>Training</strong><small>Bots only · No rewards</small></span></button>
+              </div>
+              <section id="arena-play-options" class="arena-play-options" aria-label="Choose your brawl" hidden>
+                <button type="button" id="arena-modes-back" class="arena-modes-back"><span data-icon="arrow"></span> Modes</button>
+                <button type="button" class="primary pier-play" id="arena-fun"><span class="play-mark" data-icon="crew"></span><span><strong>For Fun</strong><small>Online crew + bots · No rewards</small></span></button>
+                <button type="button" class="pier-play" id="arena-paid"><span class="play-mark" data-icon="coin"></span><span><strong>Plunder Pot</strong><small id="arena-play-price">2.00 gold entry · Winner takes the pot</small></span></button>
+              <div class="pier-modes" role="group" aria-label="Play with friends">
+                <div class="pier-mode">
+                  <button id="show-crew-room" class="symbol-button" type="button" aria-expanded="false" aria-controls="crew-room"><span data-icon="crew"></span>Play with friends</button>
+                  <button class="mode-help" type="button" data-mode-info="friends" aria-label="About playing with friends" aria-haspopup="dialog">i</button>
+                </div>
+                <div class="pier-mode">
+                  <button id="show-gold-room" class="symbol-button primary" type="button" aria-expanded="false" aria-controls="gold-room"><span data-icon="coin"></span>Wager test gold</button>
+                  <button class="mode-help" type="button" data-mode-info="wager" aria-label="About gold wagers" aria-haspopup="dialog">i</button>
+                </div>
+              </div>
+              <div class="pier-options" id="crew-room" hidden>
+                <form id="join-form" class="pier-join">
+                  <input id="room-input" aria-label="Room code" type="text" maxlength="8" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="Room code" required>
+                  <button class="symbol-button" type="submit" aria-label="Join crew" title="Join crew" data-icon="arrow"></button>
+                </form>
+                <button class="symbol-button" type="button" id="create"><span data-icon="plus"></span>New crew</button>
+              </div>
+              <div class="pier-options" id="gold-room" hidden>
+                <form id="wager-form" class="wager-form">
+                  <label for="wager-amount">Your wager in test gold</label>
+                  <input id="wager-amount" type="number" inputmode="decimal" step=".01" min=".01" required placeholder="0.00">
+                  <small>Balance <strong id="home-gold">—</strong> · 10% fee</small>
+                  <button id="create-stakes" class="symbol-button primary" type="submit"><span data-icon="sword"></span>Find a gold match</button>
+                </form>
+              </div>
+              </section>
+              <p id="pier-notice" class="pier-notice" role="status"></p>
+            </section>
+            <section class="action-card pier-card cottage-card" id="cottage" aria-labelledby="cottage-title" hidden>
+              <header class="pier-heading">
+                <h2 id="cottage-title" tabindex="-1">Your Cottage</h2>
+              </header>
+              <nav class="cottage-tabs" aria-label="Cottage">
+                <button type="button" data-cottage-tab="home" aria-label="Quarters"><span data-icon="home" aria-hidden="true"></span><span class="desktop-copy">Quarters</span><span class="mobile-copy">Home</span></button>
+                <button type="button" data-cottage-tab="gear"><span data-icon="barrel" aria-hidden="true"></span>Gear</button>
+                <button type="button" data-cottage-tab="decor"><span data-icon="home" aria-hidden="true"></span>Decor</button>
+                <button type="button" data-cottage-tab="log" aria-label="Logbook"><span data-icon="trophy" aria-hidden="true"></span><span class="desktop-copy">Logbook</span><span class="mobile-copy">Log</span></button>
+              </nav>
+              <div id="cottage-content"></div>
+              <p id="cottage-notice" role="status" hidden></p>
+              <footer class="cottage-tabs">
+                <button id="cottage-brawl" type="button"><span data-icon="sword" aria-hidden="true"></span>For Fun</button>
+                <button id="cottage-shop" type="button"><span data-icon="store" aria-hidden="true"></span>Barrel Works</button>
+              </footer>
+            </section>
+            <section class="action-card pier-card expeditions-card" id="expeditions" aria-labelledby="expeditions-title" hidden>
+              <header class="pier-heading">
+                <h2 id="expeditions-title" tabindex="-1">Expeditions</h2>
+                <span class="workshop-balance symbol-button" aria-label="Expedition gold"><span data-icon="coin"></span><strong id="expeditions-gold">—</strong></span>
+              </header>
+              <nav class="expedition-modes" id="expeditions-modes" aria-label="Expedition balance" hidden>
+                <button type="button" data-expedition-mode="local" aria-pressed="true">Local playtest</button>
+                <button type="button" data-expedition-mode="near" aria-pressed="false">NEAR testnet</button>
+              </nav>
+              <div class="expedition-cargo" id="expeditions-cargo" hidden>
+                <div class="expedition-art" id="expeditions-art"></div>
+                <div class="expedition-manifest">
+                  <span id="expeditions-stage" class="expedition-stage"></span>
+                  <h3 id="expeditions-item"></h3>
+                  <span class="expedition-clock"><span data-icon="clock"></span><time id="expeditions-clock"></time></span>
+                </div>
+              </div>
+              <div id="expeditions-progress-wrap" class="expedition-funding" hidden>
+                <div><strong id="expeditions-funded"></strong><span id="expeditions-crew"></span></div>
+                <progress id="expeditions-progress" aria-label="Expedition funding" max="1" value="0"></progress>
+              </div>
+              <dl class="expedition-totals" id="expeditions-totals" hidden></dl>
+              <p id="expeditions-detail" class="expedition-detail"></p>
+              <form class="expedition-form" id="expeditions-form" hidden>
+                <label class="visually-hidden" for="expeditions-amount">Amount in test gold</label>
+                <input id="expeditions-amount" inputmode="decimal" type="number" min="1" step="0.01" placeholder="Gold" required>
+                <button type="submit" class="primary" id="expeditions-action">Contribute</button>
+              </form>
+              <button type="button" class="primary expedition-utility" id="expeditions-utility" hidden></button>
+              <p id="expeditions-notice" class="expedition-notice" role="status" hidden></p>
+              <a id="expeditions-receipt" class="expedition-receipt" target="_blank" rel="noopener" hidden>View receipt ↗</a>
+            </section>
+            <section class="action-card pier-card workshop-card" id="workshop" aria-labelledby="workshop-title" hidden>
+              <header class="pier-heading">
+                <h2 id="workshop-title" tabindex="-1">Barrel Works</h2>
+                <div class="workshop-balances">
+                  <span id="workshop-scrap" class="workshop-balance symbol-button" aria-label="Scrap" title="Scrap" hidden><span data-icon="break"></span><strong id="workshop-scrap-value">0</strong></span>
+                  <span class="workshop-balance symbol-button" aria-label="Test gold"><span data-icon="coin"></span><strong id="workshop-gold">—</strong></span>
+                </div>
+              </header>
+              <button id="near-workshop-open" class="symbol-button" type="button" aria-haspopup="dialog" hidden>
+                <span data-icon="store" aria-hidden="true"></span> Barrel Works
+              </button>
+              <section id="first-brawl-reward" class="first-brawl-reward" aria-labelledby="first-brawl-title" hidden>
+                <h3 id="first-brawl-title" tabindex="-1">Choose your first barrel</h3>
+                <div id="first-brawl-options" class="first-brawl-options"></div>
+                <div class="first-brawl-actions">
+                  <button type="button" class="primary symbol-button" id="first-brawl-rematch" hidden><span data-icon="replay"></span> Play for fun</button>
+                  <button type="button" class="symbol-button" id="first-brawl-cottage" hidden><span data-icon="home" aria-hidden="true"></span> View gear in your cottage</button>
+                </div>
+                <p id="first-brawl-notice" class="pier-notice" role="status" hidden></p>
+              </section>
+              <div class="workshop-store" id="workshop-store">
+                <div class="workshop-toolbar">
+                  <nav class="workshop-tabs" aria-label="Trading">
+                    <button type="button" id="shop-stock" aria-pressed="true"><span data-icon="store" aria-hidden="true"></span>Buy</button>
+                    <button type="button" id="shop-sell" aria-pressed="false"><span data-icon="coin" aria-hidden="true"></span>Sell</button>
+                  </nav>
+                </div>
+                <nav class="workshop-categories" id="workshop-category" aria-label="Item category">
+                  <button class="symbol-button" type="button" data-category="all" aria-label="All sellable items" title="All sellable items" data-icon="bag" hidden></button>
+                  <button class="symbol-button" type="button" data-category="rig" aria-pressed="true" aria-label="Barrels" title="Barrels" data-icon="barrel"></button>
+                  <button class="symbol-button" type="button" data-category="barrelPaint" aria-pressed="false" aria-label="Barrel paints" title="Barrel paints" data-icon="barrel"></button>
+                  <button class="symbol-button" type="button" data-category="pirate" aria-pressed="false" aria-label="Pirates" title="Pirates" data-icon="shirt"></button>
+                  <button class="symbol-button" type="button" data-category="pet" aria-pressed="false" aria-label="Pets" title="Pets" data-icon="parrot"></button>
+                  <button class="symbol-button" type="button" data-category="decor" aria-pressed="false" aria-label="Themes" title="Themes" data-icon="flag"></button>
+                  <button class="symbol-button" type="button" data-category="home" aria-pressed="false" aria-label="Cottage" title="Cottage" data-icon="home"></button>
+                  <button class="symbol-button" type="button" data-category="loot" aria-pressed="false" aria-label="Loot chest" title="Loot chest" data-icon="chest"></button>
+                </nav>
+                <div class="workshop-indicators">
+                  <div id="workshop-loadout" class="workshop-loadout" aria-label="Equipped"></div>
+                  <div id="workshop-notice" class="workshop-notice" role="status" hidden></div>
+                </div>
+                <div id="workshop-items" class="workshop-items"></div>
+              </div>
+            </section>
+            <section class="action-card pier-card" id="lobby" aria-labelledby="lobby-title" hidden>
+              <header class="pier-heading">
+                <div><p class="eyebrow accent">THE LAST PLANK</p><h2 id="lobby-title" tabindex="-1">Crew Room</h2></div>
+              </header>
+              <div class="room-code"><strong id="code" aria-label="Room code">—</strong><button class="symbol-button" type="button" id="copy" aria-label="Copy invite" title="Copy invite" data-icon="link"></button></div>
+              <div id="lobby-crew"></div>
+              <div id="lobby-stake"></div>
+              <div class="lobby-actions">
+                <label id="seat-label" class="symbol-button"><span data-icon="crew"></span><select id="seats" aria-label="Arena size"><option value="6">6</option><option value="7">7</option><option value="8" selected>8</option></select></label>
+                <button class="primary symbol-button" type="button" id="start"><span data-icon="play"></span>Start round</button>
+              </div>
+              <p class="pier-notice" id="lobby-detail" role="status"></p>
+            </section>
+            <section class="action-card pier-card result-card" id="results" aria-labelledby="result-title" hidden>
+              <header class="pier-heading">
+                <div><p class="eyebrow accent" id="result-eyebrow">ROUND CLOSED</p><h2 id="result-title" tabindex="-1">A new captain.</h2></div>
+              </header>
+              <p id="result-detail" class="visually-hidden"></p>
+              <div class="result-rank symbol-button" id="result-rank" hidden><span data-icon="trophy"></span><strong id="rank-value"></strong></div>
+              <p id="gold-result" class="pier-payout" hidden></p>
+              <details id="result-economy"><summary>Gold details</summary>
+                <dl id="round-gold-breakdown" class="round-gold-breakdown" hidden></dl>
+                <a id="gold-receipt" class="pier-receipt" target="_blank" rel="noopener noreferrer" hidden>View receipt ↗</a>
+              </details>
+              <section id="inaugural-farewell" class="next-adventure" hidden aria-label="More adventures await">
+                <h3>That was just the warm-up!</h3>
+                <div class="adventure-previews">
+                  <div><span data-icon="cannon"></span><strong>Cannon crossfire</strong></div>
+                  <div><span data-icon="parrot"></span><strong>Parrot raids</strong></div>
+                  <div><span data-icon="kraken"></span><strong>Kraken grabs</strong></div>
+                </div>
+                <p>Pick your free barrel. Come back for more!</p>
+              </section>
+              <div id="first-brawl-result"></div>
+              <div class="result-actions">
+                <button class="primary symbol-button" id="again" type="button"><span data-icon="replay"></span><span id="again-label">Play again</span></button>
+                <button class="symbol-button" id="result-bay" type="button"><span data-icon="home"></span><span id="result-bay-label">Back to bay</span></button>
+              </div>
+              <details id="battle-recap" class="battle-recap" hidden>
+                <summary><span data-icon="impact"></span> Round highlights</summary>
+                <ul id="recap-list"></ul>
+              </details>
+              <div id="result-crew"></div>
+              <details id="result-entry"><summary>Entry options</summary><div id="result-stake"></div></details>
+              <p id="result-notice" class="pier-notice" role="status"></p>
+            </section>
+            <div id="quick-play-status" class="quick-play-status" role="status" hidden>Preparing your round…</div>
+            <div id="preparing" class="preparing-entry" role="status" hidden><span class="preparing-wheel" aria-hidden="true">⚓</span><strong>Getting your berth ready…</strong><small>The countdown starts when your entry is confirmed.</small></div>
+            <div id="countdown" class="countdown" hidden><p id="arena-map" class="eyebrow">Tidebreak Harbor</p><strong id="count">3</strong><p id="countdown-entry" hidden></p></div>
+          </div>
+          <p id="arena-fallback" class="arena-fallback" hidden>The 3D display is unavailable in this window.</p>
+        </div>
+        <div class="bottom">
+          <div class="keyboard"><span><kbd>WASD</kbd> <kbd>↑↓←→</kbd> Steer</span></div>
+          <button id="training-speed" class="symbol-button training-speed" type="button" aria-pressed="false" hidden><span data-icon="speed"></span><span id="training-speed-label">Speed up ×3</span></button>
+          <div id="emotes" class="emotes" role="group" aria-label="Emotes" hidden>
+            <button class="symbol-button" type="button" data-emote="wave" aria-label="Wave" title="Wave" aria-keyshortcuts="1"><kbd aria-hidden="true">1</kbd><span data-icon="wave"></span></button>
+            <button class="symbol-button" type="button" data-emote="cheer" aria-label="Cheer" title="Cheer" aria-keyshortcuts="2"><kbd aria-hidden="true">2</kbd><span data-icon="cheer"></span></button>
+            <button class="symbol-button" type="button" data-emote="shrug" aria-label="Shrug" title="Shrug" aria-keyshortcuts="3"><kbd aria-hidden="true">3</kbd><span data-icon="shrug"></span></button>
+          </div>
+          <p id="notice" role="status" aria-live="polite">Choose a way to play.</p>
+        </div>
+      </section>
+
+      <details class="pier-crew" id="crew" hidden>
+        <summary id="crew-caption">Crew</summary>
+        <ol id="roster" class="roster"></ol>
+      </details>
+      <section class="pier-stake" id="stake-strip" aria-labelledby="stake-title" hidden>
+        <p class="pier-payout" id="stake-refund" role="status" hidden></p>
+        <a id="refund-receipt" class="pier-receipt" target="_blank" rel="noopener noreferrer" hidden>View testnet refund ↗</a>
+        <div class="pier-figures">
+          <span id="stake-title">Your stake <strong id="stake-entry"></strong></span>
+          <span><span id="stake-currency">Test gold</span> <strong id="stake-balance"></strong></span>
+        </div>
+        <label id="stake-wager-label" for="stake-wager" hidden>Choose your wager
+          <input id="stake-wager" type="number" inputmode="decimal" step=".01" required>
+        </label>
+        <p id="stake-detail"></p>
+        <button id="stake-ready" type="button" aria-pressed="false">Confirm entry</button>
+        <button id="near-room-pass" type="button" hidden>Enable room pass</button>
+        <small id="near-room-pass-detail" hidden></small>
+      </section>
+    </div>
+    <dialog id="arena-mode-info" class="pier-card workshop-info" aria-labelledby="arena-mode-title">
+      <h3 id="arena-mode-title"></h3>
+      <p id="arena-mode-detail"></p>
+      <form method="dialog"><button type="submit">Close</button></form>
+    </dialog>
+    <dialog id="near-workshop" class="pier-card workshop-info near-workshop" aria-labelledby="near-workshop-title">
+      <header class="pier-heading">
+        <h2 id="near-workshop-title">Barrel Works</h2>
+        <form method="dialog"><button class="symbol-button" type="submit" data-icon="close" aria-label="Close"></button></form>
+      </header>
+      <button id="near-workshop-connect" class="primary" type="button">Sign in</button>
+      <div id="near-workshop-account" class="near-workshop-account" hidden>
+        <strong id="near-workshop-balance"></strong>
+      </div>
+      <p id="near-workshop-status" role="status" hidden></p>
+      <div id="near-workshop-award" class="near-workshop-award" hidden></div>
+      <a id="near-workshop-receipt" target="_blank" rel="noopener noreferrer" hidden>View receipt ↗</a>
+      <nav id="near-workshop-trade" class="workshop-tabs near-workshop-categories" aria-label="Trade direction" hidden>
+        <button type="button" data-near-trade="buy" aria-pressed="true">Buy</button>
+        <button type="button" data-near-trade="sell" aria-pressed="false">Sell</button>
+      </nav>
+      <nav id="near-workshop-categories" class="workshop-tabs near-workshop-categories" aria-label="Workshop categories" hidden>
+        <button type="button" data-near-category="rigs" aria-pressed="true">Barrels</button>
+        <button type="button" data-near-category="outfits" aria-pressed="false">Outfits</button>
+        <button type="button" data-near-category="pets" aria-pressed="false">Pets</button>
+        <button type="button" data-near-category="chests" aria-pressed="false">Chests</button>
+        <button type="button" data-near-category="paint" aria-pressed="false">Barrel paints</button>
+        <button type="button" data-near-category="decor" aria-pressed="false">Décor</button>
+      </nav>
+      <div id="near-workshop-items" class="workshop-items"></div>
+      <section id="near-workshop-collection" hidden aria-label="Your collection"></section>
+    </dialog>
+    <dialog id="near-workshop-review" class="pier-card workshop-info" aria-labelledby="near-workshop-review-title" aria-describedby="near-workshop-review-detail">
+      <h3 id="near-workshop-review-title"></h3>
+      <p id="near-workshop-review-detail"></p>
+      <form method="dialog">
+        <button value="cancel" autofocus>Cancel</button>
+        <button class="primary" value="confirm">Confirm</button>
+      </form>
+    </dialog>
+    <div id="helm" class="helm" aria-hidden="true" hidden>
+      <span class="helm-north">▲</span><span class="helm-east">▶</span><span class="helm-south">▼</span><span class="helm-west">◀</span>
+      <span class="helm-thumb" id="helm-thumb"></span>
+    </div>
+    <dialog id="expeditions-confirm" class="action-card pier-card leave-dialog expedition-confirm" aria-labelledby="expeditions-confirm-title" aria-describedby="expeditions-confirm-detail">
+      <form method="dialog">
+        <h2 id="expeditions-confirm-title"></h2>
+        <p id="expeditions-confirm-detail"></p>
+        <div class="leave-actions">
+          <button value="cancel" autofocus>Cancel</button>
+          <button class="primary" value="confirm">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="training-guide" class="action-card pier-card visual-guide" aria-labelledby="training-title">
+      <form method="dialog">
+        <h2 id="training-title">Stay afloat!</h2>
+        <div class="training-story" id="training-story"></div>
+        <div class="training-controls"><span class="training-keyboard"><kbd>WASD</kbd> / <kbd>↑↓←→</kbd></span><span class="training-touch"><span data-icon="control"></span> Touch anywhere on the arena to open the joystick. Drag to steer.</span></div>
+        <div id="intro-reward-recovery"></div>
+        <div class="result-actions"><button value="cancel">Back</button><button id="training-guide-start" value="play" class="primary">Got it · Start</button></div>
+      </form>
+    </dialog>
+    <dialog id="first-match-prize" class="action-card pier-card leave-dialog" aria-labelledby="first-match-prize-title">
+      <h2 id="first-match-prize-title">Your first voyage!</h2>
+      <p>You finished your first match. Pick your free barrel.</p>
+      <div id="first-match-prize-content"></div>
+      <form method="dialog"><button value="later">Later</button></form>
+    </dialog>
+    <dialog id="judges-welcome" class="action-card pier-card leave-dialog" aria-labelledby="judges-welcome-title">
+      <h2 id="judges-welcome-title">Welcome aboard, judges!</h2>
+      <p>This tour is for NEAR Hackathon judges. It guides you through the live game, its testnet economy, and the labs behind it.</p>
+      <p>Here to play? Head back to the bay for the full pirate experience. Here to judge? Come aboard and enjoy the tour!</p>
+      <form method="dialog" class="judges-welcome-actions"><button autofocus>Back to game</button><button id="judges-welcome-start" class="primary" type="button">Enter Judges Tour</button></form>
+    </dialog>
+    <dialog id="judges-tour" class="action-card pier-card leave-dialog" aria-labelledby="judges-tour-title">
+      <h2 id="judges-tour-title">NEAR Hackathon · Judges Tour</h2>
+      <p>Play in the live game first, then explore the labs. GOLD and receipts use NEAR testnet.</p>
+      <p id="judges-progress" role="status"></p>
+      <ol class="judges-route">
+        <li data-judge-step="training"><input type="checkbox" disabled aria-label="Arena visit recorded"><div><button type="button" data-judge-place="arena">Play a match</button><small>Training or For Fun. Claim your first barrel in the bay.</small></div></li>
+        <li data-judge-step="shop"><input type="checkbox" disabled aria-label="Shop visit recorded"><div><button type="button" data-judge-place="lab">Visit Barrel Works</button><small>Check prices and stock, then try buying an upgrade.</small></div></li>
+        <li data-judge-step="gear"><input type="checkbox" disabled aria-label="Cottage visit recorded"><div><button type="button" data-judge-place="home">Equip &amp; inspect receipts</button><small>Equip in Gear. Open Logbook to check confirmed activity.</small></div></li>
+        <li data-judge-step="paid"><input type="checkbox" disabled aria-label="Paid arena visit recorded"><div><button type="button" data-judge-place="arena">Enter Plunder Pot</button><small>Choose Play, review the entry, then inspect the settlement.</small></div></li>
+        <li data-judge-step="voyage"><input type="checkbox" disabled aria-label="Expeditions visit recorded"><div><button type="button" data-judge-place="expeditions">Visit Expeditions</button><small>Follow the crew from funding to auction and payout.</small></div></li>
+      </ol>
+      <h3>Labs &amp; evidence</h3>
+      <div id="bay-tests" class="judges-tests">
+        <div data-judge-step="impact"><input type="checkbox" disabled aria-label="Impact Lab visited"><button type="button" id="open-lab">Impact Lab</button></div>
+        <div data-judge-step="traps"><input type="checkbox" disabled aria-label="Trap Lab visited"><a href="/trap-lab.html" target="_blank" rel="noopener">Trap Lab ↗</a></div>
+        <div data-judge-step="bots"><input type="checkbox" disabled aria-label="Bot Lab visited"><a href="/trap-lab.html?mode=bots" target="_blank" rel="noopener">Bot Lab ↗</a></div>
+        <div data-judge-step="rehearsal"><input type="checkbox" disabled aria-label="Expeditions rehearsal visited"><a href="/judges-expeditions.html" target="_blank" rel="noopener">Expeditions rehearsal ↗</a></div>
+        <div data-judge-step="agent"><input type="checkbox" disabled aria-label="Agent proof visited"><a href="/proofs/agent.html" target="_blank" rel="noopener">Agent &amp; spending limits ↗</a></div>
+      </div>
+      <p class="judges-note">Labs use isolated scenarios. The Expeditions rehearsal uses separate demo crews and lets you advance each stage at your own pace.</p>
+      <label class="judges-performance"><input id="judges-performance" type="checkbox"> Show performance</label>
+      <section id="judges-thanks" class="judges-thanks" aria-labelledby="judges-thanks-title" hidden>
+        <h3 id="judges-thanks-title">Thanks for coming aboard!</h3>
+        <p>Thank you for taking the time to review NEARly Afloat. If you have a moment to share feedback, I’d love to hear it.</p>
+        <p>Discord <strong>leined</strong> · <a href="mailto:0xleined@gmail.com">0xleined@gmail.com</a></p>
+      </section>
+      <form method="dialog" class="judges-footer"><button>Back to bay</button></form>
+    </dialog>
+    <dialog id="display-help" class="action-card pier-card leave-dialog" aria-labelledby="display-help-title">
+      <h2 id="display-help-title">More room to brawl</h2>
+      <p>↻ Turn your phone sideways. If it stays upright, turn off Portrait Orientation Lock in your phone's Control Center.</p>
+      <p>On iPhone, Safari may not allow fullscreen or rotation from a website button. Use Share → Add to Home Screen → Open as Web App, then launch the game from that icon for more screen space.</p>
+      <form method="dialog"><button>Got it</button></form>
+    </dialog>
+    <dialog id="arena-confirm" class="action-card pier-card leave-dialog" aria-labelledby="arena-confirm-title">
+      <form method="dialog">
+        <h2 id="arena-confirm-title">Ready to brawl?</h2>
+        <p id="arena-confirm-detail"></p>
+        <div class="result-actions"><button value="cancel">Back</button><button value="play" class="primary">Play</button></div>
+      </form>
+    </dialog>
+    <dialog id="feature-guide" class="action-card pier-card leave-dialog" aria-labelledby="feature-guide-title">
+      <form method="dialog">
+        <h2 id="feature-guide-title"></h2>
+        <p id="feature-guide-text"></p>
+        <button class="primary" type="submit">Got it</button>
+      </form>
+    </dialog>
+    <dialog id="profile-dialog" class="action-card pier-card profile-dialog" aria-labelledby="profile-title">
+      <form method="dialog" class="profile-heading">
+        <h2 id="profile-title">Your progress</h2>
+        <button class="symbol-button" aria-label="Close" data-icon="close"></button>
+      </form>
+      <button id="profile-generate" class="primary symbol-button" type="button"><span data-icon="save"></span> Create backup code</button>
+      <label id="profile-output-label" hidden>One-use backup code
+        <input id="profile-output" readonly autocomplete="off" spellcheck="false">
+      </label>
+      <form id="profile-restore">
+        <label>Restore from code
+          <input id="profile-code" required maxlength="32" autocomplete="off" spellcheck="false">
+        </label>
+        <button class="symbol-button" type="submit"><span data-icon="check"></span> Restore</button>
+      </form>
+      <p id="profile-status" class="pier-notice" role="status" hidden></p>
+    </dialog>
+    <dialog id="leave-dialog" class="action-card pier-card leave-dialog" aria-labelledby="leave-title" aria-describedby="leave-detail">
+      <form method="dialog">
+        <h2 id="leave-title">Back to the bay?</h2>
+        <p id="leave-detail"></p>
+        <div class="leave-actions">
+          <button value="stay" class="symbol-button" autofocus><span data-icon="close"></span>Keep playing</button>
+          <button value="leave" class="quiet symbol-button"><span data-icon="exit"></span>Back to bay</button>
+        </div>
+      </form>
+    </dialog>
+    <footer>NEARly Afloat <span>◆</span> LOCAL PLAYTEST</footer>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

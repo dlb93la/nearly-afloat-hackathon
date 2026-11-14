@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-11-14T11:14:03.756Z",
+  "block": 277649185,
+  "network": "testnet",
+  "contract": "s-9842391e.afloat-agent-0470958ec6.testnet",
+  "token": "g-9842391e.afloat-agent-0470958ec6.testnet",
+  "delegatedPublicKey": "ed25519:2DuUd9DaJBZ4HGeUAZMtBBJ8jxuzqTy7jBWiqthTKfpm",
+  "supply": "1000000",
+  "vault": "30000",
+  "localBuildChecked": false,
+  "cost": 563,
+  "revenue": 312,
+  "net": -251,
+  "policy": {
+    "items": [
+      "pirate-5-1"
+    ],
+    "budget": 1563,
+    "per_trade": 1000,
+    "spent": 1126,
+    "revenue": 312,
+    "nonce": 3,
+    "expires_at": 1794617347176,
+    "enabled": true
+  },
+  "receipts": [
+    {
+      "action": "buy",
+      "hash": "7GvDz3sv4qrV8yhk6VWf5p2f2DKCcNTQc6GFko3TdS6Q",
+      "price": 563,
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "action": "sell",
+      "hash": "22PYVUWDM1f1xrSBvkSboCJpjRFVif8SE6cq2tizkobi",
+      "price": 312,
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "action": "replay",
+      "hash": "3xpbr3w8hH8mEaUbN2PwpdtCHUtahTDN6Qvyb2yhsPRS",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "budget bypass",
+      "hash": "4ip5FTDpk1acqkmq1KDWabrJwdWFVNuvt7R5o2Y5WXwh",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "per-trade limit",
+      "hash": "8eiFfukyWEypdUkNXR3LKeerU6csMo5R5fdiFnobstrd",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "unsupported action",
+      "hash": "7ucwmzCA7p6F29Xz1ZTihxSwBMH7uBTFgK9FGJ9nPSxy",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "forbidden item",
+      "hash": "HaYmfmhnHs6Z8JdFnLjyB7MWx5ofrxs9czsfQrBXEjH3",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "cumulative budget after resale",
+      "hash": "Fsyop8h5hStDoGzDZRhioiSYVgR4MuANMWCY7YNnp5vt",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "revoked policy",
+      "hash": "4kNcu8UNkqPWiWc7ddsX9Vyxox4hu1nSKmo15pyzucne",
+      "status": "FINAL_REJECTED"
+    },
+    {
+      "action": "expired policy",
+      "hash": "D7NbhXWmtJuwF9LBugkhTLGdqcUXaC3d4v2woEiTkuzb",
+      "status": "FINAL_REJECTED"
+    }
+  ],
+  "scope": "Reads final receipts, deployed code hashes against recorded proof, and current token backing. Local source build identity is checked only with --check-local-build. Protocol refusals, recovery and concurrency are exercised by the signed rehearsal. This does not establish profitability or jury acceptance."
+}

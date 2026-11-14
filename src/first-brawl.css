@@ -1,0 +1,78 @@
+.first-brawl-reward {
+  margin: .45rem 0 .65rem;
+  padding: .55rem;
+  border: 1px solid #aa7950;
+  border-radius: .38rem;
+  background: #332a24;
+}
+.cabinet #judges-tour { width: min(38rem, calc(100% - 1rem)); max-height: calc(100dvh - 1.1rem); }
+.judges-route { padding: 0; list-style: none; display: grid; gap: .45rem; }
+.judges-route li { display: grid; grid-template-columns: 1.25rem minmax(0, 1fr); gap: .55rem; align-items: center; padding: .38rem .48rem; background: #181e1acc; border: 1px solid #a37d4f8a; border-radius: 4px; }
+.judges-route li.visited { border-color: #73bc99; }
+#judges-tour [data-judge-step] input { margin: 0; width: 1.12rem; height: 1.12rem; accent-color: #a4e4bd; opacity: 1; }
+.judges-route small { display: block; margin-top: .23rem; color: #e0cdb1; }
+.cabinet #judges-tour .judges-route button { width: 100%; justify-content: start; }
+#judges-progress { color: #b6eccd; }
+.judges-performance { display: flex; align-items: center; gap: .6rem; padding-block: .75rem; }
+.judges-performance input { width: 22px; height: 22px; }
+.judges-tests { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); gap: .45rem; }
+.judges-tests > div { display: grid; grid-template-columns: 1.15rem minmax(0, 1fr); gap: .35rem; align-items: center; }
+.judges-tests a { min-height: 44px; display: flex; align-items: center; padding: .36rem .55rem; border: 1px solid #9d7952; border-radius: 3px; background: #233730; color: #e3ffeb; }
+.judges-note { color: #ead5b1; font-size: .82rem; }
+.judges-footer { position: sticky; bottom: -.45rem; padding: .4rem 0; background: #352a21; border-top: 1px solid #b18a5b72; }
+.judges-thanks { background: #1a372f; border: 1px solid #7ec9a2; border-radius: 4px; padding: .7rem; margin-bottom: .6rem; scroll-margin-bottom: 3.6rem; }
+.judges-thanks h3, .judges-thanks p { margin: 0 0 .38rem; }
+.judges-thanks a { color: #baffd7; overflow-wrap: anywhere; }
+.judges-welcome-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.judges-welcome-actions button { flex: 1 1 9rem; justify-content: center; }
+.first-brawl-reward h3 { margin: 0 0 .45rem; font-size: 1rem; color: #ffdfa8; }
+.first-brawl-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .38rem; }
+.first-brawl-options button {
+  display: grid;
+  gap: .27rem;
+  min-width: 0;
+  padding: .33rem;
+  text-align: center;
+  background: #242a2c;
+  color: #f7e7d0;
+  border: 1px solid #8e7158;
+  border-radius: .32rem;
+}
+.first-brawl-options button:hover:not(:disabled) { background: #57402f; border-color: #f3be7d; }
+.first-brawl-options .workshop-thumb { height: 55px; }
+.first-brawl-stats { display: flex; justify-content: center; gap: .6rem; }
+.first-brawl-stats > span { display: inline-flex; align-items: center; gap: .18rem; font: 700 .78rem/1.4 monospace; }
+.first-brawl-stats .game-icon { width: .95rem; height: .95rem; }
+.first-brawl-stats [data-benefit="true"] { color: #d1e69f; }
+.first-brawl-stats [data-benefit="false"] { color: #ffb695; }
+#first-brawl-workshop { min-height: 44px; }
+#first-brawl-workshop { margin-top: .55rem; }
+.round-gold-breakdown { display: flex; flex-wrap: wrap; gap: .28rem; margin: .4rem 0; }
+.round-gold-breakdown > div { padding: .28rem .38rem; background: #322c24; border-radius: .28rem; }
+.round-gold-breakdown dt { display: flex; align-items: center; gap: .18rem; color: #f5d4a6; font-size: .7rem; }
+.round-gold-breakdown dt .game-icon { width: .84rem; height: .84rem; }
+.round-gold-breakdown dd { margin: .1rem 0 0; color: #ffe0a5; font: 700 .8rem/1.4 monospace; }
+
+:is(.tutorial-action, [data-host-next], #feature-guide button[type="submit"],
+  .first-brawl-options button, #first-brawl-rematch,
+  .bay-marker:has(.bay-next-step:not([hidden]))):not(:disabled, [hidden]) {
+  animation: tutorial-glow 2.7s ease-in-out infinite;
+}
+
+@keyframes tutorial-glow {
+  0%, 100% {
+    box-shadow: inset 0 0 0 1px #ffcf784d, 0 0 .35rem #e9a63566;
+  }
+  50% {
+    box-shadow: inset 0 0 0 1px #ffdf95, 0 0 .92rem #ffc454b3;
+  }
+}
+#host-progress {
+  display: block;
+  margin-bottom: .35rem;
+  color: #76512e;
+  font-weight: 750;
+  font-size: .78rem;
+}
+.bay-host [data-host-close] { width: auto; padding-inline: .55rem; }
+#inaugural-farewell { margin: .38rem 0; }

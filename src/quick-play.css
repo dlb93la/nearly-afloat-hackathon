@@ -1,0 +1,116 @@
+#arena-play { margin-top: .6rem; }
+.arena-menu, .arena-play-options { display: grid; gap: .7rem; }
+.arena-menu .pier-play, .arena-play-options > .pier-play { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 68px; }
+.arena-menu .pier-play > span:last-child, .arena-play-options > .pier-play > span:last-child { flex: 1; text-align: left; }
+.arena-menu .pier-play small, .arena-play-options > .pier-play small { display: block; margin-top: .22rem; font-size: .76rem; line-height: 1.35; color: inherit; opacity: 1; text-shadow: none; }
+#home .arena-menu #arena-play { margin: 0; }
+.arena-play-options .pier-modes { margin: 0; grid-template-columns: 1fr; }
+.arena-modes-back { display: inline-flex; gap: .35rem; align-items: center; justify-self: start; font-size: .8rem; }
+.arena-modes-back .game-icon { transform: rotate(180deg); }
+#arena-paid[data-access="signin"], #arena-paid[data-access="renew"] { border-color: #ebbe7c; }
+#arena-paid[data-access="insufficient"] small { color: #ffd3aa; }
+#home .pier-modes { margin-top: .8rem; }
+body[data-quick-play="true"] #lobby { visibility: hidden; }
+.quick-play-status { align-self: center; justify-self: center; padding: 1rem 1.4rem; border: 1px solid #b18a52; border-radius: .5rem; background: #243236f2; color: #ffe0aa; }
+.result-actions, .first-brawl-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: .6rem;
+  width: max-content;
+  max-width: 100%;
+  margin: .8rem auto;
+}
+.first-brawl-actions, .result-actions--first { grid-template-columns: minmax(0, 1fr); }
+.result-actions:not(:has(> button:not([hidden]) ~ button:not([hidden]))) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.cabinet .pier-card :is(.result-actions, .first-brawl-actions) > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  margin: 0;
+  padding: .65rem .85rem;
+  font-size: .86rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.cabinet :is(.result-actions, .first-brawl-actions) > button > [data-icon] { flex-shrink: 0; }
+.first-brawl-actions:not(:has(> button:not([hidden]))) { display: none; }
+/* The old replay margin must not offset one button from the other. */
+.cabinet .result-card #again { margin: 0; }
+.result-card > details { margin-block: .6rem; }
+.result-card summary { padding-block: .5rem; cursor: pointer; color: #ebcc9d; }
+.training-result #battle-recap { display: none; }
+.training-result .pier-heading { margin-bottom: .45rem; }
+.training-result #result-title { font-size: clamp(1.35rem, 4vw, 2rem); }
+.training-result .result-actions { margin-bottom: .15rem; }
+.training-speed {
+  position: absolute;
+  z-index: 2;
+  bottom: max(3.3rem, calc(env(safe-area-inset-bottom) + 2.6rem));
+  left: 50%;
+  translate: -50% 0;
+  min-height: 44px;
+  padding: .55rem .85rem;
+  color: #ffe1a8;
+  background: #30271e;
+  border-color: #d39e62;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+.visual-guide { width: min(48rem, calc(100% - 1.5rem)); }
+.visual-guide::backdrop { background: #07151cd9; }
+.training-story, .adventure-previews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; }
+.training-frame, .adventure-previews > div { min-width: 0; display: grid; gap: .5rem; text-align: center; padding: .7rem .35rem; background: #142c31; border: 1px solid #9b784c; border-radius: .45rem; }
+.training-picture { height: 7rem; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: radial-gradient(ellipse, #b47a47 0 46%, #1a6971 49%); border-radius: .35rem; }
+.training-picture .workshop-thumb { width: 72px; height: 70px; object-fit: contain; }
+.cabinet :is(.training-picture, .adventure-previews) .workshop-thumb[data-rarity] {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+.training-picture .game-icon { width: 2.2rem; height: 2.2rem; color: #ffcf79; }
+.training-frame:nth-child(2) .workshop-thumb:last-child { transform: translate(10px, 15px) rotate(30deg); }
+.training-frame:nth-child(3) .game-icon { position: absolute; top: .2rem; }
+.training-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 0; }
+.training-controls > span { display: inline-flex; align-items: center; gap: .4rem; }
+.training-controls > .training-touch { display: none; text-align: left; }
+@media (any-pointer: coarse) {
+  .training-controls > .training-keyboard { display: none; }
+  .training-controls > .training-touch { display: inline-flex; }
+  .training-touch .game-icon { flex: none; }
+}
+.next-adventure h3 { margin: .6rem 0; font-size: 1.15rem; }
+.next-adventure p { margin: .6rem 0; }
+.adventure-previews > div { position: relative; }
+.adventure-previews .workshop-thumb { width: 100%; height: 66px; object-fit: contain; }
+.adventure-previews .game-icon { position: absolute; top: .45rem; right: .25rem; width: 2rem; height: 2rem; color: #ffd28b; filter: drop-shadow(0 2px 2px #000); }
+.adventure-previews strong { font-size: .8rem; }
+.adventure-previews small { color: #e0cfae; font-size: .65rem; }
+.near-workshop[data-embedded="true"] { position: static; width: auto; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; overflow: visible; color: inherit; }
+.near-workshop[data-embedded="true"] > .pier-heading { display: none; }
+.near-workshop[data-embedded="true"] .workshop-items { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.near-workshop-account { align-items: start; }
+.near-workshop-account details { max-width: 18rem; font-size: .8rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .training-frame:first-child .workshop-thumb { animation: training-move 1.6s ease-in-out infinite alternate; }
+  .adventure-previews .game-icon { animation: training-bob 2s ease-in-out infinite alternate; }
+}
+@keyframes training-move { from { transform: translateX(-12px) rotate(-9deg); } to { transform: translateX(12px) rotate(9deg); } }
+@keyframes training-bob { to { transform: translateY(-4px) rotate(6deg); } }
+@media (max-width: 500px) {
+  .result-actions { grid-template-columns: minmax(0, 1fr); }
+  .training-story { gap: .35rem; }
+  .training-picture { height: 5.2rem; }
+  .training-picture .workshop-thumb { width: 50px; height: 52px; }
+  .training-frame strong { font-size: .85rem; }
+  .training-frame { padding: .4rem .2rem; }
+  .adventure-previews { gap: .35rem; }
+}

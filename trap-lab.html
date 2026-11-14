@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>NEARly Afloat · Trap Lab</title>
+  <link rel="icon" href="/brand/favicon-v2.png">
+</head>
+<body>
+  <canvas id="lab-arena" aria-label="Arena test scene"></canvas>
+  <header class="lab-header"><a href="/?tour=1">← Judges Tour</a><button id="lab-sound" type="button" aria-label="Sound effects" aria-pressed="true">♪</button></header>
+  <aside class="lab-console" aria-label="Lab controls">
+    <h1 id="lab-title">Trap Lab</h1>
+    <section id="lab-bots" hidden>
+      <p>Try a full arena round with a chosen bot style. The simulation runs in your browser.</p>
+      <label>Bot style <select id="lab-bot-style"><option value="">Mixed</option><option value="bold">Aggressive</option><option value="cautious">Cautious</option><option value="chaotic">Chaotic</option></select></label>
+      <label>Opponents <select id="lab-bot-count"><option>1</option><option>3</option><option selected>7</option></select></label>
+      <p><a href="/trap-lab.html">Switch to Trap Lab</a></p>
+    </section>
+    <label>Map <select id="lab-map"><option value="harbor">Tidebreak Harbor</option><option value="jungle">Canopy Ruins</option><option value="wreck">Blackflag Graveyard</option></select></label>
+    <div id="lab-trap-controls">
+    <nav id="lab-traps" aria-label="Trap">
+      <button data-kind="broadside" aria-pressed="true"><span data-icon="cannon" aria-hidden="true"></span>Cannons</button>
+      <button data-kind="parrots" aria-pressed="false"><span data-icon="parrot" aria-hidden="true"></span>Parrots</button>
+      <button data-kind="kraken" aria-pressed="false"><span data-icon="kraken" aria-hidden="true"></span>Kraken</button>
+      <button data-kind="powder" aria-pressed="false"><span data-icon="powder" aria-hidden="true"></span>Powder barrel</button>
+      <button data-kind="collapse" aria-pressed="false"><span data-icon="break" aria-hidden="true"></span>Collapsing floor</button>
+      <button data-kind="anchor-drop" aria-pressed="false"><span data-icon="impact" aria-hidden="true"></span>Falling anchor</button>
+      <button data-kind="crate-drop" aria-pressed="false"><span data-icon="barrel" aria-hidden="true"></span>Cargo barrels</button>
+      <button data-kind="barrel-roll" aria-pressed="false"><span data-icon="replay" aria-hidden="true"></span>Rolling barrels</button>
+      <button data-kind="seesaw" aria-pressed="false"><span data-icon="control" aria-hidden="true"></span>Floating seesaw</button>
+    </nav>
+    <h2>Earlier prototypes</h2>
+    <nav id="lab-prototypes" aria-label="Trap prototypes">
+      <button data-kind="anchor" aria-pressed="false"><span data-icon="trade" aria-hidden="true"></span>Swinging anchor</button>
+      <button data-kind="crate" aria-pressed="false"><span data-icon="chest" aria-hidden="true"></span>Hanging crate</button>
+    </nav>
+    </div>
+    <div class="lab-buttons">
+      <button id="lab-play" type="button" aria-label="Pause or resume">Ⅱ</button>
+      <button id="lab-reset" type="button" aria-label="Restart" title="Restart" data-icon="replay"></button>
+      <button id="lab-hit-pause" type="button" aria-pressed="false" title="Pause on impact" aria-label="Pause on impact" data-icon="impact"></button>
+    </div>
+    <label>Playback <select id="lab-speed"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option></select></label>
+    <div id="lab-trap-settings">
+    <h2 id="lab-tuning-title">Tune the trap</h2>
+    <label data-tuning>Force <select id="lab-force"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+    <label>Offset <input id="lab-offset" type="range" min="-2" max="2" step=".1" value="0"><output id="lab-offset-value">0</output></label>
+    <label data-tuning><span id="lab-count-label">Count</span><select id="lab-count"></select></label>
+    <label data-tuning>Direction <select id="lab-heading"><option value="0">West → East</option><option value="90">North → South</option><option value="180">East → West</option><option value="270">South → North</option></select></label>
+    <label data-tuning>Warning time <select id="lab-warning"><option value=".5">Short</option><option value="1" selected>Standard</option><option value="2">Long</option></select></label>
+    <label data-tuning><span id="lab-reach-label">Impact width</span><select id="lab-reach"><option value=".7">Narrow</option><option value="1" selected>Standard</option><option value="1.3">Wide</option></select></label>
+    <label data-tuning>Fuse <select id="lab-fuse"><option value=".75">0.75 s</option><option value="2" selected>2 s</option><option value="4">4 s</option></select></label>
+    <label data-tuning>Crane speed <select id="lab-crane-speed"><option value="0">Stationary</option><option value=".5">Slow</option><option value="1" selected>Standard</option><option value="2">Fast</option></select></label>
+    <label data-tuning>Starting tilt <select id="lab-tilt"><option value="0">Level</option><option value=".044" selected>Standard</option><option value=".13">Steep</option></select></label>
+    <label class="lab-checks"><input id="lab-multiple" type="checkbox"><span id="lab-multiple-label">3 targets</span></label>
+    </div>
+    <dl class="lab-meters">
+      <div><dt>Speed</dt><dd id="lab-velocity">0</dd></div>
+      <div><dt>Peak</dt><dd id="lab-peak">0</dd></div>
+      <div><dt>Impulse</dt><dd id="lab-impulse">—</dd></div>
+      <div><dt>Distance</dt><dd id="lab-travel">0</dd></div>
+    </dl>
+    <p id="lab-status" role="status">Preparing</p>
+    <small>WASD or arrows · Space to pause · R to restart</small>
+  </aside>
+  <div id="lab-stick" aria-label="Drag to steer"><span></span></div>
+  <script type="module" src="/src/trap-lab.js"></script>
+</body>
+</html>

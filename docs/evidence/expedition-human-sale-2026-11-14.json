@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-11-14T11:41:59.243Z",
+  "network": "testnet",
+  "contract": "r-f08ea9c0.afloat-proof-44f848902e.testnet",
+  "block": 277652119,
+  "campaign": {
+    "id": 4,
+    "status": "settled",
+    "item_type": "pet-expedition-parrot",
+    "target": 3000,
+    "funded": 3000,
+    "contributor_count": 2,
+    "min_supporters": 2,
+    "funding_ends_at": 1794654862706,
+    "sails_at": 1794654741421,
+    "auction_starts_at": 1794654749421,
+    "auction_ends_at": 1794655049421,
+    "minimum_bid": 8100,
+    "highest_bid": 8000,
+    "highest_bidder": "1d260ba2935f1e87386daefa70c749c94ee901e5dc0d3d3b5fe6bcb6ed3c4af3",
+    "winner": "1d260ba2935f1e87386daefa70c749c94ee901e5dc0d3d3b5fe6bcb6ed3c4af3",
+    "sale": 8000,
+    "fee": 400,
+    "net": 7600,
+    "treasury": 188523,
+    "needs_advance": false,
+    "prize_rarity": "mythic",
+    "prize_units": 1,
+    "prize_supply_scope": "one_per_campaign_not_globally_unique"
+  },
+  "accounts": [
+    {
+      "player": "900c65ed003152e297595895b91fd86f4ff59fcff846b8f9369a76c9a2378e2a",
+      "awards": [],
+      "award_counts": {},
+      "award_editions": [],
+      "legacy_award_counts_untracked": false,
+      "registered": true,
+      "balance": 13067,
+      "contribution": 2000,
+      "contribution_nonce": 1,
+      "min_contribution": 0,
+      "max_contribution": 0,
+      "refund": 0,
+      "payout": 5067,
+      "award": null,
+      "award_equipped": false
+    },
+    {
+      "player": "1d260ba2935f1e87386daefa70c749c94ee901e5dc0d3d3b5fe6bcb6ed3c4af3",
+      "awards": [
+        "pet-expedition-parrot"
+      ],
+      "award_counts": {
+        "pet-expedition-parrot": 1
+      },
+      "award_editions": [
+        {
+          "campaign_id": 4,
+          "item_type": "pet-expedition-parrot"
+        }
+      ],
+      "legacy_award_counts_untracked": false,
+      "registered": true,
+      "balance": 4693,
+      "contribution": 1000,
+      "contribution_nonce": 2,
+      "min_contribution": 0,
+      "max_contribution": 0,
+      "refund": 0,
+      "payout": 2533,
+      "award": "pet-expedition-parrot",
+      "award_equipped": true
+    }
+  ],
+  "checks": {
+    "contributions": true,
+    "settled": true,
+    "expectedSale": true,
+    "sale99": false,
+    "fee5Percent": true,
+    "proportionalPayouts": true,
+    "winnerOwnsCargo": true
+  },
+  "expectedSale": 8000,
+  "scope": "Finalized on-chain state and exact integer payouts. This command submits no transactions.",
+  "settlementReceipt": {
+    "hash": "69MgkKyCqNVAedNaPESc1k5sz6qG6KMzDLJmKF8A7Lhf",
+    "finalExecution": "FINAL",
+    "success": true,
+    "signer": "r-f08ea9c0.afloat-proof-44f848902e.testnet",
+    "receiver": "r-f08ea9c0.afloat-proof-44f848902e.testnet",
+    "method": "advance",
+    "args": {
+      "campaign_id": 4
+    }
+  },
+  "humanTest": {
+    "acceptedSaleGold": 80,
+    "twoBrowserAccounts": true,
+    "responsibleConfirmedBidAmount": true,
+    "screenshotsShowFinalBalances": true
+  }
+}

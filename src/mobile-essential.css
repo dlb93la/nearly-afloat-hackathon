@@ -1,0 +1,147 @@
+/* Compact mobile compositions use content height, not a scaled desktop window. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.header-extra { display: contents; }
+.cabinet .masthead .header-tools #mobile-tools-toggle { display: none; }
+.captain-preferences > summary { display: none; }
+.mobile-copy { display: none; }
+body[data-ui-layout="mobile"] .mobile-copy { display: inline; }
+body[data-ui-layout="mobile"] .desktop-copy { display: none; }
+
+body[data-ui-layout="mobile"] .cabinet .overlay[data-screen] {
+  --panel-top-gap: 3.35rem;
+  padding-top: calc(var(--hud-top) + var(--panel-top-gap));
+  place-items: end center;
+}
+body[data-ui-layout="mobile"] .cabinet .overlay > .pier-card {
+  width: min(100%, 23rem);
+  height: auto;
+  max-height: min(64dvh, 100%);
+  padding: .65rem;
+  border-radius: 5px;
+  overflow: auto;
+}
+body[data-ui-layout="mobile"] .cabinet .overlay > :is(#workshop, #cottage) {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 25rem);
+  height: auto;
+  max-height: min(66dvh, 100%);
+  min-height: 0;
+  align-self: end;
+  margin: 0;
+  overflow: hidden;
+}
+body[data-ui-layout="mobile"] .cabinet #cottage-content {
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+body[data-ui-layout="mobile"] .cabinet :is(.pier-heading, .captain-menu-heading) {
+  gap: .45rem;
+  padding-bottom: .4rem;
+  margin-bottom: .45rem;
+}
+body[data-ui-layout="mobile"] .cabinet :is(.action-card h2, .pier-heading h2, .captain-menu h2) {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 0;
+}
+body[data-ui-layout="mobile"] .cabinet .pier-heading .eyebrow { display: none; }
+body[data-ui-layout="mobile"] .cabinet .pier-notice:empty { display: none; }
+body[data-ui-layout="mobile"] .cabinet .pier-notice { margin: .35rem 0 0; font-size: .8rem; }
+body[data-ui-layout="mobile"] .cabinet :is(button, summary) { -webkit-tap-highlight-color: transparent; }
+body[data-ui-layout="mobile"] .cabinet .pier-card button { font-size: .85rem; }
+
+/* Sound, music, account and balance stay at hand; secondary tools open on demand. */
+body[data-ui-layout="mobile"] .cabinet .head-actions {
+  flex-direction: row;
+  align-items: center;
+  gap: .15rem;
+}
+body[data-ui-layout="mobile"] .cabinet .header-tools { position: relative; }
+body[data-ui-layout="mobile"] .cabinet .header-tools #mobile-tools-toggle {
+  display: inline-flex;
+  order: 5;
+  font-size: 1.6rem;
+}
+body[data-ui-layout="mobile"] .cabinet .header-extra {
+  position: absolute;
+  display: none;
+  z-index: 6;
+  right: 0;
+  top: 48px;
+  padding: .2rem;
+  background: #30291ff5;
+  border: 1px solid #bc955f;
+  border-radius: 4px;
+}
+body[data-ui-layout="mobile"] .cabinet #mobile-tools-toggle[aria-expanded="true"] ~ .header-extra { display: flex; }
+body[data-ui-layout="mobile"] .cabinet .captain-trigger { width: 44px; padding: 0; }
+body[data-ui-layout="mobile"] .cabinet #captain-menu-label,
+body[data-ui-layout="mobile"] .cabinet #back-label {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+body[data-ui-layout="mobile"] .cabinet .masthead .bay-back {
+  width: 44px; height: 44px; min-width: 44px; padding: 0; justify-content: center;
+}
+body[data-ui-layout="mobile"] .cabinet .brand-wordmark { width: 80px; }
+body[data-ui-layout="mobile"] .cabinet .play-hud {
+  top: calc(var(--hud-top) + 3.35rem);
+  gap: .25rem;
+}
+body[data-ui-layout="mobile"] .cabinet .play-hud > span { min-height: 30px; padding: .25rem .4rem; font-size: .8rem; }
+
+/* Account starts with identity and the main action, with editing kept one tap away. */
+body[data-ui-layout="mobile"] .cabinet dialog.captain-menu {
+  width: min(21rem, calc(100vw - var(--hud-left) - var(--hud-right)));
+  max-height: min(72dvh, calc(100dvh - 1rem));
+  padding: .7rem;
+}
+body[data-ui-layout="mobile"] .cabinet .captain-eyebrow,
+body[data-ui-layout="mobile"] .cabinet .captain-build { display: none; }
+body[data-ui-layout="mobile"] .cabinet .captain-identity { padding: .3rem; margin: .4rem 0; gap: .5rem; }
+body[data-ui-layout="mobile"] .cabinet .captain-identity img { width: 38px; height: 38px; }
+body[data-ui-layout="mobile"] .cabinet .captain-balance { padding: .4rem .5rem; }
+body[data-ui-layout="mobile"] .cabinet .captain-balance strong { font-size: 1rem; }
+body[data-ui-layout="mobile"] .cabinet .captain-preferences { margin: 0; padding: 0; border: 0; }
+body[data-ui-layout="mobile"] .cabinet .captain-preferences > summary {
+  display: flex; align-items: center; min-height: 44px; padding: .4rem 0; font-size: .85rem;
+}
+body[data-ui-layout="mobile"] .cabinet .captain-menu details { margin-block: .2rem; }
+body[data-ui-layout="mobile"] .cabinet .captain-menu summary { min-height: 44px; }
+body[data-ui-layout="mobile"] .cabinet .captain-signout { margin-top: .4rem; }
+
+body[data-ui-layout="mobile"] .cabinet .arena-menu,
+body[data-ui-layout="mobile"] .cabinet .arena-play-options { gap: .45rem; }
+body[data-ui-layout="mobile"] .cabinet #home .pier-play { min-height: 50px; gap: .5rem; padding: .4rem .6rem; }
+body[data-ui-layout="mobile"] .cabinet #home .pier-play strong { font-size: 1rem; }
+body[data-ui-layout="mobile"] .cabinet #arena-menu #arena-play small { display: none; }
+body[data-ui-layout="mobile"] .cabinet #home .pier-play small { font-size: .8rem; margin-top: .08rem; }
+body[data-ui-layout="mobile"] .cabinet .result-actions { width: 100%; gap: .4rem; margin: .55rem 0; }
+body[data-ui-layout="mobile"] .cabinet .result-actions > button { min-height: 44px; padding: .4rem .6rem; }
+body[data-ui-layout="mobile"] .cabinet #result-title { font-size: 1.5rem; }
+body[data-ui-layout="mobile"] .cabinet #results > details { margin-block: .15rem; }
+body[data-ui-layout="mobile"] .cabinet #results summary { min-height: 44px; display: flex; align-items: center; padding: .3rem 0; font-size: .8rem; }
+body[data-ui-layout="mobile"] .cabinet #result-rank { font-size: .85rem; margin-block: .3rem; }
+body[data-ui-layout="mobile"] .cabinet #cottage footer.cottage-tabs { display: none; }
+body[data-ui-layout="mobile"] .cabinet #cottage .cottage-tabs { flex-shrink: 0; margin: 0 0 .35rem; }
+body[data-ui-layout="mobile"] .cabinet #cottage .cottage-tabs button { min-height: 44px; font-size: .78rem; padding: .3rem; gap: .25rem; }
+body[data-ui-layout="mobile"] .cabinet .cottage-quarters > p { font-size: .8rem; margin-block: .3rem; }
+body[data-ui-layout="mobile"] .cabinet .cottage-milestone { padding: .4rem; }
+body[data-ui-layout="mobile"] .cabinet .cottage-milestone > .game-icon { width: 1.6rem; height: 1.6rem; }
+body[data-ui-layout="mobile"] .cabinet .cottage-home-actions { gap: .35rem; margin-top: .4rem; }
+body[data-ui-layout="mobile"] .cabinet .cottage-home-actions button { min-height: 44px; font-size: .8rem; }
+body[data-ui-layout="mobile"] .cabinet .near-workshop[data-embedded="true"] > .pier-heading { display: none; }
+
+@media (max-height: 510px) {
+  body[data-ui-layout="mobile"] .cabinet .overlay[data-screen] { --panel-top-gap: 3.1rem; place-items: end end; }
+  body[data-ui-layout="mobile"] .cabinet .overlay > .pier-card,
+  body[data-ui-layout="mobile"] .cabinet .overlay > :is(#workshop, #cottage) {
+    width: min(100%, 25rem); height: auto; max-height: 100%; overflow: auto;
+  }
+  body[data-ui-layout="mobile"] .cabinet .overlay > :is(#workshop, #cottage) { display: block; }
+  body[data-ui-layout="mobile"] .cabinet .training-picture { height: 3.5rem; }
+  body[data-ui-layout="mobile"] .cabinet .training-controls { padding: .4rem 0; }
+  body[data-ui-layout="mobile"] .cabinet .training-story { gap: .35rem; }
+}

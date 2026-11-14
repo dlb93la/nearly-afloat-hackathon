@@ -1,0 +1,1142 @@
+{
+  "preparedAt": "2026-11-14T19:47:47.985Z",
+  "published": false,
+  "provenance": {
+    "privateBaseCommit": "890a0e6022bc471884070f7c2b6e1649157b6890",
+    "includesWorkingTreeChanges": true,
+    "note": "Current source snapshot. Original private history is preserved separately; no remote or visibility was changed."
+  },
+  "license": "PolyForm Shield License 1.0.0; original asset permissions in ASSETS-LICENSE.md",
+  "files": [
+    {
+      "name": ".dockerignore",
+      "bytes": 309,
+      "sha256": "e98d25621f79db30f420083af3c48e39c9030d0b55f0df3d478a0be0e742714b"
+    },
+    {
+      "name": ".gitignore",
+      "bytes": 294,
+      "sha256": "9ea315f548943b69b61ce8005ce5cb92986d3d43692666c9503f7eb48eaba595"
+    },
+    {
+      "name": ".node-version",
+      "bytes": 8,
+      "sha256": "08062faf0d7a2d22f5d7933c50e975dd1527034275597be7c1b3b9fd2b9d079a"
+    },
+    {
+      "name": "AGENTS.md",
+      "bytes": 1706,
+      "sha256": "87160d0320344d7d014f83713809a5709bf1522d28211c6ffd173137fb4ea023"
+    },
+    {
+      "name": "ASSETS-LICENSE.md",
+      "bytes": 1830,
+      "sha256": "2eea329b3f0e2316a6c97470fce02a118aea0231fc1c863c8b8ea2c7c6ee57a9"
+    },
+    {
+      "name": "Dockerfile",
+      "bytes": 1277,
+      "sha256": "1af5a40b5d8391a4b77f18d46a240ceebbd0105df8b520f53fa544cfa33c420c"
+    },
+    {
+      "name": "LICENSE",
+      "bytes": 5748,
+      "sha256": "67530f8e9adfcc5d2e9d72b804500cebb7472ff84c34a6729a80a2a9be901ee6"
+    },
+    {
+      "name": "NOTICE",
+      "bytes": 790,
+      "sha256": "6556324748e1f135076746d238e4103d76235b53271576eb159caff3c53e034b"
+    },
+    {
+      "name": "README.md",
+      "bytes": 4735,
+      "sha256": "594ec066b7d0cd9c04180294bdf84799887c14836dc812c3129b2ca8e80177e0"
+    },
+    {
+      "name": "agent-journal.mjs",
+      "bytes": 1386,
+      "sha256": "582297c56add25f684553d242a658d6940744055900f4972110191ca8a75e860"
+    },
+    {
+      "name": "agent-provision.mjs",
+      "bytes": 4300,
+      "sha256": "031df8468f70f779ddc5b54ed81a312b43d9fa20bfbc5b2047351d78e5f4b219"
+    },
+    {
+      "name": "config/deploy.example",
+      "bytes": 901,
+      "sha256": "c2b8fb8d386eaf783617f906a363c9c8f83201f614588b02d240c6c293815429"
+    },
+    {
+      "name": "config/privy.example",
+      "bytes": 514,
+      "sha256": "e15133982bb85661931e21fe0eca43dbe7a4bddfe2b06060f4eed901a85f2c5d"
+    },
+    {
+      "name": "deployment-config.mjs",
+      "bytes": 4395,
+      "sha256": "370a5471b39531eb60e204fc864ee0bb8323314de1a7c7c412a1702cfeb18c63"
+    },
+    {
+      "name": "docs/JUDGES-GUIDE.md",
+      "bytes": 8103,
+      "sha256": "343a4999efb74630887dd149d73bae1a2a9a4b7ba340f700809d6242bffdfce0"
+    },
+    {
+      "name": "docs/evidence/agent-gold-testnet.json",
+      "bytes": 14831,
+      "sha256": "992297959917c52521c58a9062d4d01541145e036a7c16522487f1a9a03ba3cb"
+    },
+    {
+      "name": "docs/evidence/agent-testnet.json",
+      "bytes": 3169,
+      "sha256": "b63cd9325b1648d1d8a763962bb7613e41cf0c9b3ba2524f07caa693fb1db403"
+    },
+    {
+      "name": "docs/evidence/expedition-human-sale-2026-11-14.json",
+      "bytes": 3035,
+      "sha256": "9c0560b55ae072c558e16ab0fae41633aa720c5867b1c712cb608d0ab4e154ab"
+    },
+    {
+      "name": "docs/evidence/judges-expedition-2026-11-14.json",
+      "bytes": 4072,
+      "sha256": "ff55b88ecef9d07afa33c6d2a3f45c7d150bb1ff35b5dea287fbe76c3199f47a"
+    },
+    {
+      "name": "docs/media/arena.webp",
+      "bytes": 201446,
+      "sha256": "40bf88cc3d33b8e38d8c78d9ede433a1050c0968028d2d2196b4061a732b5dcf"
+    },
+    {
+      "name": "docs/media/harbor.webp",
+      "bytes": 196708,
+      "sha256": "cb227cefad2b31439695d820c7afcf7b9a309d33fb94dbe95d414710388a90fe"
+    },
+    {
+      "name": "economy.mjs",
+      "bytes": 39469,
+      "sha256": "28a9d7aff4786fab2b8493c0b30e509125eb976577bba170709028d0c6ceeffd"
+    },
+    {
+      "name": "index.html",
+      "bytes": 45419,
+      "sha256": "fc732158d4e1f7e41fe4cc87591bb2c0ff0192931430507331616d957866e3dc"
+    },
+    {
+      "name": "judges-expedition.mjs",
+      "bytes": 10943,
+      "sha256": "a8623f5a6ba34c5e1839e142cdc9e1e2a6237d8bb71b6c66003c6f4688056c70"
+    },
+    {
+      "name": "judges-expeditions.html",
+      "bytes": 2948,
+      "sha256": "d0f5ece99fa2fb54dd3d7d4c485e5515741e278474d68a940ebc655ea5bed392"
+    },
+    {
+      "name": "merchant-agent.mjs",
+      "bytes": 6759,
+      "sha256": "cdb2bc572e6b0b709b49ed11a754e3067bbcd0e61200112977200a1271b67ce7"
+    },
+    {
+      "name": "near-arena.mjs",
+      "bytes": 11762,
+      "sha256": "c6ac3a0f05160dcc94267bf40e8eca3dcda48363e07edd9980d08468a7da09e9"
+    },
+    {
+      "name": "near-arena/.cargo/config.toml",
+      "bytes": 62,
+      "sha256": "d92814cb641da0d05b6112416239f6c78baa5a7a8a9d631d5f92aaaf7e3b37c3"
+    },
+    {
+      "name": "near-arena/Cargo.lock",
+      "bytes": 32876,
+      "sha256": "ee641aaf84ffdb68f21bc07dc1e99f60bfb16317c86f0fdf9437bea44d074320"
+    },
+    {
+      "name": "near-arena/Cargo.toml",
+      "bytes": 411,
+      "sha256": "b50e2dc2e46c7fd443965281d10f28e6ef4870895021614b7b30ae1c6052638a"
+    },
+    {
+      "name": "near-arena/README.md",
+      "bytes": 2494,
+      "sha256": "ee3093d9369da872f7fe13fc8a9a2bb793a797e6e78df24edd325a04c765a63e"
+    },
+    {
+      "name": "near-arena/src/catalog_data.rs",
+      "bytes": 4879,
+      "sha256": "6edc0a9a05acad20db03ce32497dea2642f5aa2cc36576c0fdc2b3d8d9d744cf"
+    },
+    {
+      "name": "near-arena/src/collection.rs",
+      "bytes": 10669,
+      "sha256": "b11c027a125ba5e3794ac0eb8446c283a74a9c18968f66befc9f87fde29dd03a"
+    },
+    {
+      "name": "near-arena/src/economic_agent.rs",
+      "bytes": 4016,
+      "sha256": "4e3193c0bc547c34b7b9c78a75e3fcba205ef0f5482218004029db9a663da774"
+    },
+    {
+      "name": "near-arena/src/gold.rs",
+      "bytes": 5808,
+      "sha256": "b58c23436fbf464416b3a24c7d09f390c110b9f3ca477da736ee3134aad90dde"
+    },
+    {
+      "name": "near-arena/src/lib.rs",
+      "bytes": 12395,
+      "sha256": "2f7df57180db3f39df7abdd49facca31ebc13472350a532651a5b717d91aeb8b"
+    },
+    {
+      "name": "near-arena/src/logbook.rs",
+      "bytes": 2575,
+      "sha256": "f7e7b80e244fa2567d96fd7edcf93dcabebf2145fd23570070a710f064430052"
+    },
+    {
+      "name": "near-arena/src/merchant.rs",
+      "bytes": 673,
+      "sha256": "85bc6c9b021a604f9b186f7415887c3f695fe66e32fd5b982b3791deaef71f3b"
+    },
+    {
+      "name": "near-arena/src/voyage.rs",
+      "bytes": 27918,
+      "sha256": "9d7728b35ec7bd2eee759ae1071b1c14f0c02fde945231086cf185abea6c4c55"
+    },
+    {
+      "name": "near-arena/src/workshop.rs",
+      "bytes": 16970,
+      "sha256": "f758bd467a6eccb7237bce188a5b7ce0fc161286313bc06f8254db3d5f0e9e70"
+    },
+    {
+      "name": "near-arena/test/agent-sandbox.test.mjs",
+      "bytes": 21321,
+      "sha256": "580034d0081cd3f123f7edc3a489e041654628667b87c55c3703a83e29e2f9fa"
+    },
+    {
+      "name": "near-arena/test/contract-session.test.mjs",
+      "bytes": 39389,
+      "sha256": "7ba156d2d933dabbc5643aef53471f5f693add328719296220877afca60dc271"
+    },
+    {
+      "name": "near-arena/test/judges-demo.test.mjs",
+      "bytes": 3084,
+      "sha256": "bfefd705f06feb326c37a9c45f4afbdbd9fc9bee8d8485d3ca65347b827edad3"
+    },
+    {
+      "name": "near-arena/test/sandbox.test.mjs",
+      "bytes": 11591,
+      "sha256": "9f2816ea71c2d863e2ec3f55670eaf37914525488448e947815d8acff01f9444"
+    },
+    {
+      "name": "near-embedded.mjs",
+      "bytes": 8882,
+      "sha256": "b50a7c08c05f8b209601a536424c8663b53bf42771a084f9d70704e845bb3ba3"
+    },
+    {
+      "name": "near-expeditions.mjs",
+      "bytes": 7182,
+      "sha256": "a581f43b398ca3030a5c0278e4216d0b119965618bc1bd5d3a818bf60c0975b2"
+    },
+    {
+      "name": "near-expeditions/.gitignore",
+      "bytes": 9,
+      "sha256": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368"
+    },
+    {
+      "name": "near-expeditions/Cargo.lock",
+      "bytes": 33121,
+      "sha256": "c2485b9670bc7a8837dee46b3c88fabc2ea55ae7a95dd088a3248685fef9ee9c"
+    },
+    {
+      "name": "near-expeditions/Cargo.toml",
+      "bytes": 310,
+      "sha256": "a2ccda61ba57212ee4d6b5a83f5ac8d663a7c9bd4417d05996e6e551159d105e"
+    },
+    {
+      "name": "near-expeditions/README.md",
+      "bytes": 5862,
+      "sha256": "de76b9ea43de222ee82ef9a55a5262f7e3d24a545ff8f5b93ee4dd36e6b3f226"
+    },
+    {
+      "name": "near-expeditions/src/lib.rs",
+      "bytes": 12131,
+      "sha256": "8231d12d420a109f7e0ea105e43596f6b28a5e39a29bc866d8ab12d1d16c52f1"
+    },
+    {
+      "name": "near-expeditions/test/contract.test.mjs",
+      "bytes": 7555,
+      "sha256": "cebb0f924c8449528902022abf86421b5d3377d4ad6a0494b596a1f305bdf801"
+    },
+    {
+      "name": "near-expeditions/test/game-bridge.mjs",
+      "bytes": 6369,
+      "sha256": "2c2180330165fd1194bc9608912ec96a73d75cece46793360276b65efb3ccffa"
+    },
+    {
+      "name": "near-expeditions/test/rehearse-testnet.mjs",
+      "bytes": 8980,
+      "sha256": "def1da1173f21263b7014b16d3a8e01e9078a0e64c6eebce652575a85824dea6"
+    },
+    {
+      "name": "near-expeditions/test/sandbox.test.mjs",
+      "bytes": 6711,
+      "sha256": "9056fffb1668f5b0526e604bf415a868b4f93e3687e28ee972b2b162c9aed611"
+    },
+    {
+      "name": "near-gold/Cargo.lock",
+      "bytes": 33146,
+      "sha256": "0e8d1ad29d35442c05c4d23595c639d14fa483fa58e1c29b9a3795d61cc57fd0"
+    },
+    {
+      "name": "near-gold/Cargo.toml",
+      "bytes": 342,
+      "sha256": "77ec25ac8bf0075c841ffdbbaf057b4480ba766707ce03ecbb37f920d139babc"
+    },
+    {
+      "name": "near-gold/src/lib.rs",
+      "bytes": 5577,
+      "sha256": "4bd3785a3c60c372d7a9f0b5f147ededc79992ae91a1cfc73545b62fe8ff0871"
+    },
+    {
+      "name": "near-rpc-reads.mjs",
+      "bytes": 6007,
+      "sha256": "cc82fbe747038905d835a7b147fe703d61046f39009d8773a64eb7d706f1fe49"
+    },
+    {
+      "name": "near-social-actions.mjs",
+      "bytes": 8946,
+      "sha256": "355149ed45e86b4c9e96cf228fefab42a6a7475d421b200211bb2796ab0a099d"
+    },
+    {
+      "name": "near-social.mjs",
+      "bytes": 15781,
+      "sha256": "1631a24c834e061a77e922d5169fda0f4f0e02e184768e3226b1d55332069e76"
+    },
+    {
+      "name": "package-lock.json",
+      "bytes": 95242,
+      "sha256": "88d3486937ebb0196604bc77ac1595fa0ec1e16a6b677e4818a9a9fe627b72b5"
+    },
+    {
+      "name": "package.json",
+      "bytes": 1182,
+      "sha256": "8b80baacee44a723ae81b354b800ca210de303332bd78057c82cef7cf543e63a"
+    },
+    {
+      "name": "public/audio/argh.ogg",
+      "bytes": 6792,
+      "sha256": "32cda05788125da7f2ec3be5d7de2bab475373fe72b1c6a4dc5ee39d2cbbae5a"
+    },
+    {
+      "name": "public/audio/bay-shanty.ogg",
+      "bytes": 392828,
+      "sha256": "265ae4142d344203fb7822c53df7710751525d9f1fdaecd46a1c1b7c614710d0"
+    },
+    {
+      "name": "public/audio/yarr.ogg",
+      "bytes": 6633,
+      "sha256": "5fdbd37f89c6de171b06cbb855d941e641c9c898627856c86f7d4cfc022a21e4"
+    },
+    {
+      "name": "public/brand/barrel-icon-v2.webp",
+      "bytes": 20542,
+      "sha256": "05a9dc7d99c75ab061f6318c86f8cbfacd46ba5b0908bb62e47e3f04ff291193"
+    },
+    {
+      "name": "public/brand/favicon-v2.png",
+      "bytes": 10491,
+      "sha256": "d12594c0e17973cb497867da24980b900033aeeb81b5863e29f5636a8396661c"
+    },
+    {
+      "name": "public/brand/nearly-afloat-wordmark.webp",
+      "bytes": 28868,
+      "sha256": "eaf46466abe240ea87cbab774f222ae5a06ab5fad1d3f63970c50eb37b262df1"
+    },
+    {
+      "name": "public/manifest.webmanifest",
+      "bytes": 255,
+      "sha256": "d69c4d4fed29c971948de403cb9ca7dc57d78db773318fcbd12a0d67002bf438"
+    },
+    {
+      "name": "public/proofs/agent-proof.json",
+      "bytes": 14832,
+      "sha256": "6842b0b7fe2fcb0f66331f16b54bea310efee7f0c69feac30be0ff20e1e5a965"
+    },
+    {
+      "name": "public/proofs/agent-verified.json",
+      "bytes": 2488,
+      "sha256": "0197913a01ebb827bb880f122cc8ebe5450e0a97d5a0360c26b023495deaeb90"
+    },
+    {
+      "name": "public/proofs/agent.html",
+      "bytes": 4952,
+      "sha256": "11070c30668e0823b945d840eeef6c789ba528e10beb35bf7500294f4dab03b5"
+    },
+    {
+      "name": "public/proofs/judges-expedition.json",
+      "bytes": 4072,
+      "sha256": "ff55b88ecef9d07afa33c6d2a3f45c7d150bb1ff35b5dea287fbe76c3199f47a"
+    },
+    {
+      "name": "render.yaml",
+      "bytes": 1793,
+      "sha256": "357a68568ad952fef8bc0dec739a7f91112550905ee094bd4e9dd0f1434d3c1b"
+    },
+    {
+      "name": "scripts/audit-arena-physics.mjs",
+      "bytes": 2311,
+      "sha256": "63e9bfce5b2fbaae3a90607c07341337e8f0f599c18b9d4c63e0ef2428617ed0"
+    },
+    {
+      "name": "scripts/backup-economy.mjs",
+      "bytes": 1220,
+      "sha256": "24f61f1bdd9cf393a9c82ea486ff021c3da9aae74f25a20826bffc985d53887a"
+    },
+    {
+      "name": "scripts/dependency-notices.mjs",
+      "bytes": 1697,
+      "sha256": "02ab033984f07be415a974f330dfa826f19c0485fdb91f495b01073aab0c78eb"
+    },
+    {
+      "name": "scripts/deploy-preflight.mjs",
+      "bytes": 6696,
+      "sha256": "43b269eff485f3d244a74b92fac376eccec532a03640fa4901c5c8d55b4d2a04"
+    },
+    {
+      "name": "scripts/hosting-smoke.mjs",
+      "bytes": 4816,
+      "sha256": "e9d09563c4a34818cb9bb5d7b8017837a214995dc7bba75794e5b16c5e193c89"
+    },
+    {
+      "name": "scripts/merchant-reserve-daemon.mjs",
+      "bytes": 949,
+      "sha256": "9820bdbe0a777d7b99e76cefb333d3f20a7a48af05fcf6cbea65ea52b6bcba2d"
+    },
+    {
+      "name": "scripts/merchant-reserve-preview.mjs",
+      "bytes": 4316,
+      "sha256": "73877c0505adb67c77c9f80e8d30d14ee1b4c388c75f2cfdd9864a9dee3da99f"
+    },
+    {
+      "name": "scripts/near-candidate-rehearsal.mjs",
+      "bytes": 14651,
+      "sha256": "845f1dcc17fffcdc21291ec5c3b4ef1954e0c35e099a4f6983367ddffc974adb"
+    },
+    {
+      "name": "scripts/near-catalog.mjs",
+      "bytes": 1857,
+      "sha256": "4757177569ac46fcc5795472296cc092a1ccbb63f370a296c808da2fb3de1f51"
+    },
+    {
+      "name": "scripts/near-setup.mjs",
+      "bytes": 7704,
+      "sha256": "cec0f8cbb0dd3de40a7cc30ffba9bb945ee25967535710b485a01ee73efa6559"
+    },
+    {
+      "name": "scripts/near-social-preview.mjs",
+      "bytes": 6933,
+      "sha256": "2a5c1e1fecbedf7af56fe0d72c60c535e5731997cb311572bd562a3e032f5013"
+    },
+    {
+      "name": "scripts/near-verify.mjs",
+      "bytes": 1192,
+      "sha256": "866aa50eb15c230aa4456c5a1545f27b93b5ee342fce2923e0ca0c446abff0f6"
+    },
+    {
+      "name": "scripts/prepare-release.mjs",
+      "bytes": 4521,
+      "sha256": "2762e297b169f0767b7b5bef639b005aa299efc5b6db9aa30f282ff4840d51e2"
+    },
+    {
+      "name": "scripts/setup-judges-expedition.mjs",
+      "bytes": 5745,
+      "sha256": "d2351dc18232ff67b87eb89d441b537878fdb0f2fcc5faf688fe1ab314b7de06"
+    },
+    {
+      "name": "scripts/verify-agent-evidence.mjs",
+      "bytes": 3552,
+      "sha256": "3ea5e657f29f0c110a5c80d2e035ca9c4c62fd7c4d5c32c8dbff054ba21c90a7"
+    },
+    {
+      "name": "scripts/verify-candidate.mjs",
+      "bytes": 1487,
+      "sha256": "1fb6db600d97ce690d5179531803951a26a99b4a0cdf7eb3b3603a9eca8fab4e"
+    },
+    {
+      "name": "scripts/verify-expedition-sale.mjs",
+      "bytes": 4380,
+      "sha256": "4eb77036c8f06880c6752c9bb4cd3b19e456cdbc19a7b582083adb47dea391a1"
+    },
+    {
+      "name": "scripts/verify-gold-agent-evidence.mjs",
+      "bytes": 6770,
+      "sha256": "1e2f9aeb092b9ac4856b348d87ae19c32c52142fa92bad2cf00c2250737f374f"
+    },
+    {
+      "name": "scripts/verify-judges-expedition.mjs",
+      "bytes": 2611,
+      "sha256": "0bf1f82a8d097646303816734704eadc018f4bf3ec0a89b519e2c5ce531fe6cf"
+    },
+    {
+      "name": "scripts/verify-private-preview.mjs",
+      "bytes": 3606,
+      "sha256": "31966c1ea300ec957bd1945c89cb05de1af61b963538c4bd9d28ef84fa4c1a15"
+    },
+    {
+      "name": "server.mjs",
+      "bytes": 77522,
+      "sha256": "8d191957d16a8f956b735ca1122c35490061798c21d8a71a6cfe4af951bc78b6"
+    },
+    {
+      "name": "shared/arena-entry.mjs",
+      "bytes": 309,
+      "sha256": "8db85fe0d4a4a85238c4677e9aca4b3af1c1a88058e0d598a0aefd795785348a"
+    },
+    {
+      "name": "shared/arena-hazards.mjs",
+      "bytes": 17151,
+      "sha256": "2438322cd97d120d3375f7f19fc22f9f0042eeb3beb494e58771ffa1a4e98e51"
+    },
+    {
+      "name": "shared/arena-maps.mjs",
+      "bytes": 443,
+      "sha256": "72c634e384b4f7bdef07aac03544d60115efce250fb7e980068d3f937d23d580"
+    },
+    {
+      "name": "shared/contact-geometry.mjs",
+      "bytes": 4748,
+      "sha256": "cfe124e2f5ae0f932dab9169dd61311379010689b0813382891f65a354180105"
+    },
+    {
+      "name": "shared/cosmetics.mjs",
+      "bytes": 5384,
+      "sha256": "24daabaa27b4df997019e190d84b84041190413ebe906fac9500a307c125614f"
+    },
+    {
+      "name": "shared/economy-policy.mjs",
+      "bytes": 400,
+      "sha256": "819b72fc526fa5ed32fe05863d12f0e00ca2f7aeb1a5c8488945cb5bb624d1ae"
+    },
+    {
+      "name": "shared/expeditions.mjs",
+      "bytes": 8646,
+      "sha256": "23506c3306ac54614f233eb24f048a14eb9048962950431e06bcbfbb849550ba"
+    },
+    {
+      "name": "shared/experimental-traps.mjs",
+      "bytes": 6837,
+      "sha256": "a0fd7d0a0b0c9ec17424378956b260587df85bc1b38f12a4cf725f381231d8b6"
+    },
+    {
+      "name": "shared/live-vault.mjs",
+      "bytes": 13482,
+      "sha256": "b45e59fc30247b539dca8e34140897051d111ec487e0fe28560fe3c407ffb5c7"
+    },
+    {
+      "name": "shared/login-choice.mjs",
+      "bytes": 447,
+      "sha256": "4f5d34428e2e3d4421a2bb735d782615572b06a8b1fc6c6d6e65f9244daeb27c"
+    },
+    {
+      "name": "shared/merchant-agent.mjs",
+      "bytes": 1354,
+      "sha256": "b78cfd42baf43db19cfcb351825c622955f55d9c6e38cdc7cdc0bcd5dee3269c"
+    },
+    {
+      "name": "shared/merchant.mjs",
+      "bytes": 3149,
+      "sha256": "76dac3fd65e4d5bb37d2f8e28e74f10c96344d7e2af8ff4172a5374db0175418"
+    },
+    {
+      "name": "shared/rarities.mjs",
+      "bytes": 2081,
+      "sha256": "3e920f0066409c719eb0ed0b6eca0a7d58edc5899e8890c6d6c40ed4494d8f17"
+    },
+    {
+      "name": "shared/reactions.mjs",
+      "bytes": 294,
+      "sha256": "408ab889005835ae41afb71bebd2ccf082fab9edafef9a1498558b9d8d2828bc"
+    },
+    {
+      "name": "shared/rigs.mjs",
+      "bytes": 2284,
+      "sha256": "ed68cae197c97e43c2858ceaa534b176cc37b022264aa91e300f112b01489395"
+    },
+    {
+      "name": "shared/simulation.mjs",
+      "bytes": 49025,
+      "sha256": "339fb06d1b5be7f0050a92159d2d59321f6597e0f1b39f49b9a10df96f71f767"
+    },
+    {
+      "name": "shared/social-session.mjs",
+      "bytes": 194,
+      "sha256": "98006426f9a16249512254ad403642bdf4ecf607ef5aafe0098f7a534d5cd520"
+    },
+    {
+      "name": "shared/trap-lab.mjs",
+      "bytes": 4050,
+      "sha256": "6664f5d4b10e8f7083c94fff4b9c018788bd60cb62bf8d635f345eb3d6a7d61d"
+    },
+    {
+      "name": "shared/vault.mjs",
+      "bytes": 3269,
+      "sha256": "9fcaa8cfb6de7ae3ab3eaea434e2ceab577af183ef7fdd5ac6382710c9761360"
+    },
+    {
+      "name": "shared/world-lighting.mjs",
+      "bytes": 388,
+      "sha256": "60e195cde11fdc8ab3c562dd867ad1019af3e0f9676e62cc4cfd4e8c7940b692"
+    },
+    {
+      "name": "signin.html",
+      "bytes": 2406,
+      "sha256": "a39d7a046f6cfe92672ca5d91ba97f90a0bba938f7e8ca8bc9c9b991e93e6121"
+    },
+    {
+      "name": "src/accessibility.css",
+      "bytes": 5404,
+      "sha256": "4c2b7d084bfc3d1c124c89e2f909c5b4da4ace4968f43ca20b5e8733b2ef876b"
+    },
+    {
+      "name": "src/accessibility.js",
+      "bytes": 2260,
+      "sha256": "93f62e630fd445dab44eff559548442cae862842c930053d9260ed13d9e02636"
+    },
+    {
+      "name": "src/arena-cable-route.js",
+      "bytes": 1363,
+      "sha256": "2d83f3c433831ca1fcb73ede19ed90c2540e1c517869bb8fce3d7b001426db5d"
+    },
+    {
+      "name": "src/arena-cargo-view.js",
+      "bytes": 14854,
+      "sha256": "f133bc2d4d9f6cd41690d8421b3330b53e4eed03f45f3ed1af9a468cc76b2e20"
+    },
+    {
+      "name": "src/arena-gold.css",
+      "bytes": 698,
+      "sha256": "872fe8adbded236d89dfea43ee698f082faae6673ef87ddea4026459c7efaab0"
+    },
+    {
+      "name": "src/arena-gold.js",
+      "bytes": 2833,
+      "sha256": "4bc0cd2f8b2bbaf5289cf0bcfe325911ce9161126669b3f7a5591272c78e3d49"
+    },
+    {
+      "name": "src/arena-hazard-view.js",
+      "bytes": 15594,
+      "sha256": "b365c75228b66648d3009e553e048bb21cb87de7950684bc1db9a40f7072910f"
+    },
+    {
+      "name": "src/arena-map-view.js",
+      "bytes": 17493,
+      "sha256": "83a2e7a16cb72becc9ebf7b8a8a9b28c97b2f5bc30c9d08bf66bac4229951b3c"
+    },
+    {
+      "name": "src/arena-view.js",
+      "bytes": 60609,
+      "sha256": "b4abbdb60b507686bf352a4e37f99bd89361a8e42b57fbf346159d0937305c45"
+    },
+    {
+      "name": "src/barrel-model.js",
+      "bytes": 4251,
+      "sha256": "df38b5df3cb958d31ea3e12c182e73782e18ce65153685b591dbb10b5046b5be"
+    },
+    {
+      "name": "src/battle-feed.js",
+      "bytes": 3860,
+      "sha256": "1f6414c37cfc10e448f54bde005a0f635f5e90667db62953a5d2289ae47a8f97"
+    },
+    {
+      "name": "src/bay-coast.js",
+      "bytes": 17758,
+      "sha256": "d5724a562a5d245c275e64cde838b507d19414ebd976fad98d3e62d9bf15c91e"
+    },
+    {
+      "name": "src/bay-expansion.js",
+      "bytes": 32311,
+      "sha256": "5163f155842124b8bc1c1e5067245914b165df223ef38084c3ca813ca18f1d61"
+    },
+    {
+      "name": "src/bay-host-scene.js",
+      "bytes": 11524,
+      "sha256": "0bacdd6973869c93e1d32da5fc919e9d10f7f4686a2336a15e3ce319acfd4318"
+    },
+    {
+      "name": "src/bay-hosts.js",
+      "bytes": 5699,
+      "sha256": "a4e2f09286daf7b503a679d94e44671c1c28866ac465f91e5c17d11220d28fba"
+    },
+    {
+      "name": "src/bay-life.js",
+      "bytes": 11799,
+      "sha256": "bb062ef5f8dddcb0919e531271e98bcb6257327d96fa6d109cc9777985f4573b"
+    },
+    {
+      "name": "src/bay-navigation.js",
+      "bytes": 1809,
+      "sha256": "b8a320803ceb7137da712667e7d58c5b318078612c923437f0f92ec1c2e0b967"
+    },
+    {
+      "name": "src/bay-spectacle.js",
+      "bytes": 11704,
+      "sha256": "9736ff4e1c9fa1da77a40ef0ff586afdcdd655adb166d473bec08a082eb9f32b"
+    },
+    {
+      "name": "src/bay-view.js",
+      "bytes": 41985,
+      "sha256": "edca1a8e6d82602510e86a5bd598065ca218f5a5b3f343929f2a4ff1dd294af0"
+    },
+    {
+      "name": "src/captain-menu.css",
+      "bytes": 6051,
+      "sha256": "3dff03019534a5d0aff0e34de54d917522eff0bf2168d4b8394bb5319b82c960"
+    },
+    {
+      "name": "src/captain-menu.js",
+      "bytes": 4292,
+      "sha256": "8ae1ccc3f9bf7f890777feb5dd88aa66ca9cd1170bca7fcc25d3b19a2dfc59e5"
+    },
+    {
+      "name": "src/captains-home.js",
+      "bytes": 11890,
+      "sha256": "587108e462ace9e456c3de38024aa5b4fd0f6d98d6b4c7bc1b3d77ff42ebc962"
+    },
+    {
+      "name": "src/cottage.js",
+      "bytes": 15072,
+      "sha256": "593db50fa92ca8fb465d9c2d54a032f604b160bb313646af358ac3016bb04640"
+    },
+    {
+      "name": "src/crowd-audio.js",
+      "bytes": 1279,
+      "sha256": "391949426f5d8ad8d761681acf3fca8e71ec293cf389d62414e8bf8cc8feafe3"
+    },
+    {
+      "name": "src/embedded-login.css",
+      "bytes": 2231,
+      "sha256": "c56d77fc263f55266e6b01ca5b217a699c62d244622dc3084f69d844a4b4ed7f"
+    },
+    {
+      "name": "src/embedded-login.js",
+      "bytes": 10373,
+      "sha256": "a817a3044fd6f0fbcfbc62443b832f2924b4d4cf38552e67de18e7f8cdd131a5"
+    },
+    {
+      "name": "src/expedition-scene.js",
+      "bytes": 3902,
+      "sha256": "47ff711305f28a61ada80365747dd0ec2e58adaf218379ea759fcd5bbc15101e"
+    },
+    {
+      "name": "src/expeditions.css",
+      "bytes": 5529,
+      "sha256": "e0dad217c57c9328a215dd1565cb7854b7d89cc2b24f41974463cc28594b94ff"
+    },
+    {
+      "name": "src/expeditions.js",
+      "bytes": 28580,
+      "sha256": "af6084694359a389908922b4c5482308284351a0a02af51143eade5ce4357289"
+    },
+    {
+      "name": "src/experimental-trap-view.js",
+      "bytes": 7686,
+      "sha256": "b3cf5bd07234eb171b0b9a1847111662e1eb84809280d58bdbdb71dae889b44a"
+    },
+    {
+      "name": "src/first-brawl.css",
+      "bytes": 4329,
+      "sha256": "7b3889999ae706ed989deec2d3ab6cc347bba5275dc4e4ab9cf5c1dbac732b07"
+    },
+    {
+      "name": "src/fort-models.js",
+      "bytes": 4120,
+      "sha256": "bc0092171f11bcd548eb2649d33e3c48570092e4dd241c9082b53c0824f8993b"
+    },
+    {
+      "name": "src/game-icons.js",
+      "bytes": 5804,
+      "sha256": "6ae6e7c173f7031abc5e69f8309a2d2b760cac724df3e2cdbac9bfead70e815a"
+    },
+    {
+      "name": "src/gold-wallet-embedded.js",
+      "bytes": 3452,
+      "sha256": "c488f2a74bbd5198376c6832108e4d3a80fec6d74cede69f1e10494ea16cd403"
+    },
+    {
+      "name": "src/gold-wallet.js",
+      "bytes": 7936,
+      "sha256": "11c58e8bd3f0e1dd0bed1cbc94e67dd82903460ccf0b5964cc09da84be26a0d7"
+    },
+    {
+      "name": "src/harbor-audio.js",
+      "bytes": 1906,
+      "sha256": "8839ee63b9d58ef3a8c57e43d9fdcd0ad451184f6967d24cef229df4c26a375d"
+    },
+    {
+      "name": "src/harbor.js",
+      "bytes": 12942,
+      "sha256": "40d2cf43a65a70fe235671842deb32944814ba51e4f054c629680557e06aa042"
+    },
+    {
+      "name": "src/interface-layout.css",
+      "bytes": 10406,
+      "sha256": "fb120b0db565aab291fd977d08f5d04d19c36514a9131230ac7008599a0c1868"
+    },
+    {
+      "name": "src/interface-layout.js",
+      "bytes": 1835,
+      "sha256": "3062808d0857ba6ac6520fdc2105acce1d1c293acd1e90c21e04e8ac512313b4"
+    },
+    {
+      "name": "src/item-thumbnail.js",
+      "bytes": 10536,
+      "sha256": "7c59247aa1723931c0840d1e71245e1a926af50b2f0199500d303ec2136cc6ae"
+    },
+    {
+      "name": "src/judges-expeditions.css",
+      "bytes": 2560,
+      "sha256": "6946c4b1aa6edd1b91d6fbe4f62bb604a7ca8463a9672f0627eff55c71fc6efc"
+    },
+    {
+      "name": "src/judges-expeditions.js",
+      "bytes": 7690,
+      "sha256": "91b557bc1e4d2e61e39f39d6eb870089e491134f177a668eb9eef526c09d431c"
+    },
+    {
+      "name": "src/main.js",
+      "bytes": 101731,
+      "sha256": "5e2070c61dc2b5e3528ea2410f3adfce05302b8626132c87cc51ed2ca8defc97"
+    },
+    {
+      "name": "src/mobile-essential.css",
+      "bytes": 7575,
+      "sha256": "7331b2d931b7308bfaf1a9e391c4160b76ef8a16d67c4496f8e408a97427c162"
+    },
+    {
+      "name": "src/near-wallet.js",
+      "bytes": 5997,
+      "sha256": "d0588ed48a54a9d558a6106b24d73101d495e36db5e80eebb8a3f12afbb83024"
+    },
+    {
+      "name": "src/near-workshop.css",
+      "bytes": 11539,
+      "sha256": "453be1f7d03bfff0d4ce5259b1e6507cf2f5f1648f2bdbaa0732c77d2f209eeb"
+    },
+    {
+      "name": "src/near-workshop.js",
+      "bytes": 42983,
+      "sha256": "3ea1be6e80cb20425825b381b809e236769fbd5d14f69f5604b7bc028fdfe0f8"
+    },
+    {
+      "name": "src/night-lighting.js",
+      "bytes": 5774,
+      "sha256": "8d30515c2129f0028dccded72a55e0c0f06b1827b848de0201ab91cf9a2ab02f"
+    },
+    {
+      "name": "src/pending-gold.js",
+      "bytes": 784,
+      "sha256": "138711fdaeee61b1e8efd2038bf14d8280750cfc8b0d3bdac7fd8e031a86690a"
+    },
+    {
+      "name": "src/performance-meter.js",
+      "bytes": 2241,
+      "sha256": "6c8f9e853705938e090cbaf2da08d19014168c7834baaa53f6a92e71eabb233b"
+    },
+    {
+      "name": "src/pet-model.js",
+      "bytes": 5728,
+      "sha256": "34b32c0665aa1bd9f1277455c6f249a7e6ae25a73f60255d571331eab5567545"
+    },
+    {
+      "name": "src/pier.css",
+      "bytes": 25012,
+      "sha256": "91031ba1797c12fd66ebbba1032adc74238dc10617a0a54422ed0f557251bf95"
+    },
+    {
+      "name": "src/pirate-bird.js",
+      "bytes": 1381,
+      "sha256": "97353dee59e4c70c4c5f846db48badb4f0da140131b4a0309aba8b61b12f4f3f"
+    },
+    {
+      "name": "src/pirate-ui.css",
+      "bytes": 8845,
+      "sha256": "3831ba5b3355345ed8b8cd6a9fdab7337de805a934a23b6838248ddbc4e5000f"
+    },
+    {
+      "name": "src/player-markers.js",
+      "bytes": 1835,
+      "sha256": "41f31911e579f48d23c3b75e390f809c28b72b52416aa06b31abc780b4948cbe"
+    },
+    {
+      "name": "src/profile-progress.css",
+      "bytes": 394,
+      "sha256": "fe69fad016503a7b9468df13e825ad1efc77ba3eef018858c2ccefe09dc5759f"
+    },
+    {
+      "name": "src/profile-progress.js",
+      "bytes": 1920,
+      "sha256": "712e5d4829bde0e888132cb2a671150ef8df95a3a7aa9be33515ff50a5446ae1"
+    },
+    {
+      "name": "src/quick-play.css",
+      "bytes": 6501,
+      "sha256": "9d45c7ceacdaa217fd2569efcca2cb7c190130a8ae226890bcbcbb85143c76a8"
+    },
+    {
+      "name": "src/spectator-fleet.js",
+      "bytes": 6567,
+      "sha256": "9e9765297c0d20baacbea86c9f00402d5ed46a394ce03ae1d4aa8bb077944ad7"
+    },
+    {
+      "name": "src/style.css",
+      "bytes": 10070,
+      "sha256": "0ef40bf6542811c3966cd1c5f247e806b09a6193b0829d1a8756de2c021749a3"
+    },
+    {
+      "name": "src/trap-lab.css",
+      "bytes": 3389,
+      "sha256": "c20ef3180a4375b1a5780e2bfc140f85d34ad0433d7ccd66314743cbcdbdbf28"
+    },
+    {
+      "name": "src/trap-lab.js",
+      "bytes": 11540,
+      "sha256": "1e94c1e756a6fddbb979769ae2ea420dd96825dea5496c4d7d4e48f15fd4e772"
+    },
+    {
+      "name": "src/vault-view.js",
+      "bytes": 17981,
+      "sha256": "67ae41d31457f44aab815196152990b2d28aeffef255410c30d5cf59fc8b0055"
+    },
+    {
+      "name": "src/vault.css",
+      "bytes": 6361,
+      "sha256": "79e805ffa772053b608f8d3ae3a29bd6be730e6229b40731bae445d6273b5618"
+    },
+    {
+      "name": "src/wood-planks.svg",
+      "bytes": 3229,
+      "sha256": "fde6a23f994e15b43ef8fd89813dcc3eb219b740c17f34e6199059ff15813039"
+    },
+    {
+      "name": "src/workshop.js",
+      "bytes": 24488,
+      "sha256": "32396f4b420831968e11243e68c3cd4e77ee900e29cc6a760795380c058ab22f"
+    },
+    {
+      "name": "src/world.css",
+      "bytes": 10495,
+      "sha256": "0e1cf2b24ad2dafb4e4e2a083f72b8ca29d6d9825c26cb13ae62c6ea0584fb53"
+    },
+    {
+      "name": "test/agent-journal.test.mjs",
+      "bytes": 1685,
+      "sha256": "695528450b966d0a1e82f0f38b9ab83c9b0b5b7930f49410d6a1b193ed099017"
+    },
+    {
+      "name": "test/arena-cable-route.test.mjs",
+      "bytes": 1854,
+      "sha256": "ee3d081a659d67ee7b856ed28f425db359a1161611f78e1bd0020240c453df17"
+    },
+    {
+      "name": "test/arena-gold.test.mjs",
+      "bytes": 2723,
+      "sha256": "460a2ef4289294c6b267039805806ec1d311a41516a4055801a97f3ae0265a35"
+    },
+    {
+      "name": "test/arena-modes-server.test.mjs",
+      "bytes": 7813,
+      "sha256": "724ed9db75d1d76e5f9177bf0bb280003163b8541b99ed6f012de991876d0c06"
+    },
+    {
+      "name": "test/bay-hosts.test.mjs",
+      "bytes": 3838,
+      "sha256": "6a67541503a091072fc335abb01cfa47d0bafbea61c6923ccf69bae874851a5e"
+    },
+    {
+      "name": "test/contact-geometry.test.mjs",
+      "bytes": 2147,
+      "sha256": "01255388f81602024cbd6ce6dc955bb8f8dd179f89339026212016352aa8ddb8"
+    },
+    {
+      "name": "test/economy.test.mjs",
+      "bytes": 17960,
+      "sha256": "f2fac473f04e084c07cccdc7cbb05703b542cfdd7990cb8df1eff2b3eb14e7d6"
+    },
+    {
+      "name": "test/expeditions-interface.test.mjs",
+      "bytes": 468,
+      "sha256": "35b2503f087710d9759119d22d0e3dcac716472f4d3b7a83cf48a6bf91263d94"
+    },
+    {
+      "name": "test/expeditions-near.test.mjs",
+      "bytes": 4631,
+      "sha256": "b2bbf2a1ba0f6b1a05bb68b098bc3151284c8e818261154be189f43f572ebb62"
+    },
+    {
+      "name": "test/expeditions-server.test.mjs",
+      "bytes": 7410,
+      "sha256": "52e1b89dc76ca2a10395332f25682c38ba58aede8d8a0e49be63a467c8217b86"
+    },
+    {
+      "name": "test/expeditions.test.mjs",
+      "bytes": 8523,
+      "sha256": "ba6066a8a8ced52696ee45f652a1103b15b697006de5b556259eba6865fdce64"
+    },
+    {
+      "name": "test/first-brawl.test.mjs",
+      "bytes": 3394,
+      "sha256": "75c8703020ba119658dd6c2e49ae3a9cede9904757fc0f44ec59d38ce8087d93"
+    },
+    {
+      "name": "test/fixtures/expedition-contribution-dom.mjs",
+      "bytes": 4341,
+      "sha256": "32acd46d029dc8b3b0cb4e2b4508edd5eaa77fed38e65527e4954807e3d19536"
+    },
+    {
+      "name": "test/fixtures/main-arena-dom.mjs",
+      "bytes": 21273,
+      "sha256": "55b6ab2ccf0394fb8ee47d75c32fbc4bb0c69677ec362ab7d9f6baaa002764c9"
+    },
+    {
+      "name": "test/game-session-recovery.test.mjs",
+      "bytes": 1558,
+      "sha256": "7b266efd0608f763028f5ef1b00238e22c9535e72648700fc8a9d2b25d936662"
+    },
+    {
+      "name": "test/gold-wallet.test.mjs",
+      "bytes": 2914,
+      "sha256": "64da4026dd5f0ccaedf94a5a5c7e52bced69cbd4760922e3dede3a56a40e3ad4"
+    },
+    {
+      "name": "test/hosted-runtime.test.mjs",
+      "bytes": 5745,
+      "sha256": "9877e6ea489d65cf076b1f7d4e2e9a32274a36f4fadf07f6088d3ffb051b5839"
+    },
+    {
+      "name": "test/interface-layout.test.mjs",
+      "bytes": 3330,
+      "sha256": "f6d3daa65662b6c705e24bba4c4fca5fa07b4a5b58d66e370317638c2e2fd462"
+    },
+    {
+      "name": "test/judges-expedition.test.mjs",
+      "bytes": 4273,
+      "sha256": "4f533373680a9217b0f63ac68cd56e89e3fd4b1128f1fc5e3f6c853840df0c32"
+    },
+    {
+      "name": "test/ledger-migration.test.mjs",
+      "bytes": 2499,
+      "sha256": "0d30629cd3fb5d207293c8684c263ea538fd070b718891fdbd9d459084c20193"
+    },
+    {
+      "name": "test/live-vault.test.mjs",
+      "bytes": 3092,
+      "sha256": "80c3fca860415158e69600191534a10ed52cd6acdc8b32b4f1e2392debba682f"
+    },
+    {
+      "name": "test/login-choice.test.mjs",
+      "bytes": 1353,
+      "sha256": "a7d192b2d51f428f5a342f825349994c981fd526d8ae592f770ce1750c15df75"
+    },
+    {
+      "name": "test/main-arena-flow.test.mjs",
+      "bytes": 755,
+      "sha256": "7cecea84d94c60648ae7cb253571fe0ed02b21c2cd080aae2f07ea910e2ca93d"
+    },
+    {
+      "name": "test/merchant-agent.test.mjs",
+      "bytes": 1330,
+      "sha256": "ccf97a264f9df423954d1701f67c708da7ff6ca443f5b6802b615bef9bb3d92a"
+    },
+    {
+      "name": "test/merchant.test.mjs",
+      "bytes": 7337,
+      "sha256": "ceea285022040a794853adc639fcb58aadac936af6569c068b49431d43962755"
+    },
+    {
+      "name": "test/near-embedded.test.mjs",
+      "bytes": 20224,
+      "sha256": "120396dd55e7b8990f7e1b8210e01121cebb40b32db08d814e6415d0cb8d75d9"
+    },
+    {
+      "name": "test/near-instant-play.test.mjs",
+      "bytes": 14054,
+      "sha256": "fc16cb4f6a700770faed60a20afd5d868841fec75cdee9dd79519b337fa986cc"
+    },
+    {
+      "name": "test/near-recovery.test.mjs",
+      "bytes": 15811,
+      "sha256": "890e4109f166ad02a52b8b68ab9fa93724cd8647aa747d121c28c84df45b9d6b"
+    },
+    {
+      "name": "test/near-rpc-reads.test.mjs",
+      "bytes": 6116,
+      "sha256": "d6944848021c8a68daa1009cb682a858cd895c9272228eec91bd9a03dd4886ca"
+    },
+    {
+      "name": "test/near-social.test.mjs",
+      "bytes": 20393,
+      "sha256": "6c9e6d9f3c1edf8d2ba84bbe85d57f4c8f14ebe46b5724a84da1a4d9764f15c6"
+    },
+    {
+      "name": "test/pending-gold.test.mjs",
+      "bytes": 1162,
+      "sha256": "a4edfbd562b0e0194c5a592c7972d86d4d9cc3eccbc5a0a96dda37c633a1b435"
+    },
+    {
+      "name": "test/performance-meter.test.mjs",
+      "bytes": 797,
+      "sha256": "49b44c794505014a7b67dfb314975eec5b42908f6bf16b552bb48fcfbc3ac0b0"
+    },
+    {
+      "name": "test/pirate-profile.test.mjs",
+      "bytes": 2112,
+      "sha256": "68f643d253ddc5bf4b99aaa001855ba068cf068420ef6a2f24298b83a056c8ea"
+    },
+    {
+      "name": "test/profile-progress.test.mjs",
+      "bytes": 1362,
+      "sha256": "5b817a2ea7ef350b4eb118515c968a4e33e602f620524f41c7e36cd6218295da"
+    },
+    {
+      "name": "test/rarities.test.mjs",
+      "bytes": 2397,
+      "sha256": "a1c4e7c9ad17ac39e54396faf1276f2d4b0d52312bea59a71b623459f845528a"
+    },
+    {
+      "name": "test/room-isolation.test.mjs",
+      "bytes": 5196,
+      "sha256": "555548a7ad655e1ffd252ca543498dd235cab1a0ad612e7ce0904017e01edcc1"
+    },
+    {
+      "name": "test/simulation.test.mjs",
+      "bytes": 20325,
+      "sha256": "575295665fd71fb74f0392595cb759f7c598db1243bfa6749af2cfd6ae3ce7dc"
+    },
+    {
+      "name": "test/social-action-session.test.mjs",
+      "bytes": 2039,
+      "sha256": "be3e4b4bd85634bfb069a2fbcc9d29a39e8787742fa88982ae1d44b3a368bbb7"
+    },
+    {
+      "name": "test/trap-lab.test.mjs",
+      "bytes": 8867,
+      "sha256": "84bb8d0b8e420723fc7c188a516c4805f029fc68799c5a1533e07a40028eed62"
+    },
+    {
+      "name": "trap-lab.html",
+      "bytes": 6044,
+      "sha256": "a68c9f853e604b3e91a5bd1e83ec0621328981fce7ac205ed5ab893bb5801790"
+    },
+    {
+      "name": "vite.config.js",
+      "bytes": 1757,
+      "sha256": "65badfd486a4dffd76aad33f4d910f3d41dd2d1442a2b97c3fc33be525f1178d"
+    },
+    {
+      "name": "vite.config.mjs",
+      "bytes": 553,
+      "sha256": "5f6f3b6b02774258d0d1f5737784f88852fab96df070f517c525fa594e1389b3"
+    }
+  ]
+}

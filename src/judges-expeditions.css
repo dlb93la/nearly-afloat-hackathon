@@ -1,0 +1,26 @@
+.judges-expeditions { min-height: 100svh; overflow: auto; background: radial-gradient(ellipse at top,#214b4d,#0b202a 75%); }
+.rehearsal-shell { width: min(100% - 2rem, 980px); margin: auto; padding: 1.2rem 0 3rem; }
+.rehearsal-shell header { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center; }
+.rehearsal-shell h1 { font-size:clamp(2.2rem,6vw,3.5rem); margin:1rem 0 0; }
+.rehearsal-shell a { color:#a9f4d5; overflow-wrap:anywhere; }
+.rehearsal-intro { font-size:1.3rem; color:#ffdb96; margin:.2rem 0; }
+.rehearsal-badge { border:1px solid #75b4a3; border-radius:1rem; padding:.3rem .7rem; font-size:.8rem; }
+.rehearsal-stages { display:grid; grid-template-columns:repeat(4,1fr); gap:.5rem; margin:1.4rem 0; }
+.rehearsal-stages span { padding:.65rem; border-bottom:2px solid #557876; color:#b1c4c2; }
+.rehearsal-stages [aria-current] { color:#ffe2aa; border-color:#fac66b; background:#493725; }
+.rehearsal-card { background:linear-gradient(100deg,#392e23,#302a23); border:2px solid #957044; box-shadow:inset 0 0 0 3px #211e19,0 5px 0 #091b20; border-radius:5px; padding:1.1rem; margin:1rem 0; }
+.rehearsal-card h2 { margin:.3rem 0; } .rehearsal-card h3 { color:#ffe2aa; margin:.4rem 0; }
+.rehearsal-cargo { display:grid; grid-template-columns:160px 1fr; gap:1.2rem; align-items:center; }
+.rehearsal-cargo .workshop-thumb { width:100%; height:150px; object-fit:contain; border:1px solid #da85d9; }
+.rehearsal-cargo small { color:#e8a6e4; }
+.rehearsal-actions { display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; margin-top:1.2rem; }
+.rehearsal-shell button { min-height:44px; padding:.7rem 1rem; color:#ffe5b9; background:linear-gradient(#745034,#503922); border:2px solid #b18349; border-radius:3px; font-weight:700; }
+.rehearsal-shell button:not(:disabled):hover { border-color:#ffe2a2; background:#72502f; }
+.demo-crews { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.demo-crew { margin:0; } .demo-crew small { display:block; margin-top:.7rem; }
+.demo-crew .workshop-thumb { width:120px; height:120px; object-fit:contain; }
+#rehearsal-status { min-height:3rem; color:#ffe2aa; }
+#rehearsal-receipts { display:flex; gap:.6rem 1rem; flex-wrap:wrap; }
+#rehearsal-contracts { font-size:.78rem; }
+.rehearsal-shell summary { cursor:pointer; font-weight:700; }
+@media(max-width:600px) { .rehearsal-stages { grid-template-columns:1fr 1fr; } .rehearsal-cargo { grid-template-columns:95px 1fr; gap:.7rem; } .rehearsal-cargo .workshop-thumb { height:110px; } .demo-crews { grid-template-columns:1fr; } }

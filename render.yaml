@@ -1,0 +1,58 @@
+# Preparation only. Creating this Blueprint starts hosting and requires approval.
+# Keep the repository private. Do not connect/sync this file before approval.
+services:
+  - type: web
+    name: nearly-afloat
+    runtime: docker
+    plan: standard
+    region: virginia
+    branch: main
+    numInstances: 1
+    autoDeployTrigger: "off"
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    disk:
+      name: afloat-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: PUBLIC_ORIGIN
+        sync: false
+      - key: BARREL_NEAR_SOCIAL_CALLBACK
+        sync: false
+      - key: BARREL_NEAR_CONTRACT
+        value: r-f08ea9c0.afloat-proof-44f848902e.testnet
+      - key: BARREL_GOLD_CONTRACT
+        value: g-f08ea9c0.afloat-proof-44f848902e.testnet
+      - key: BARREL_NEAR_REFEREE
+        value: r-f08ea9c0.afloat-proof-44f848902e.testnet
+      - key: BARREL_NEAR_KEY
+        sync: false
+      - key: BARREL_NEAR_RPC
+        value: https://testnet-rpc.intea.rs
+      - key: BARREL_NEAR_SESSIONS
+        value: "1"
+      - key: BARREL_NEAR_WORKSHOP
+        value: "1"
+      - key: BARREL_NEAR_STARTER
+        value: "1"
+      - key: BARREL_NEAR_COLLECTION
+        value: "1"
+      - key: BARREL_NEAR_VOYAGE
+        value: "1"
+      - key: BARREL_GOLD_WALLET
+        value: "1"
+      - key: BARREL_NEAR_SOCIAL
+        value: "1"
+      - key: BARREL_NEAR_SOCIAL_PROVIDER
+        value: privy
+      - key: PRIVY_APP_ID
+        value: cmwe3biz1002t0hjkpsfyf936
+      - key: BARREL_NEAR_SOCIAL_SPONSOR
+        value: afloat-proof-44f848902e.testnet
+      - key: BARREL_NEAR_SOCIAL_SPONSOR_KEY
+        sync: false
+      - key: BARREL_EXPEDITIONS_OPERATOR
+        value: r-f08ea9c0.afloat-proof-44f848902e.testnet
+      - key: BARREL_EXPEDITIONS_KEY
+        sync: false

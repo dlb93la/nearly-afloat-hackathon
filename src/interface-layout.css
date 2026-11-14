@@ -1,0 +1,201 @@
+/* Separate compositions. Financial state and controls remain shared. */
+.performance-meter {
+  position: fixed; z-index: 30; bottom: calc(max(.75rem, env(safe-area-inset-bottom)) + 56px);
+  left: max(.75rem, env(safe-area-inset-left));
+  max-width: calc(100vw - 1rem); padding: .4rem .6rem; border: 1px solid #c49b5c; border-radius: 4px;
+  color: #fff1ce; background: #15282bef; font: 11px/1.5 ui-monospace, monospace; white-space: pre-wrap; pointer-events: none;
+}
+body[data-ui-layout] .cabinet .overlay[data-screen] {
+  --panel-top-gap: 6.2rem;
+  padding: calc(var(--hud-top) + var(--panel-top-gap)) var(--hud-right) var(--hud-bottom) var(--hud-left);
+}
+body[data-ui-layout] .cabinet .overlay > .pier-card {
+  min-width: 0;
+  max-height: 100%;
+  padding: 1rem;
+  overscroll-behavior: contain;
+}
+body[data-ui-layout] .cabinet #workshop:not([hidden]) {
+  min-height: 0;
+  overflow: hidden;
+  gap: .5rem;
+}
+body[data-ui-layout] #workshop > .pier-heading { flex-shrink: 0; margin: 0; }
+body[data-ui-layout] .cabinet .action-card h2 { font-size: 2rem; }
+body[data-ui-layout] .cabinet dialog:not([data-embedded="true"]) {
+  max-width: calc(100vw - max(1rem, env(safe-area-inset-left)) - max(1rem, env(safe-area-inset-right)));
+  max-height: calc(100dvh - max(1rem, env(safe-area-inset-top)) - max(1rem, env(safe-area-inset-bottom)));
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+/* PC: wide shop window; smaller destinations stay beside the village. */
+body[data-ui-layout="desktop"] .cabinet .overlay[data-screen] {
+  place-items: center end;
+  padding-inline: max(var(--hud-left), 1.25rem) max(var(--hud-right), 1.25rem);
+}
+body[data-ui-layout="desktop"] .cabinet #workshop {
+  width: min(100%, 56rem);
+  height: min(100%, 48rem);
+  max-height: 100%;
+}
+body[data-ui-layout="desktop"] .cabinet #cottage {
+  width: min(100%, 35rem);
+  max-height: 100%;
+}
+body[data-ui-layout] .cabinet #cottage {
+  align-self: start;
+  margin-top: .65rem;
+  height: min(37rem, calc(100% - .65rem));
+  max-height: 100%;
+  overflow: hidden;
+}
+body[data-ui-layout] #cottage-content { min-height: 0; overflow: auto; }
+body[data-ui-layout="desktop"] .cabinet #expeditions { width: min(100%, 35rem); }
+body[data-ui-layout="desktop"] .cabinet :is(#home, #lobby, #results) { width: min(100%, 29rem); }
+
+/* Phone/tablet: a bottom sheet, compact HUD and generous touch targets. */
+body[data-ui-layout="mobile"] .cabinet {
+  --hud-top: max(.5rem, env(safe-area-inset-top));
+  --hud-right: max(.5rem, env(safe-area-inset-right));
+  --hud-bottom: max(.5rem, env(safe-area-inset-bottom));
+  --hud-left: max(.5rem, env(safe-area-inset-left));
+}
+body[data-ui-layout="mobile"] .cabinet .overlay[data-screen] {
+  place-items: end center;
+  background: linear-gradient(0deg, #10222db3, transparent 82%);
+}
+body[data-ui-layout="mobile"] .cabinet .overlay > .pier-card {
+  width: min(100%, 38rem);
+  padding: .85rem;
+  border-radius: 10px 10px 4px 4px;
+}
+body[data-ui-layout="mobile"] .cabinet #workshop {
+  width: min(100%, 38rem);
+  height: min(38rem, 100%);
+  max-height: 100%;
+}
+body[data-ui-layout="mobile"] .cabinet #cottage .cottage-tabs { gap: .25rem; }
+body[data-ui-layout="mobile"] .cabinet #cottage .cottage-tabs button { font-size: .65rem; padding: .4rem .2rem; gap: .2rem; overflow-wrap: anywhere; }
+body[data-ui-layout="mobile"] #cottage-content { min-width: 0; }
+body[data-ui-layout="mobile"] .cabinet .action-card h2 { font-size: 1.55rem; }
+body[data-ui-layout="mobile"] .cabinet .pier-heading { margin-bottom: .6rem; }
+body[data-ui-layout="mobile"] .masthead { gap: .4rem; }
+body[data-ui-layout="mobile"] .brand-emblem { display: none; }
+body[data-ui-layout="mobile"] .head-actions { gap: .2rem; padding: .2rem; }
+body[data-ui-layout="mobile"] .head-actions :is(.connection, .captain-chevron) { display: none; }
+body[data-ui-layout="mobile"] .head-actions .header-gold { padding-inline: .3rem; font-size: .72rem; }
+body[data-ui-layout="mobile"] .head-actions button { min-width: 44px; min-height: 44px; padding-inline: .5rem; }
+body[data-ui-layout="mobile"] .masthead .bay-back { padding-inline: .5rem; font-size: .76rem; }
+body[data-ui-layout="mobile"] .bottom .keyboard { display: none; }
+body[data-ui-layout="mobile"] .cabinet :is(button, input, select) { touch-action: manipulation; }
+body[data-ui-layout="mobile"] .cabinet :is(input, select) { font-size: 16px; }
+body[data-ui-layout="mobile"] .cabinet dialog.captain-menu {
+  inset: var(--hud-top) var(--hud-right) auto auto;
+  width: min(23rem, calc(100vw - var(--hud-left) - var(--hud-right)));
+}
+
+/* A rotated phone keeps a touch composition, with the sea visible on the left. */
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .overlay[data-screen] {
+  place-items: center end;
+}
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .overlay > .pier-card {
+  width: min(100%, 32rem);
+  max-height: 100%;
+  padding: .65rem;
+}
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet #workshop {
+  width: min(100%, 36rem);
+  height: 100%;
+  max-height: 100%;
+}
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .pier-heading h2 { font-size: 1.45rem; }
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet #workshop > .pier-heading { margin: 0; }
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .overlay[data-screen="results"] { padding-bottom: var(--hud-bottom); }
+
+/* Compact painted controls retain a 44px touch target around the artwork. */
+.cabinet .masthead .head-actions {
+  width: max-content; flex: none; align-items: flex-end; gap: 0; padding: 0;
+  border: 0; border-radius: 0; background: none; box-shadow: none;
+}
+.cabinet .header-tools, .cabinet .header-account { gap: 0; }
+.cabinet .masthead .header-tools button {
+  position: relative; isolation: isolate; width: 44px; height: 44px; min-width: 44px; min-height: 44px;
+  padding: 10px; border: 0; background: none; box-shadow: none; border-radius: 5px;
+  color: #ffe5b8; font-size: 16px;
+}
+.cabinet .masthead .header-tools button::before {
+  content: ''; position: absolute; z-index: -1; inset: 5px; border: 1px solid #b48b59;
+  border-radius: 4px; background: linear-gradient(135deg, #60462feb, #322a22f2);
+  box-shadow: inset 0 0 0 1px #241d16, 0 2px 3px #061b226b;
+}
+.cabinet .masthead .header-tools button:hover:not(:disabled) { background: none; }
+.cabinet .masthead .header-tools button:active:not(:disabled) { box-shadow: none; }
+.cabinet .masthead .header-tools .game-icon, .cabinet .masthead .sound-icon { width: 17px; height: 17px; }
+.cabinet .masthead .captain-trigger {
+  position: relative; isolation: isolate; min-height: 44px; padding: 5px 9px;
+  background: none; border: 0; box-shadow: none; font-size: .72rem; gap: .3rem;
+}
+.cabinet .masthead .captain-trigger::before {
+  content: ''; position: absolute; z-index: -1; inset: 5px 2px;
+  background: linear-gradient(#594330ed, #332a22ed); border: 1px solid #ae8553; border-radius: 4px;
+}
+.cabinet .masthead .captain-trigger > span[data-icon] {
+  width: 15px; min-height: 0; padding: 0; background: none; clip-path: none; box-shadow: none;
+}
+.cabinet .masthead .captain-trigger:hover:not(:disabled) { background: none; }
+.cabinet .masthead .header-gold {
+  min-height: 30px; padding: 3px 7px; margin-left: 3px; font-size: .74rem;
+  background: #11292cde; border: 1px solid #91724780; border-radius: 4px;
+}
+.cabinet .header-account .connection { font-size: .58rem; }
+.cabinet .bay-marker {
+  --sign-edge: 4.4rem;
+  min-height: 34px; max-width: 145px; padding: .2rem .55rem; gap: .32rem;
+  font-size: .74rem; line-height: 1.15; letter-spacing: 0; border-width: 1px;
+  box-shadow: inset 0 0 0 1px #d79d6073, 0 2px 0 #37241e, 0 3px 5px #211a1660;
+}
+.cabinet .bay-marker::before { inset: -5px -3px; }
+.cabinet .bay-marker .bay-crest { width: 17px; height: 19px; }
+body[data-ui-layout="mobile"] .cabinet .bay-marker { max-width: 125px; padding-inline: .42rem; font-size: .68rem; }
+.cabinet .brand-emblem { width: 52px; }
+.cabinet .brand-wordmark { width: 230px; }
+body[data-ui-layout="mobile"] .cabinet .brand-wordmark { width: 90px; }
+@media (max-width: 350px) {
+  body[data-ui-layout="mobile"] .cabinet .brand-wordmark { width: 76px; }
+}
+body[data-ui-layout="mobile"] .cabinet .head-actions .captain-chevron { display: none; }
+body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .brand-wordmark { width: 135px; }
+.cabinet .theater-top { display: none; }
+.cabinet .play-hud {
+  inset: calc(var(--hud-top) + 6.3rem) var(--hud-right) auto var(--hud-left);
+  justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: .35rem;
+}
+.cabinet .play-hud .clock { min-width: 3.5rem; font-size: .9rem; }
+/* Confirmation precedes the countdown. The arena stays animated behind it. */
+.preparing-entry { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:grid; justify-items:center; gap:.6rem; width:min(86vw,26rem); padding:1.2rem; background:#15282ee8; border:1px solid #af8751; border-radius:.4rem; text-align:center; }
+.preparing-entry strong { color:#ffe1a0; font-size:1.12rem; }
+.preparing-entry small { color:#e3d9c5; }
+.preparing-wheel { display:block; font-size:2rem; animation:berth-ready 1.4s ease-in-out infinite alternate; }
+@keyframes berth-ready { from { transform:rotate(-18deg) translateY(-2px); } to { transform:rotate(18deg) translateY(2px); } }
+@media(prefers-reduced-motion:reduce) { .preparing-wheel { animation:none; } }
+
+/* Short windows use one scroll area. Tabs and quick links cannot squeeze the inventory to zero. */
+@media (max-height: 510px) {
+  body[data-ui-layout] .cabinet .overlay[data-screen] { --panel-top-gap: 5.6rem; }
+  body[data-ui-layout] .cabinet .overlay > :is(#cottage, #workshop) {
+    display: block;
+    margin-top: 0;
+    height: 100%;
+    overflow: auto;
+    padding: .7rem;
+  }
+  body[data-ui-layout] .cabinet .overlay > :is(#cottage, #workshop)[hidden] { display:none; }
+  .cabinet :is(#cottage, #workshop) :is(.pier-heading, .cottage-tabs) { margin-bottom: .45rem; }
+  body[data-ui-layout] .cabinet #cottage-content,
+  body[data-ui-layout] .cabinet #cottage-content:has(.near-workshop[open]),
+  .cabinet :is(#cottage, #workshop) .near-workshop[data-embedded="true"][open],
+  .cabinet :is(#cottage, #workshop) .near-workshop :is(.locker-body, #near-workshop-items, #near-workshop-collection) {
+    overflow: visible;
+  }
+}

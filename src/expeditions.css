@@ -1,0 +1,91 @@
+.pier-card.expeditions-card {
+  width: min(100%, 29rem);
+  max-height: 100%;
+  overflow: auto;
+}
+
+.expeditions-card[hidden] { display: none; }
+.expeditions-card .pier-heading { align-items: center; margin-bottom: .62rem; }
+.expeditions-card .pier-heading h2 { font-size: clamp(1.55rem, 5vw, 2.4rem); }
+.expeditions-card svg { width: 1rem; height: 1rem; flex: 0 0 auto; }
+
+.expedition-cargo {
+  display: grid;
+  grid-template-columns: minmax(5rem, 31%) 1fr;
+  align-items: center;
+  gap: .9rem;
+  padding: .55rem;
+  border: 1px solid #bd975b62;
+  border-radius: 3px;
+  background: linear-gradient(120deg, #1c4e52, #243033 75%);
+}
+
+.expedition-art { display: grid; place-items: center; aspect-ratio: 1.25; }
+.expedition-art img, .expedition-art canvas { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.expedition-manifest h3 { margin: .2rem 0 .32rem; font-size: clamp(1.05rem, 4vw, 1.32rem); }
+.expedition-stage { color: #ffd18f; font-size: .74rem; font-weight: 700; }
+.expedition-clock { display: inline-flex; align-items: center; gap: .36rem; color: #c0dfdb; font-variant-numeric: tabular-nums; font-size: .8rem; }
+.expedition-clock:has(time:empty) { display: none; }
+
+.expedition-funding { display: grid; gap: .35rem; margin: .65rem 0; font-size: .81rem; }
+.expedition-funding > div { display: flex; align-items: baseline; justify-content: space-between; gap: .4rem; }
+.expedition-funding progress { width: 100%; height: .56rem; accent-color: #f2b76d; }
+.expedition-totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.7rem, 1fr));
+  gap: .35rem;
+  margin: .65rem 0 0;
+}
+.expedition-totals > div { display: grid; gap: .12rem; padding: .38rem .48rem; background: #1c2d33; border-radius: 3px; }
+.expedition-totals dt { color: #d8c5ae; font-size: .69rem; }
+.expedition-totals dd { margin: 0; color: #ffe4ad; font-weight: 700; font-size: .87rem; }
+.expedition-detail, .expedition-notice { color: #dfd2bf; margin: .58rem 0 0; font-size: .79rem; line-height: 1.45; }
+.expedition-notice[data-error="true"] { color: #ffc5a6; }
+.expedition-form { display: grid; grid-template-columns: minmax(4.7rem, .72fr) 1fr; gap: .45rem; margin-top: .65rem; }
+.expedition-form input { width: 100%; min-height: 44px; padding-inline: .5rem; }
+.expedition-utility { width: 100%; margin-top: .65rem; }
+.expedition-modes { display: flex; gap: .35rem; margin-bottom: .52rem; }
+.expedition-modes button { flex: 1; font-size: .76rem; }
+.expedition-modes [aria-pressed="true"] { border-color: #deb679; color: #ffe4ad; }
+.expedition-receipt { display: inline-block; color: #ffe4ad; margin-top: .5rem; font-size: .76rem; }
+.expeditions-card [hidden] { display: none; }
+.expedition-confirm h2 { font-size: clamp(1.25rem, 5vw, 1.7rem); }
+.expedition-confirm .leave-actions .primary { flex: 1; }
+
+@media (max-width: 420px) {
+  .expedition-cargo { gap: .55rem; }
+  .expeditions-card .pier-heading h2 { letter-spacing: -.025em; }
+}
+
+.expedition-more { display: contents; }
+.expedition-more > summary, .expedition-extra-totals, .expedition-mobile-receipt, .expedition-compact-status { display: none; }
+body[data-ui-layout="mobile"] #expeditions:not([hidden]) { display: flex; flex-direction: column; }
+body[data-ui-layout="mobile"] #expeditions > * { flex-shrink: 0; }
+body[data-ui-layout="mobile"] .expedition-cargo {
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: .55rem;
+  padding: .4rem;
+}
+body[data-ui-layout="mobile"] .expedition-art { aspect-ratio: 1; }
+body[data-ui-layout="mobile"] .expedition-art :is(img, canvas) { max-height: 64px; object-fit: contain; }
+body[data-ui-layout="mobile"] .expedition-manifest h3 { font-size: 1rem; margin-block: .15rem; }
+body[data-ui-layout="mobile"] :is(.expedition-stage, .expedition-clock) { font-size: .75rem; }
+body[data-ui-layout="mobile"] .expedition-funding { font-size: .78rem; margin-block: .5rem; }
+body[data-ui-layout="mobile"] #expeditions-totals > [data-mobile-essential="false"] { display: none; }
+body[data-ui-layout="mobile"] #expeditions-totals:not(:has([data-mobile-essential="true"])) { display: none; }
+body[data-ui-layout="mobile"] .expedition-totals { margin-top: .4rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+body[data-ui-layout="mobile"] .expedition-totals dt { font-size: .75rem; }
+body[data-ui-layout="mobile"] .expedition-more { display: block; margin-top: .35rem; order: 1; }
+body[data-ui-layout="mobile"] .expedition-more > summary {
+  display: list-item; cursor: pointer; min-height: 44px; align-content: center;
+  font-size: .78rem; color: #eac692; padding-block: .4rem;
+}
+body[data-ui-layout="mobile"] .expedition-extra-totals { display: grid; margin-bottom: .5rem; }
+body[data-ui-layout="mobile"] .expedition-more .expedition-detail { margin-top: .15rem; font-size: .78rem; }
+body[data-ui-layout="mobile"] #expeditions-receipt { display: none; }
+body[data-ui-layout="mobile"] .expedition-mobile-receipt { display: inline-flex; min-height: 44px; align-items: center; font-size: .78rem; }
+body[data-ui-layout="mobile"] .expedition-compact-status { display: block; color: #e6cfaa; margin: .35rem 0 0; font-size: .78rem; line-height: 1.35; }
+body[data-ui-layout="mobile"] .expedition-form { margin-top: .35rem; }
+body[data-ui-layout="mobile"] .expedition-form button, body[data-ui-layout="mobile"] .expedition-utility { min-height: 44px; font-size: .8rem; }
+body[data-ui-layout="mobile"] .expedition-notice { font-size: .78rem; margin-top: .4rem; }
+body[data-ui-layout="mobile"] .expeditions-card [hidden] { display: none; }

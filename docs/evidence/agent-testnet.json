@@ -1,0 +1,118 @@
+{
+  "network": "testnet",
+  "agent": "a-8d6f53ad.reserve-aa46a4b8.testnet",
+  "contract": "s-1c9e76f4.reserve-aa46a4b8.testnet",
+  "cost": 495,
+  "revenue": 275,
+  "net": -220,
+  "receipts": [
+    {
+      "label": "grant_test_gold",
+      "hash": "Ex4FbKm69iNMfmYuhqYeF7ugVJ5UxonsN8J3VPZrJihS",
+      "success": true
+    },
+    {
+      "label": "configure_agent",
+      "hash": "7eDpC1xy29vzo2K1tLfrkUHnH5wr3EFpKXpcHperzgkV",
+      "success": true
+    },
+    {
+      "label": "replay",
+      "layer": "contract",
+      "reason": "Smart contract panicked: Agent nonce changed"
+    },
+    {
+      "label": "budget bypass",
+      "layer": "contract",
+      "reason": "Smart contract panicked: Agent budget exceeded"
+    },
+    {
+      "label": "forbidden item",
+      "layer": "contract",
+      "reason": "Smart contract panicked: Agent item forbidden"
+    },
+    {
+      "label": "self escalation",
+      "layer": "protocol",
+      "reason": "Access key does not allow method configure_agent"
+    },
+    {
+      "label": "bypass wrapper",
+      "layer": "protocol",
+      "reason": "Access key does not allow method collection_action"
+    },
+    {
+      "label": "wrong receiver",
+      "layer": "protocol",
+      "reason": "Access key receiver s-1c9e76f4.reserve-aa46a4b8.testnet does not match transaction receiver alice.bb-1ff20598-arena.testnet"
+    },
+    {
+      "label": "collection_action",
+      "hash": "8FocfVa2F2wZo1e3nFwdkjzXqbGUsM5QK2F8J6zh69AV",
+      "success": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "8pduA8t1paCyRFH51SpuJa2ukFTXdNqsagsmM7TLd7Vc",
+      "success": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "4baDqByhhpY5txHHpZoMvuTLNAbtfXMbQJZKKwVDf3s5",
+      "success": true
+    },
+    {
+      "label": "collection_action",
+      "hash": "5y41Lob5Pee6N1koYYSLKeQY6nzuHQoHQbKv9kbcYRXx",
+      "success": true
+    },
+    {
+      "label": "cumulative budget after resale",
+      "layer": "contract",
+      "reason": "Smart contract panicked: Agent budget exceeded"
+    },
+    {
+      "label": "configure_agent",
+      "hash": "4f4Q5bfWF9j9pKk3k3kYqdSYaqKk6jW2MbcAvcUe4ATS",
+      "success": true
+    },
+    {
+      "label": "revoked policy",
+      "layer": "contract",
+      "reason": "Smart contract panicked: Agent policy inactive"
+    }
+  ],
+  "buy": {
+    "action": "buy",
+    "item": "pirate-4-0",
+    "expected_price": 495,
+    "nonce": 1,
+    "reason": "Acquire discounted surplus for the merchant reserve",
+    "at": 1794539513583,
+    "hash": "GyU3AeQb62CBU9AR4vpmWriR8mqjWZfcKU2nsEtT8AYd",
+    "network": "configured-rpc"
+  },
+  "release": {
+    "action": "sell",
+    "item": "pirate-4-0",
+    "expected_price": 275,
+    "nonce": 2,
+    "reason": "Release reserve into scarce shop stock",
+    "at": 1794539555537,
+    "hash": "GQ1cTGg3pH71oErUV8uMr4YT1BHZNVAgSy4DPwX5N5th",
+    "network": "configured-rpc"
+  },
+  "codeHash": "BMiFUBPtfAyfcyd77UwrR2FJNg7iNyuTwtdKWwLYZ16S",
+  "verifiedPolicy": {
+    "items": [
+      "pirate-4-0"
+    ],
+    "budget": 495,
+    "per_trade": 495,
+    "spent": 495,
+    "revenue": 275,
+    "nonce": 2,
+    "expires_at": 1794541303583,
+    "enabled": false
+  }
+}

@@ -1,0 +1,10 @@
+# Copy to .env.privy (ignored). These are PUBLIC application identifiers, not secrets.
+# Never add an App Secret to browser code or VITE_* variables.
+BARREL_NEAR_SOCIAL=1
+BARREL_NEAR_SOCIAL_PROVIDER=privy
+BARREL_NEAR_SOCIAL_CALLBACK=http://localhost:3000/
+PRIVY_APP_ID=
+# Optional: leave blank for the development app's default/root web configuration.
+PRIVY_CLIENT_ID=
+# The existing testnet game/referee/sponsor configuration is still required.
+# Enable identity tokens and Google + email in the Privy dashboard.
