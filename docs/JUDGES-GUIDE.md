@@ -2,6 +2,8 @@
 
 [Play](https://nearly-afloat-production.up.railway.app/) · [Running build](https://nearly-afloat-production.up.railway.app/build-info.json)
 
+[Watch the 70-second demo](https://x.com/LeinedD/status/2121723268059333071) · [Download the Full HD recording](https://github.com/dlb93la/nearly-afloat-hackathon/releases/download/demo-2026-11-14/NEARly-Afloat-Demo-FullHD-60fps.mp4)
+
 ![A match on the floating arena](media/arena.webp)
 
 ## What to try

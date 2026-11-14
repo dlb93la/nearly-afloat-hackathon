@@ -1,10 +1,12 @@
 {
-  "preparedAt": "2026-11-14T19:47:47.985Z",
-  "published": false,
+  "preparedAt": "2026-11-14T22:13:43.927658+00:00",
+  "published": true,
   "provenance": {
     "privateBaseCommit": "890a0e6022bc471884070f7c2b6e1649157b6890",
     "includesWorkingTreeChanges": true,
-    "note": "Current source snapshot. Original private history is preserved separately; no remote or visibility was changed."
+    "note": "Game and contract source remains the initial approved public snapshot. This update changes README, judges-guide media links and presentation assets only. Original private history is preserved separately.",
+    "initialPublicCommit": "7b2dbe06ecc47beac319a8a0fa85c6c59ec31c1a",
+    "presentationOnlyUpdate": true
   },
   "license": "PolyForm Shield License 1.0.0; original asset permissions in ASSETS-LICENSE.md",
   "files": [
@@ -50,23 +52,23 @@
     },
     {
       "name": "README.md",
-      "bytes": 4735,
-      "sha256": "594ec066b7d0cd9c04180294bdf84799887c14836dc812c3129b2ca8e80177e0"
+      "bytes": 10059,
+      "sha256": "5a2aa48a34069276777a6be923fcdd7af8a285c5f2be9c4e74cf6d72051cfcb8"
     },
     {
       "name": "agent-journal.mjs",
-      "bytes": 1386,
-      "sha256": "582297c56add25f684553d242a658d6940744055900f4972110191ca8a75e860"
+      "bytes": 1349,
+      "sha256": "646b2a6fe57f235ab14266d1b8fbf78edec54cfcd997642091153cea95c9cacb"
     },
     {
       "name": "agent-provision.mjs",
-      "bytes": 4300,
-      "sha256": "031df8468f70f779ddc5b54ed81a312b43d9fa20bfbc5b2047351d78e5f4b219"
+      "bytes": 4231,
+      "sha256": "e51ac4b6e3fd91a3c8b0a1d5fd74198beeb4fe1d4096991948d6f8bf303a24e3"
     },
     {
       "name": "config/deploy.example",
-      "bytes": 901,
-      "sha256": "c2b8fb8d386eaf783617f906a363c9c8f83201f614588b02d240c6c293815429"
+      "bytes": 900,
+      "sha256": "7a4b4f44e7e139b03ae1962950c7ad05c2e296f8c576327d2e22934d62c5a99e"
     },
     {
       "name": "config/privy.example",
@@ -80,8 +82,8 @@
     },
     {
       "name": "docs/JUDGES-GUIDE.md",
-      "bytes": 8103,
-      "sha256": "343a4999efb74630887dd149d73bae1a2a9a4b7ba340f700809d6242bffdfce0"
+      "bytes": 8339,
+      "sha256": "b9013f497116c258864e5655880d0d6f4f1ad43d9d2b672a169c2e6028831e93"
     },
     {
       "name": "docs/evidence/agent-gold-testnet.json",
@@ -95,8 +97,8 @@
     },
     {
       "name": "docs/evidence/expedition-human-sale-2026-11-14.json",
-      "bytes": 3035,
-      "sha256": "9c0560b55ae072c558e16ab0fae41633aa720c5867b1c712cb608d0ab4e154ab"
+      "bytes": 2932,
+      "sha256": "37493ade198a16d8c3f6649c655f95d40052b766b8e0b13912e9e21ee3cd4e37"
     },
     {
       "name": "docs/evidence/judges-expedition-2026-11-14.json",
@@ -109,19 +111,44 @@
       "sha256": "40bf88cc3d33b8e38d8c78d9ede433a1050c0968028d2d2196b4061a732b5dcf"
     },
     {
+      "name": "docs/media/canopy-parrots.webp",
+      "bytes": 232072,
+      "sha256": "e934f393d2a187652a38cf98ef8ca05c689d0d8d9f4e1e1420b97237f5cc8b1e"
+    },
+    {
+      "name": "docs/media/demo-preview.gif",
+      "bytes": 4766382,
+      "sha256": "29c550aece1cb97873b1bf22b41a4c8f01c31bae5ca9450932008bf1de8bb168"
+    },
+    {
+      "name": "docs/media/harbor-showcase.webp",
+      "bytes": 208714,
+      "sha256": "c3fdebe02d96cd4cf4f9d6bbaf3509ab5d4d7b5c5f2d50de574bf0ef71ac4629"
+    },
+    {
       "name": "docs/media/harbor.webp",
       "bytes": 196708,
       "sha256": "cb227cefad2b31439695d820c7afcf7b9a309d33fb94dbe95d414710388a90fe"
     },
     {
+      "name": "docs/media/kraken.webp",
+      "bytes": 217634,
+      "sha256": "f83abab2e329edb3ba58b95bef5907640a226278bee33539b52118079f282e9d"
+    },
+    {
+      "name": "docs/media/night-arena.webp",
+      "bytes": 179102,
+      "sha256": "32686bc78856bf348a9997f4a5987b3620b76e6448dab53c40e8429fe8c6f001"
+    },
+    {
       "name": "economy.mjs",
-      "bytes": 39469,
-      "sha256": "28a9d7aff4786fab2b8493c0b30e509125eb976577bba170709028d0c6ceeffd"
+      "bytes": 38681,
+      "sha256": "e8a4dd788f7fbf9530c2c9588dab6feb3a1accd8cdf25c1c367f88a754b8e6c8"
     },
     {
       "name": "index.html",
-      "bytes": 45419,
-      "sha256": "fc732158d4e1f7e41fe4cc87591bb2c0ff0192931430507331616d957866e3dc"
+      "bytes": 44873,
+      "sha256": "b3f01084273bfd5b6f07ce0bebb74112927b3a34c4f92e89c8aae387f332b350"
     },
     {
       "name": "judges-expedition.mjs",
@@ -135,8 +162,8 @@
     },
     {
       "name": "merchant-agent.mjs",
-      "bytes": 6759,
-      "sha256": "cdb2bc572e6b0b709b49ed11a754e3067bbcd0e61200112977200a1271b67ce7"
+      "bytes": 6633,
+      "sha256": "3fe49e02e224a4d4eb9bb221a489ab48f11247cf377819d3d3a1ecc43a6209ec"
     },
     {
       "name": "near-arena.mjs",
@@ -160,8 +187,8 @@
     },
     {
       "name": "near-arena/README.md",
-      "bytes": 2494,
-      "sha256": "ee3093d9369da872f7fe13fc8a9a2bb793a797e6e78df24edd325a04c765a63e"
+      "bytes": 2493,
+      "sha256": "44e0093c2867b00d5c3d5079672cca4ee8105c23af785921c3ca47ff78e881b7"
     },
     {
       "name": "near-arena/src/catalog_data.rs",
@@ -170,8 +197,8 @@
     },
     {
       "name": "near-arena/src/collection.rs",
-      "bytes": 10669,
-      "sha256": "b11c027a125ba5e3794ac0eb8446c283a74a9c18968f66befc9f87fde29dd03a"
+      "bytes": 10413,
+      "sha256": "f84bbdd0aadc5eff05837bd82b8e6db280cc8e6e9a927551f180149be9cb7bbe"
     },
     {
       "name": "near-arena/src/economic_agent.rs",
@@ -205,18 +232,18 @@
     },
     {
       "name": "near-arena/src/workshop.rs",
-      "bytes": 16970,
-      "sha256": "f758bd467a6eccb7237bce188a5b7ce0fc161286313bc06f8254db3d5f0e9e70"
+      "bytes": 16496,
+      "sha256": "84839d16000f261ac4d57ab5877da1913d5804cfa9a38d240519c537212026e0"
     },
     {
       "name": "near-arena/test/agent-sandbox.test.mjs",
-      "bytes": 21321,
-      "sha256": "580034d0081cd3f123f7edc3a489e041654628667b87c55c3703a83e29e2f9fa"
+      "bytes": 21033,
+      "sha256": "b8c7029a19ff7a4cf467d27a3495d3cb956c72f6bfecfa9516704caf16cab45e"
     },
     {
       "name": "near-arena/test/contract-session.test.mjs",
-      "bytes": 39389,
-      "sha256": "7ba156d2d933dabbc5643aef53471f5f693add328719296220877afca60dc271"
+      "bytes": 38635,
+      "sha256": "5743540fd9183d757266859e481002d402369dbd882501bca37b95f3da6c084d"
     },
     {
       "name": "near-arena/test/judges-demo.test.mjs",
@@ -225,8 +252,8 @@
     },
     {
       "name": "near-arena/test/sandbox.test.mjs",
-      "bytes": 11591,
-      "sha256": "9f2816ea71c2d863e2ec3f55670eaf37914525488448e947815d8acff01f9444"
+      "bytes": 11417,
+      "sha256": "bef2895ef8208282f7349198b4674ece6f54606b4869c61aed59163fd7103904"
     },
     {
       "name": "near-embedded.mjs",
@@ -235,8 +262,8 @@
     },
     {
       "name": "near-expeditions.mjs",
-      "bytes": 7182,
-      "sha256": "a581f43b398ca3030a5c0278e4216d0b119965618bc1bd5d3a818bf60c0975b2"
+      "bytes": 7049,
+      "sha256": "6b486ace5dcb2fbd8eb5a9cac489d79f4aa9431adea655fe3a4eeb3831252769"
     },
     {
       "name": "near-expeditions/.gitignore",
@@ -255,8 +282,8 @@
     },
     {
       "name": "near-expeditions/README.md",
-      "bytes": 5862,
-      "sha256": "de76b9ea43de222ee82ef9a55a5262f7e3d24a545ff8f5b93ee4dd36e6b3f226"
+      "bytes": 5859,
+      "sha256": "68ea65f14d1d5e6c608e07c8bd70601aba370b102aaeabc9a4bfc259c7f06f53"
     },
     {
       "name": "near-expeditions/src/lib.rs",
@@ -320,8 +347,8 @@
     },
     {
       "name": "package.json",
-      "bytes": 1182,
-      "sha256": "8b80baacee44a723ae81b354b800ca210de303332bd78057c82cef7cf543e63a"
+      "bytes": 1148,
+      "sha256": "5a47c467082471b1d0fbb6ff3456629b9f5b75f222f4d12c5a4a472394e5ce3c"
     },
     {
       "name": "public/audio/argh.ogg",
@@ -365,13 +392,13 @@
     },
     {
       "name": "public/proofs/agent-verified.json",
-      "bytes": 2488,
-      "sha256": "0197913a01ebb827bb880f122cc8ebe5450e0a97d5a0360c26b023495deaeb90"
+      "bytes": 2408,
+      "sha256": "140ac738121cd313e5d5b9cddb682d86d7923b0a48bc39c28a55d4d3322d82bb"
     },
     {
       "name": "public/proofs/agent.html",
-      "bytes": 4952,
-      "sha256": "11070c30668e0823b945d840eeef6c789ba528e10beb35bf7500294f4dab03b5"
+      "bytes": 4946,
+      "sha256": "37b979aa62f68993275a339af2380af6aada5789f39ddcbd5db17be618e0cf68"
     },
     {
       "name": "public/proofs/judges-expedition.json",
@@ -410,13 +437,13 @@
     },
     {
       "name": "scripts/merchant-reserve-daemon.mjs",
-      "bytes": 949,
-      "sha256": "9820bdbe0a777d7b99e76cefb333d3f20a7a48af05fcf6cbea65ea52b6bcba2d"
+      "bytes": 927,
+      "sha256": "9e9dd7acb6a87c714a9d66a1dc51f0735127813c30a8d379cdd4e2778c5f1d90"
     },
     {
       "name": "scripts/merchant-reserve-preview.mjs",
-      "bytes": 4316,
-      "sha256": "73877c0505adb67c77c9f80e8d30d14ee1b4c388c75f2cfdd9864a9dee3da99f"
+      "bytes": 4244,
+      "sha256": "d5401e1936f693ccb8fa3bf780bf64ed88798f03f16fa58a7c6bae71258bfc97"
     },
     {
       "name": "scripts/near-candidate-rehearsal.mjs",
@@ -425,8 +452,8 @@
     },
     {
       "name": "scripts/near-catalog.mjs",
-      "bytes": 1857,
-      "sha256": "4757177569ac46fcc5795472296cc092a1ccbb63f370a296c808da2fb3de1f51"
+      "bytes": 1827,
+      "sha256": "ce901a3458ba1da0bdf0803cd6fe12b35fc42e5cc19c72b9ab2f8c3b2362d578"
     },
     {
       "name": "scripts/near-setup.mjs",
@@ -435,8 +462,8 @@
     },
     {
       "name": "scripts/near-social-preview.mjs",
-      "bytes": 6933,
-      "sha256": "2a5c1e1fecbedf7af56fe0d72c60c535e5731997cb311572bd562a3e032f5013"
+      "bytes": 6826,
+      "sha256": "5b7e48a10f6f0063a34b6bbe46360c29face3b74ddb241035d02ab468b2cf55d"
     },
     {
       "name": "scripts/near-verify.mjs",
@@ -460,8 +487,8 @@
     },
     {
       "name": "scripts/verify-candidate.mjs",
-      "bytes": 1487,
-      "sha256": "1fb6db600d97ce690d5179531803951a26a99b4a0cdf7eb3b3603a9eca8fab4e"
+      "bytes": 1460,
+      "sha256": "a2afcf2540f329b89a0a1c548dc6a14a0956f5e1c0ec3c2101ea25d769cd1c66"
     },
     {
       "name": "scripts/verify-expedition-sale.mjs",
@@ -480,13 +507,13 @@
     },
     {
       "name": "scripts/verify-private-preview.mjs",
-      "bytes": 3606,
-      "sha256": "31966c1ea300ec957bd1945c89cb05de1af61b963538c4bd9d28ef84fa4c1a15"
+      "bytes": 3544,
+      "sha256": "bf4bbee90c2f25d929a39d7531e961961fe778c80f1538984f4459ba5f382aa0"
     },
     {
       "name": "server.mjs",
-      "bytes": 77522,
-      "sha256": "8d191957d16a8f956b735ca1122c35490061798c21d8a71a6cfe4af951bc78b6"
+      "bytes": 75885,
+      "sha256": "8688649c943f480f8e5746fb6fc52d9bf4d372c2888992ee6b9208ea630b6608"
     },
     {
       "name": "shared/arena-entry.mjs",
@@ -495,8 +522,8 @@
     },
     {
       "name": "shared/arena-hazards.mjs",
-      "bytes": 17151,
-      "sha256": "2438322cd97d120d3375f7f19fc22f9f0042eeb3beb494e58771ffa1a4e98e51"
+      "bytes": 16820,
+      "sha256": "b13c45cd9579bef258beea6cbe70560080e3cb02d9cb476c16e3cd7e0277d38a"
     },
     {
       "name": "shared/arena-maps.mjs",
@@ -510,8 +537,8 @@
     },
     {
       "name": "shared/cosmetics.mjs",
-      "bytes": 5384,
-      "sha256": "24daabaa27b4df997019e190d84b84041190413ebe906fac9500a307c125614f"
+      "bytes": 5298,
+      "sha256": "8a1cb86a7c594732e0a1311d7689494e7fe580ef1f3e7f2b8d5bcf402c998b56"
     },
     {
       "name": "shared/economy-policy.mjs",
@@ -525,8 +552,8 @@
     },
     {
       "name": "shared/experimental-traps.mjs",
-      "bytes": 6837,
-      "sha256": "a0fd7d0a0b0c9ec17424378956b260587df85bc1b38f12a4cf725f381231d8b6"
+      "bytes": 6686,
+      "sha256": "d5992b563f1f4607693e4ff271ae56bf9747385e27be7a4d16458ce5dd236810"
     },
     {
       "name": "shared/live-vault.mjs",
@@ -545,8 +572,8 @@
     },
     {
       "name": "shared/merchant.mjs",
-      "bytes": 3149,
-      "sha256": "76dac3fd65e4d5bb37d2f8e28e74f10c96344d7e2af8ff4172a5374db0175418"
+      "bytes": 3070,
+      "sha256": "c8282c8733e3c6a6df4ba896093e2a5fa7f3ed84e7bed4a4e61376636dd14efe"
     },
     {
       "name": "shared/rarities.mjs",
@@ -565,8 +592,8 @@
     },
     {
       "name": "shared/simulation.mjs",
-      "bytes": 49025,
-      "sha256": "339fb06d1b5be7f0050a92159d2d59321f6597e0f1b39f49b9a10df96f71f767"
+      "bytes": 47940,
+      "sha256": "5e9ea0d8d61db78570a017ba90cc7157881d5eea4a74b9b1cf44476a1162a704"
     },
     {
       "name": "shared/social-session.mjs",
@@ -575,8 +602,8 @@
     },
     {
       "name": "shared/trap-lab.mjs",
-      "bytes": 4050,
-      "sha256": "6664f5d4b10e8f7083c94fff4b9c018788bd60cb62bf8d635f345eb3d6a7d61d"
+      "bytes": 3971,
+      "sha256": "737ee7b569e0aeea4c828380f5631433ca452a35d0496bd3a06768a5f6efce77"
     },
     {
       "name": "shared/vault.mjs",
@@ -610,8 +637,8 @@
     },
     {
       "name": "src/arena-cargo-view.js",
-      "bytes": 14854,
-      "sha256": "f133bc2d4d9f6cd41690d8421b3330b53e4eed03f45f3ed1af9a468cc76b2e20"
+      "bytes": 14550,
+      "sha256": "3696c6b33814bfdbf58cc1aacafc39c839bd6164badad323e53d272426f9af0b"
     },
     {
       "name": "src/arena-gold.css",
@@ -625,8 +652,8 @@
     },
     {
       "name": "src/arena-hazard-view.js",
-      "bytes": 15594,
-      "sha256": "b365c75228b66648d3009e553e048bb21cb87de7950684bc1db9a40f7072910f"
+      "bytes": 15283,
+      "sha256": "14c7b641fc5182ac0301632c1bfd57fce406122b1d7049f2d18597d79d8755dc"
     },
     {
       "name": "src/arena-map-view.js",
@@ -635,13 +662,13 @@
     },
     {
       "name": "src/arena-view.js",
-      "bytes": 60609,
-      "sha256": "b4abbdb60b507686bf352a4e37f99bd89361a8e42b57fbf346159d0937305c45"
+      "bytes": 59293,
+      "sha256": "60c7be43441e2324bf0cd6ec8012f99a4dd8595763b7485b51138bab0928dfdf"
     },
     {
       "name": "src/barrel-model.js",
-      "bytes": 4251,
-      "sha256": "df38b5df3cb958d31ea3e12c182e73782e18ce65153685b591dbb10b5046b5be"
+      "bytes": 4216,
+      "sha256": "30f5cd7c540901f01769a5d9b830a786dd489380a8a5480444ae3bd14428f1b9"
     },
     {
       "name": "src/battle-feed.js",
@@ -650,23 +677,23 @@
     },
     {
       "name": "src/bay-coast.js",
-      "bytes": 17758,
-      "sha256": "d5724a562a5d245c275e64cde838b507d19414ebd976fad98d3e62d9bf15c91e"
+      "bytes": 17390,
+      "sha256": "f9641bb3d3f90eb64fb682cd86083b989deb7a3ced23a0714ca9fc161731c1e2"
     },
     {
       "name": "src/bay-expansion.js",
-      "bytes": 32311,
-      "sha256": "5163f155842124b8bc1c1e5067245914b165df223ef38084c3ca813ca18f1d61"
+      "bytes": 32308,
+      "sha256": "08c8d436c7e0f6f11e58e4c77243ea0d025d53a0ed60bcd1a54c6487e7fdee77"
     },
     {
       "name": "src/bay-host-scene.js",
-      "bytes": 11524,
-      "sha256": "0bacdd6973869c93e1d32da5fc919e9d10f7f4686a2336a15e3ce319acfd4318"
+      "bytes": 11271,
+      "sha256": "d77857bae4c050ba229910b11c2f50c6b13fe8d5a93e0a4e57c5b57ace9a9750"
     },
     {
       "name": "src/bay-hosts.js",
-      "bytes": 5699,
-      "sha256": "a4e2f09286daf7b503a679d94e44671c1c28866ac465f91e5c17d11220d28fba"
+      "bytes": 5534,
+      "sha256": "e4c324e21d1fe6c59421739b99e23ef583da0a82b91d59576db67e999e05a947"
     },
     {
       "name": "src/bay-life.js",
@@ -685,8 +712,8 @@
     },
     {
       "name": "src/bay-view.js",
-      "bytes": 41985,
-      "sha256": "edca1a8e6d82602510e86a5bd598065ca218f5a5b3f343929f2a4ff1dd294af0"
+      "bytes": 41121,
+      "sha256": "d654703928dbbdb617a5424329448f510f7ae113e9eff0c1e79a896617a07623"
     },
     {
       "name": "src/captain-menu.css",
@@ -705,8 +732,8 @@
     },
     {
       "name": "src/cottage.js",
-      "bytes": 15072,
-      "sha256": "593db50fa92ca8fb465d9c2d54a032f604b160bb313646af358ac3016bb04640"
+      "bytes": 14742,
+      "sha256": "2ffa17634a875744cd31b6f83b1f3f8728de3c6b3dba8f75526a69d36934c586"
     },
     {
       "name": "src/crowd-audio.js",
@@ -735,18 +762,18 @@
     },
     {
       "name": "src/expeditions.js",
-      "bytes": 28580,
-      "sha256": "af6084694359a389908922b4c5482308284351a0a02af51143eade5ce4357289"
+      "bytes": 28006,
+      "sha256": "8fce4b8c432989b2d352bf12679bd100b4afa37b7d48f006c09c12f4329a86d4"
     },
     {
       "name": "src/experimental-trap-view.js",
-      "bytes": 7686,
-      "sha256": "b3cf5bd07234eb171b0b9a1847111662e1eb84809280d58bdbdb71dae889b44a"
+      "bytes": 7501,
+      "sha256": "f3b795d4d5e1c43b1a78953f3e916646f9b6e0c67451f4cbecad5962ad512701"
     },
     {
       "name": "src/first-brawl.css",
-      "bytes": 4329,
-      "sha256": "7b3889999ae706ed989deec2d3ab6cc347bba5275dc4e4ab9cf5c1dbac732b07"
+      "bytes": 4251,
+      "sha256": "cb89b1011ade96700491f773396d91a79494859fec164f3912c4f6c0a5a66769"
     },
     {
       "name": "src/fort-models.js",
@@ -770,8 +797,8 @@
     },
     {
       "name": "src/harbor-audio.js",
-      "bytes": 1906,
-      "sha256": "8839ee63b9d58ef3a8c57e43d9fdcd0ad451184f6967d24cef229df4c26a375d"
+      "bytes": 1905,
+      "sha256": "6b91b8d8e25be786e3090c63cc1bbdc3cdcc2593419f29d4f6135beab92a901a"
     },
     {
       "name": "src/harbor.js",
@@ -780,8 +807,8 @@
     },
     {
       "name": "src/interface-layout.css",
-      "bytes": 10406,
-      "sha256": "fb120b0db565aab291fd977d08f5d04d19c36514a9131230ac7008599a0c1868"
+      "bytes": 10405,
+      "sha256": "36ce9082b133403a3cbb1aed44da049fea921c6879145aa8b50a43aff5d27618"
     },
     {
       "name": "src/interface-layout.js",
@@ -790,8 +817,8 @@
     },
     {
       "name": "src/item-thumbnail.js",
-      "bytes": 10536,
-      "sha256": "7c59247aa1723931c0840d1e71245e1a926af50b2f0199500d303ec2136cc6ae"
+      "bytes": 10535,
+      "sha256": "b0e8ebb60d6aaa57f112f742f1ef743704d2aa427438ac75f31c48ffab14c26f"
     },
     {
       "name": "src/judges-expeditions.css",
@@ -805,8 +832,8 @@
     },
     {
       "name": "src/main.js",
-      "bytes": 101731,
-      "sha256": "5e2070c61dc2b5e3528ea2410f3adfce05302b8626132c87cc51ed2ca8defc97"
+      "bytes": 99483,
+      "sha256": "97770d8124c73eb32ba67e4ee0478a37cf87ca8c636d783ea70ff8e66d08c76d"
     },
     {
       "name": "src/mobile-essential.css",
@@ -815,23 +842,23 @@
     },
     {
       "name": "src/near-wallet.js",
-      "bytes": 5997,
-      "sha256": "d0588ed48a54a9d558a6106b24d73101d495e36db5e80eebb8a3f12afbb83024"
+      "bytes": 5864,
+      "sha256": "ae243f942a04bf7ffb5a054cbf91a0e1828b5ed78022ff7497576af2e51bdfad"
     },
     {
       "name": "src/near-workshop.css",
-      "bytes": 11539,
-      "sha256": "453be1f7d03bfff0d4ce5259b1e6507cf2f5f1648f2bdbaa0732c77d2f209eeb"
+      "bytes": 11536,
+      "sha256": "71b542772663ef010cb2668e5ee37e9732c11b807e5697c8083f59fa5c3b431c"
     },
     {
       "name": "src/near-workshop.js",
-      "bytes": 42983,
-      "sha256": "3ea1be6e80cb20425825b381b809e236769fbd5d14f69f5604b7bc028fdfe0f8"
+      "bytes": 42147,
+      "sha256": "1840624006787f87b44072f9b798b0d860cfa2a81691775878e452ba947521a1"
     },
     {
       "name": "src/night-lighting.js",
-      "bytes": 5774,
-      "sha256": "8d30515c2129f0028dccded72a55e0c0f06b1827b848de0201ab91cf9a2ab02f"
+      "bytes": 5647,
+      "sha256": "2ef10aa2abf3df4543c210f7674e5b82e6e8d19f0f26d63efd700b9e73aeab5e"
     },
     {
       "name": "src/pending-gold.js",
@@ -845,13 +872,13 @@
     },
     {
       "name": "src/pet-model.js",
-      "bytes": 5728,
-      "sha256": "34b32c0665aa1bd9f1277455c6f249a7e6ae25a73f60255d571331eab5567545"
+      "bytes": 5727,
+      "sha256": "ac4e964dd4d29fab1d62bddc60ae3719d5a8286c8f9edef9f312259f278fe32f"
     },
     {
       "name": "src/pier.css",
-      "bytes": 25012,
-      "sha256": "91031ba1797c12fd66ebbba1032adc74238dc10617a0a54422ed0f557251bf95"
+      "bytes": 24475,
+      "sha256": "3906d79070449e630e6446a0d4a62bc20f826d04217343b388c02c13fef3bf7c"
     },
     {
       "name": "src/pirate-bird.js",
@@ -865,8 +892,8 @@
     },
     {
       "name": "src/player-markers.js",
-      "bytes": 1835,
-      "sha256": "41f31911e579f48d23c3b75e390f809c28b72b52416aa06b31abc780b4948cbe"
+      "bytes": 1780,
+      "sha256": "c061a556f7372b36e3f6d1257997c5ec005d82445eec79c799ff3813e71d54a7"
     },
     {
       "name": "src/profile-progress.css",
@@ -890,8 +917,8 @@
     },
     {
       "name": "src/style.css",
-      "bytes": 10070,
-      "sha256": "0ef40bf6542811c3966cd1c5f247e806b09a6193b0829d1a8756de2c021749a3"
+      "bytes": 9870,
+      "sha256": "5376940bdf7369fd8bbc1622df2dba589276fc8606ffae353956a01638322fc4"
     },
     {
       "name": "src/trap-lab.css",
@@ -900,8 +927,8 @@
     },
     {
       "name": "src/trap-lab.js",
-      "bytes": 11540,
-      "sha256": "1e94c1e756a6fddbb979769ae2ea420dd96825dea5496c4d7d4e48f15fd4e772"
+      "bytes": 11300,
+      "sha256": "d7180b122b3229bd030034f60b2f80a6a20af0ad89ee8d15b41eecc30cc60c36"
     },
     {
       "name": "src/vault-view.js",
@@ -915,23 +942,23 @@
     },
     {
       "name": "src/wood-planks.svg",
-      "bytes": 3229,
-      "sha256": "fde6a23f994e15b43ef8fd89813dcc3eb219b740c17f34e6199059ff15813039"
+      "bytes": 3228,
+      "sha256": "ef8e1700f170c32e5fb467871dadba31f2b24d9795ff69026c1b57e168720b49"
     },
     {
       "name": "src/workshop.js",
-      "bytes": 24488,
-      "sha256": "32396f4b420831968e11243e68c3cd4e77ee900e29cc6a760795380c058ab22f"
+      "bytes": 23973,
+      "sha256": "4c2ee64e3a3e6c907de247668af6b8637c9d4c701fb77162cc6559119d928b7d"
     },
     {
       "name": "src/world.css",
-      "bytes": 10495,
-      "sha256": "0e1cf2b24ad2dafb4e4e2a083f72b8ca29d6d9825c26cb13ae62c6ea0584fb53"
+      "bytes": 10294,
+      "sha256": "c4c9528510a8c813c99b85925e586c3b58a82dbd3e68b9ab15e219d830ba1b36"
     },
     {
       "name": "test/agent-journal.test.mjs",
-      "bytes": 1685,
-      "sha256": "695528450b966d0a1e82f0f38b9ab83c9b0b5b7930f49410d6a1b193ed099017"
+      "bytes": 1647,
+      "sha256": "a42973cd07e8010bd5e5b283af8fee214dc7ea8199c5c3362e7c71e428332ce7"
     },
     {
       "name": "test/arena-cable-route.test.mjs",
@@ -960,8 +987,8 @@
     },
     {
       "name": "test/economy.test.mjs",
-      "bytes": 17960,
-      "sha256": "f2fac473f04e084c07cccdc7cbb05703b542cfdd7990cb8df1eff2b3eb14e7d6"
+      "bytes": 17597,
+      "sha256": "5dd83078c4d93187534ea369a0bb941e9812dd90b43911e027fc80db3fe60453"
     },
     {
       "name": "test/expeditions-interface.test.mjs",
@@ -985,8 +1012,8 @@
     },
     {
       "name": "test/first-brawl.test.mjs",
-      "bytes": 3394,
-      "sha256": "75c8703020ba119658dd6c2e49ae3a9cede9904757fc0f44ec59d38ce8087d93"
+      "bytes": 3393,
+      "sha256": "0de862ce1d2b81a041ce8e4e55c654e3bd85b7908411f1eaf3e6a50d99578782"
     },
     {
       "name": "test/fixtures/expedition-contribution-dom.mjs",
@@ -1025,8 +1052,8 @@
     },
     {
       "name": "test/ledger-migration.test.mjs",
-      "bytes": 2499,
-      "sha256": "0d30629cd3fb5d207293c8684c263ea538fd070b718891fdbd9d459084c20193"
+      "bytes": 2497,
+      "sha256": "944f74434feeba3eb54a363cf10ea346ce9af545ea7319e57d0c6db995389ca3"
     },
     {
       "name": "test/live-vault.test.mjs",
@@ -1050,8 +1077,8 @@
     },
     {
       "name": "test/merchant.test.mjs",
-      "bytes": 7337,
-      "sha256": "ceea285022040a794853adc639fcb58aadac936af6569c068b49431d43962755"
+      "bytes": 7189,
+      "sha256": "4c0a425e203fc01f9ab4086a2cd93f7863ac5b66efaf4b342676ee363bc25837"
     },
     {
       "name": "test/near-embedded.test.mjs",
@@ -1110,8 +1137,8 @@
     },
     {
       "name": "test/simulation.test.mjs",
-      "bytes": 20325,
-      "sha256": "575295665fd71fb74f0392595cb759f7c598db1243bfa6749af2cfd6ae3ce7dc"
+      "bytes": 19915,
+      "sha256": "f1e3e7eeb0f14e37ea4eb6c93499a31501e76e8895850a0368300c9be04a2aae"
     },
     {
       "name": "test/social-action-session.test.mjs",
@@ -1120,13 +1147,13 @@
     },
     {
       "name": "test/trap-lab.test.mjs",
-      "bytes": 8867,
-      "sha256": "84bb8d0b8e420723fc7c188a516c4805f029fc68799c5a1533e07a40028eed62"
+      "bytes": 8678,
+      "sha256": "b99d1772a007a332155cbf48889d92bbb20fd943af753ffc859b876bc2e1a097"
     },
     {
       "name": "trap-lab.html",
-      "bytes": 6044,
-      "sha256": "a68c9f853e604b3e91a5bd1e83ec0621328981fce7ac205ed5ab893bb5801790"
+      "bytes": 5974,
+      "sha256": "b054ecd7130769cee52cd2e1555e078b5f84a651b44b9b763a098ff54c49f8a3"
     },
     {
       "name": "vite.config.js",
@@ -1138,5 +1165,13 @@
       "bytes": 553,
       "sha256": "5f6f3b6b02774258d0d1f5737784f88852fab96df070f517c525fa594e1389b3"
     }
-  ]
+  ],
+  "initialPreparedAt": "2026-11-14T19:47:47.985Z",
+  "hashConvention": "SHA-256 of canonical Git blob bytes; text line endings may differ in a Windows working copy.",
+  "media": {
+    "sourceCommit": "7b2dbe06ecc47beac319a8a0fa85c6c59ec31c1a",
+    "fullVideo": "https://github.com/dlb93la/nearly-afloat-hackathon/releases/download/demo-2026-11-14/NEARly-Afloat-Demo-FullHD-60fps.mp4",
+    "videoSha256": "7ec5700e524e34cd02329a7d6254d738bb56ee78b93f6f57bf49c8d4811fe199",
+    "note": "Controlled game-engine demonstrations and identified historical evidence summaries. Offline capture FPS is not a device benchmark."
+  }
 }
