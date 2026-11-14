@@ -14,7 +14,7 @@ body[data-ui-layout="mobile"] .cabinet .overlay > .pier-card {
   width: min(100%, 23rem);
   height: auto;
   max-height: min(64dvh, 100%);
-  padding: .65rem;
+  padding: .5rem;
   border-radius: 5px;
   overflow: auto;
 }
@@ -35,12 +35,12 @@ body[data-ui-layout="mobile"] .cabinet #cottage-content {
   overflow: auto;
 }
 body[data-ui-layout="mobile"] .cabinet :is(.pier-heading, .captain-menu-heading) {
-  gap: .45rem;
-  padding-bottom: .4rem;
-  margin-bottom: .45rem;
+  gap: .35rem;
+  padding-bottom: .25rem;
+  margin-bottom: .3rem;
 }
 body[data-ui-layout="mobile"] .cabinet :is(.action-card h2, .pier-heading h2, .captain-menu h2) {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 1.2;
   margin: 0;
 }
@@ -123,12 +123,44 @@ body[data-ui-layout="mobile"] .cabinet .near-workshop[data-embedded="true"] > .p
 
 @media (max-height: 510px) {
   body[data-ui-layout="mobile"] .cabinet .overlay[data-screen] { --panel-top-gap: 3.1rem; place-items: end end; }
-  body[data-ui-layout="mobile"] .cabinet .overlay > .pier-card,
-  body[data-ui-layout="mobile"] .cabinet .overlay > :is(#workshop, #cottage) {
+  body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .overlay > .pier-card,
+  body[data-ui-layout="mobile"][data-ui-orientation="landscape"] .cabinet .overlay > :is(#workshop, #cottage) {
     width: min(100%, 25rem); height: auto; max-height: 100%; overflow: auto;
   }
   body[data-ui-layout="mobile"] .cabinet .overlay > :is(#workshop, #cottage) { display: block; }
   body[data-ui-layout="mobile"] .cabinet .training-picture { height: 3.5rem; }
   body[data-ui-layout="mobile"] .cabinet .training-controls { padding: .4rem 0; }
   body[data-ui-layout="mobile"] .cabinet .training-story { gap: .35rem; }
+}
+
+@media (max-height: 510px) and (orientation: landscape) {
+  body[data-ui-layout="mobile"] .cabinet .overlay > .pier-card,
+  body[data-ui-layout="mobile"] .cabinet .overlay > :is(#workshop, #cottage) {
+    width: min(100%, 24rem); padding: .5rem;
+  }
+  body[data-ui-layout="mobile"] .cabinet .pier-heading h2 { font-size: 1.15rem; }
+  body[data-ui-layout="mobile"] .cabinet .pier-card :is(button, summary) { min-height: 44px; }
+  body[data-ui-layout="mobile"] .cabinet #home .pier-play { min-height: 44px; padding: .3rem .45rem; gap: .35rem; }
+  body[data-ui-layout="mobile"] .cabinet #home .pier-play strong { font-size: .92rem; }
+  body[data-ui-layout="mobile"] .cabinet #home .pier-play small { font-size: .72rem; line-height: 1.25; }
+  body[data-ui-layout="mobile"] .cabinet :is(.arena-menu, .arena-play-options) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem;
+  }
+  body[data-ui-layout="mobile"] .arena-play-options > :is(.arena-modes-back, .pier-modes, .pier-options) { grid-column: 1 / -1; }
+  body[data-ui-layout="mobile"] .cabinet #home .pier-modes { margin-top: .25rem; }
+  body[data-ui-layout="mobile"] .cabinet .near-workshop-categories { gap: .2rem; margin-block: .2rem; }
+  body[data-ui-layout="mobile"] .cabinet .near-workshop .workshop-items { gap: .25rem; margin-top: .25rem; }
+  body[data-ui-layout="mobile"] .cabinet .near-workshop .workshop-item { gap: .15rem; padding: .25rem; }
+  body[data-ui-layout="mobile"] .cabinet .near-workshop .workshop-thumb { height: 50px; }
+  body[data-ui-layout="mobile"] .cabinet .near-workshop .item-info { min-height: 50px; }
+  body[data-ui-layout="mobile"] .cabinet .near-workshop .near-workshop-account { gap: .25rem; font-size: .8rem; }
+  body[data-ui-layout="mobile"] .cabinet .cottage-quarters > :is(h3, p) { display: none; }
+  body[data-ui-layout="mobile"] .cabinet .cottage-home-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem; margin-top: .25rem; }
+  body[data-ui-layout="mobile"] .cabinet .cottage-home-actions > :last-child { grid-column: 1 / -1; }
+  body[data-ui-layout="mobile"] .cabinet .cottage-milestone { padding: .25rem; gap: .15rem; }
+  body[data-ui-layout="mobile"] .cabinet .cottage-milestone > .game-icon { width: 1.2rem; height: 1.2rem; }
+  body[data-ui-layout="mobile"] .cabinet .expedition-cargo { grid-template-columns: 48px minmax(0, 1fr); padding: .3rem; gap: .35rem; }
+  body[data-ui-layout="mobile"] .cabinet .expedition-art :is(img, canvas) { max-height: 48px; }
+  body[data-ui-layout="mobile"] .cabinet .expedition-totals { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: .25rem; }
+  body[data-ui-layout="mobile"] .cabinet :is(.expedition-funding, .expedition-form, .expedition-notice) { margin-block: .25rem; }
 }

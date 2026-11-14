@@ -1,8 +1,8 @@
 {
-  "preparedAt": "2026-11-14T23:16:52.048238+00:00",
+  "preparedAt": "2026-11-14T23:30:56.620162+00:00",
   "published": true,
   "provenance": {
-    "privateBaseCommit": "5ea290affb783613b989f4c97c7868c1f90d2495",
+    "privateBaseCommit": "64cfdaaa83c26eb5203f9aa78ada2cecb866a1f2",
     "includesWorkingTreeChanges": true,
     "note": "Source snapshot includes the closing UI update, public documentation and demonstration media. The video records the initial submission build.",
     "initialPublicCommit": "7b2dbe06ecc47beac319a8a0fa85c6c59ec31c1a",
@@ -837,8 +837,8 @@
     },
     {
       "name": "src/mobile-essential.css",
-      "bytes": 7299,
-      "sha256": "999656ff129c2c1d7e9fca7932c4fbe9fa40c1fb2bbe30b87c68579d4733585d"
+      "bytes": 10120,
+      "sha256": "a4b2c3cd6d2df378f6e1d79bee75070305ccca04d67396913c41d0a9468d419d"
     },
     {
       "name": "src/near-wallet.js",
