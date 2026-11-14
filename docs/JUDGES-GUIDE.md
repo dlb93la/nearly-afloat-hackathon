@@ -49,7 +49,9 @@ node scripts/verify-gold-agent-evidence.mjs
 node scripts/verify-judges-expedition.mjs
 ```
 
-Both checks read public testnet receipts and state. Set `AFLOAT_AGENT_RPC` to a testnet RPC with transaction history if the default endpoint is unavailable. See the [Arena WASM and contract tests](../near-arena/README.md) and [standalone voyage contract tests](../near-expeditions/README.md).
+Both checks read public testnet receipts and state. For the agent verifier, `AFLOAT_AGENT_RPC` selects an alternative testnet RPC with transaction history. The judges' expedition verifier uses FastNEAR directly. See the [Arena WASM and contract tests](../near-arena/README.md) and [standalone voyage contract tests](../near-expeditions/README.md).
+
+The identifier at `/build-info.json` hashes the frontend inputs listed in `vite.config.js`. Path separators and text line endings affect that identifier, so a Windows checkout can produce a different ID from the Linux host. For source comparisons, record the Git commit and compare the input files. Backend code, runtime configuration and assets under `public/` require separate checks.
 
 ### Run your own GOLD environment
 

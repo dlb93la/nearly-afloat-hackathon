@@ -1,5 +1,5 @@
 {
-  "preparedAt": "2026-11-14T23:01:07.548506+00:00",
+  "preparedAt": "2026-11-14T23:11:36.589234+00:00",
   "published": true,
   "provenance": {
     "privateBaseCommit": "cbda9661f50c2d7d56af8402f8606ad69648e5ba",
@@ -82,8 +82,8 @@
     },
     {
       "name": "docs/JUDGES-GUIDE.md",
-      "bytes": 8579,
-      "sha256": "d533cf49dd31c0e8ce47f5bbbf12a932ab42f4e3a7dff4c14e1071e330c40a14"
+      "bytes": 9022,
+      "sha256": "b212152bb23eca2f2c3804bfac3da2749992b998e0498def918ed6519d56db3e"
     },
     {
       "name": "docs/evidence/agent-gold-testnet.json",
