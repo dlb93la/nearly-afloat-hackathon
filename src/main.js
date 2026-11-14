@@ -2025,6 +2025,7 @@ byId('music').addEventListener('click', () => setAudioPreference('music', !music
 const nativeFullscreen = document.documentElement.requestFullscreen ?? document.documentElement.webkitRequestFullscreen;
 const fullscreenActive = () => document.fullscreenElement || document.webkitFullscreenElement;
 byId('rotate-screen').addEventListener('click', async () => {
+  byId('display-hint').hidden = true;
   const orientation = window.screen?.orientation;
   try {
     if (!orientation?.lock) throw new Error('Orientation unavailable');
@@ -2040,6 +2041,7 @@ if (!nativeFullscreen) {
   ui.fullscreen.title = 'Fullscreen tips';
 }
 ui.fullscreen.addEventListener('click', async () => {
+  byId('display-hint').hidden = true;
   try {
     if (!nativeFullscreen) { byId('display-help').showModal(); return; }
     if (fullscreenActive()) await (document.exitFullscreen ?? document.webkitExitFullscreen).call(document);

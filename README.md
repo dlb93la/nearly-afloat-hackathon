@@ -111,7 +111,7 @@ node scripts/verify-gold-agent-evidence.mjs
 node scripts/verify-judges-expedition.mjs
 ```
 
-Privy provides Google/email sign-in with a user-owned embedded wallet. The browser can remember the account for seven days; the scoped spending key has a separate lifetime of up to eight hours and can be renewed. Match results remain authoritative on the game server. See the [judges' guide](docs/JUDGES-GUIDE.md#reproduction-and-limits) for configuration and operational limits.
+Privy provides Google/email sign-in with a user-owned embedded wallet. The browser can remember the account for seven days. The game server enforces up to eight hours and a 10,000 test-GOLD spending limit per signing session. Logout ends that session. The NEAR key remains registered with rules for the receiver, allowed methods and gas allowance. Match results remain authoritative on the game server. See the [judges' guide](docs/JUDGES-GUIDE.md#reproduction-and-limits) for configuration and operational limits.
 
 ## Source, credits & permissions
 

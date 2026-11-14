@@ -52,7 +52,7 @@ body[data-ui-layout="mobile"] .cabinet .pier-notice { margin: .35rem 0 0; font-s
 body[data-ui-layout="mobile"] .cabinet :is(button, summary) { -webkit-tap-highlight-color: transparent; }
 body[data-ui-layout="mobile"] .cabinet .pier-card button { font-size: .85rem; }
 
-/* Sound, music, account and balance stay at hand; secondary tools open on demand. */
+/* Keep the display controls within reach, including in the compact header. */
 body[data-ui-layout="mobile"] .cabinet .head-actions {
   flex-direction: row;
   align-items: center;
@@ -91,6 +91,12 @@ body[data-ui-layout="mobile"] .cabinet .play-hud {
   gap: .25rem;
 }
 body[data-ui-layout="mobile"] .cabinet .play-hud > span { min-height: 30px; padding: .25rem .4rem; font-size: .8rem; }
+
+@media (max-width: 480px) {
+  body[data-ui-layout="mobile"] .cabinet .head-actions { flex-direction: column; align-items: flex-end; }
+  body[data-ui-layout="mobile"] .cabinet .play-hud { top: calc(var(--hud-top) + 6.35rem); }
+  body[data-ui-layout="mobile"] .cabinet .overlay[data-screen] { --panel-top-gap: 6.35rem; }
+}
 
 /* Account starts with identity and the main action, with editing kept one tap away. */
 body[data-ui-layout="mobile"] .cabinet dialog.captain-menu {

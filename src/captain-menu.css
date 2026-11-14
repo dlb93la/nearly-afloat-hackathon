@@ -1,4 +1,5 @@
 .head-actions {
+  position: relative;
   display: flex; flex-direction: column; align-items: stretch;
   gap: .35rem; padding: .32rem; border: 1px solid #b28d555c; border-radius: 10px;
   background: linear-gradient(155deg, #192f33f5, #10232bf0); box-shadow: 0 5px 18px #051a2345;
@@ -8,10 +9,20 @@
 .header-tools #music { order: 1; }
 .header-tools #sound { order: 0; }
 .header-tools #feature-help { order: 2; }
-.header-tools #fullscreen { order: 3; }
-.header-tools #rotate-screen { order: 4; }
+.display-controls { order: 3; display: inline-flex; align-items: center; gap: inherit; }
 .header-tools #rotate-screen { display: none; }
 body[data-ui-input="touch"] .header-tools #rotate-screen { display: inline-flex; }
+.display-hint {
+  display: none; position: absolute; inset: calc(100% + .4rem) 0 auto auto;
+  align-items: center; gap: .35rem; padding: .22rem .48rem;
+  border: 1px solid #b89158; border-radius: 4px; background: #281e17f5;
+  color: #ffe7ab; font-size: .73rem; font-weight: 750; white-space: nowrap;
+  pointer-events: none;
+}
+body[data-scene="bay"][data-place=""] .display-hint:not([hidden]) { display: inline-flex; }
+.display-hint { flex-direction: row-reverse; }
+body[data-ui-layout="mobile"] .display-hint { right: 2.7rem; }
+.display-hint > span { font-size: 1rem; line-height: 1; color: #ffc868; }
 .header-tools button[aria-pressed="false"] { opacity: .55; }
 .masthead { align-items: flex-start; }
 .head-actions #music .game-icon, .head-actions #rotate-screen .game-icon { width: 19px; height: 19px; }
@@ -55,7 +66,7 @@ dialog.captain-menu {
 .captain-menu button { min-height: 44px; }
 .captain-menu details { margin-block: .6rem; font-size: .8rem; }
 .captain-menu summary { cursor: pointer; min-height: 36px; padding-block: .5rem; color: #d1c1a3; }
-.captain-menu details p { overflow-wrap: anywhere; user-select: text; font: .72rem/1.5 ui-monospace, monospace; }
+.captain-menu details p { overflow-wrap: anywhere; font: .72rem/1.5 ui-monospace, monospace; }
 .captain-menu details button { width: 100%; margin: .3rem 0; }
 #gold-wallet form { display: grid; gap: .35rem; }
 #gold-wallet input, #gold-wallet select { width: 100%; min-height: 44px; }

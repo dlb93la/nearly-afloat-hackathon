@@ -37,12 +37,12 @@ The agent is rule-based and its merchant worker is inactive on the hosted game. 
 - `server.mjs` runs authoritative matches and the Arena contract settles the referee's result. `shared/simulation.mjs` also powers the offline labs.
 - Social solo paid entry checks cached funds and places an account-wide server hold before starting the full countdown. Authorization, reservation and settlement continue in the background. Rematches keep independent outcomes and ordered authorizations. A failed or conflicting entry is cancelled/reconciled without a paid reward; only a confirmed settlement records a payout. There is no blockchain wait inside the running match.
 - `near-arena` implements the paid arena, equipment, durability, shared deposited balance and voyages. `near-gold` implements GOLD. `near-expeditions` contains the earlier standalone voyage contract.
-- `near-social.mjs` and `near-embedded.mjs` separate social identity from spending permission. A remembered account can survive a restart for seven days. The key has an eight-hour ceiling and a 10,000 test-GOLD allowance.
+- `near-social.mjs` and `near-embedded.mjs` separate social identity from spending permission. A remembered account can survive a restart for seven days. The server enforces an eight-hour ceiling and a 10,000 test-GOLD spending limit per signing session. Logout ends the server session. The NEAR function-call key remains registered with its receiver, allowed methods and gas allowance. The merchant agent has its own policy enforced by the contract.
 - `src/near-workshop.js` renders the testnet inventory and the Cottage barrel and color chooser. The credential-free local build has its own SQLite economy and inventory.
 
 ## Reproduction and limits
 
-Use Node.js 22.22.2 or newer. Follow the [local setup](../README.md#play-locally) and run the two checks below after `npm ci`.
+Use Node.js 22.22.2 or newer. Follow the [local setup](../README.md#run-your-own-local-game) and run the two checks below after `npm ci`.
 
 ```sh
 node scripts/verify-gold-agent-evidence.mjs

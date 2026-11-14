@@ -30,7 +30,9 @@ body {
   background: radial-gradient(ellipse at 38% -10%, #304047, transparent 59%), linear-gradient(#11242a, #101d25 66%);
 }
 button, input, select { font: inherit; }
-:is(input, textarea, [contenteditable="true"]) { -webkit-user-select: text; user-select: text; }
+.cabinet { -webkit-touch-callout: none; }
+.cabinet img { -webkit-user-drag: none; }
+:is(input, textarea, [contenteditable="true"]) { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
 button { cursor: pointer; touch-action: manipulation; }
 button:disabled { cursor: default; opacity: .53; }
 :is(button, input, select):focus-visible { outline: 2px solid #fff0bd; outline-offset: 3px; }

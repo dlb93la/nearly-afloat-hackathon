@@ -1,12 +1,12 @@
 {
-  "preparedAt": "2026-11-14T22:13:43.927658+00:00",
+  "preparedAt": "2026-11-14T23:01:07.548506+00:00",
   "published": true,
   "provenance": {
-    "privateBaseCommit": "890a0e6022bc471884070f7c2b6e1649157b6890",
+    "privateBaseCommit": "cbda9661f50c2d7d56af8402f8606ad69648e5ba",
     "includesWorkingTreeChanges": true,
-    "note": "Game and contract source remains the initial approved public snapshot. This update changes README, judges-guide media links and presentation assets only. Original private history is preserved separately.",
+    "note": "Source snapshot includes the closing UI update, public documentation and demonstration media. The video records the initial submission build.",
     "initialPublicCommit": "7b2dbe06ecc47beac319a8a0fa85c6c59ec31c1a",
-    "presentationOnlyUpdate": true
+    "presentationOnlyUpdate": false
   },
   "license": "PolyForm Shield License 1.0.0; original asset permissions in ASSETS-LICENSE.md",
   "files": [
@@ -52,8 +52,8 @@
     },
     {
       "name": "README.md",
-      "bytes": 10059,
-      "sha256": "5a2aa48a34069276777a6be923fcdd7af8a285c5f2be9c4e74cf6d72051cfcb8"
+      "bytes": 10194,
+      "sha256": "56e37d098a0d468485f11a039d8db0fc04782e5e10020dfcc8a329f6976c5d0d"
     },
     {
       "name": "agent-journal.mjs",
@@ -82,8 +82,8 @@
     },
     {
       "name": "docs/JUDGES-GUIDE.md",
-      "bytes": 8339,
-      "sha256": "b9013f497116c258864e5655880d0d6f4f1ad43d9d2b672a169c2e6028831e93"
+      "bytes": 8579,
+      "sha256": "d533cf49dd31c0e8ce47f5bbbf12a932ab42f4e3a7dff4c14e1071e330c40a14"
     },
     {
       "name": "docs/evidence/agent-gold-testnet.json",
@@ -147,8 +147,8 @@
     },
     {
       "name": "index.html",
-      "bytes": 44873,
-      "sha256": "b3f01084273bfd5b6f07ce0bebb74112927b3a34c4f92e89c8aae387f332b350"
+      "bytes": 45194,
+      "sha256": "ba9918d64a4762cbf0724455ab280a6f00a963b4e843ea7abc7d96a22fe61c0e"
     },
     {
       "name": "judges-expedition.mjs",
@@ -157,8 +157,8 @@
     },
     {
       "name": "judges-expeditions.html",
-      "bytes": 2948,
-      "sha256": "d0f5ece99fa2fb54dd3d7d4c485e5515741e278474d68a940ebc655ea5bed392"
+      "bytes": 3048,
+      "sha256": "ebc8b82635ddfae968b513dad48228ccf4f75980dc3784f380bffebcb0109f5c"
     },
     {
       "name": "merchant-agent.mjs",
@@ -472,8 +472,8 @@
     },
     {
       "name": "scripts/prepare-release.mjs",
-      "bytes": 4521,
-      "sha256": "2762e297b169f0767b7b5bef639b005aa299efc5b6db9aa30f282ff4840d51e2"
+      "bytes": 4688,
+      "sha256": "9ab5c61271cf4cb639ab471c0024a480cf4469cd27afc27c410f3c21c14603c2"
     },
     {
       "name": "scripts/setup-judges-expedition.mjs",
@@ -617,8 +617,8 @@
     },
     {
       "name": "signin.html",
-      "bytes": 2406,
-      "sha256": "a39d7a046f6cfe92672ca5d91ba97f90a0bba938f7e8ca8bc9c9b991e93e6121"
+      "bytes": 2511,
+      "sha256": "fa3c9cfc0621005c376297d1485bbed503cb531fb65ed9d1787e7a05a6c2a7c3"
     },
     {
       "name": "src/accessibility.css",
@@ -717,8 +717,8 @@
     },
     {
       "name": "src/captain-menu.css",
-      "bytes": 6051,
-      "sha256": "3dff03019534a5d0aff0e34de54d917522eff0bf2168d4b8394bb5319b82c960"
+      "bytes": 6662,
+      "sha256": "e7d31166b902694f950613d34e0cc37c09c51a1cd8343c5b211e94a6318e0852"
     },
     {
       "name": "src/captain-menu.js",
@@ -832,13 +832,13 @@
     },
     {
       "name": "src/main.js",
-      "bytes": 99483,
-      "sha256": "97770d8124c73eb32ba67e4ee0478a37cf87ca8c636d783ea70ff8e66d08c76d"
+      "bytes": 99559,
+      "sha256": "e796ac5c158d9de9a29e1ba427be10333946afe75414de5bc66f8dbc06003e7a"
     },
     {
       "name": "src/mobile-essential.css",
-      "bytes": 7575,
-      "sha256": "7331b2d931b7308bfaf1a9e391c4160b76ef8a16d67c4496f8e408a97427c162"
+      "bytes": 7890,
+      "sha256": "fcbda4b36763b3545fba69efd0bf6319b0690554d884c92578d89f5762731bdd"
     },
     {
       "name": "src/near-wallet.js",
@@ -917,8 +917,8 @@
     },
     {
       "name": "src/style.css",
-      "bytes": 9870,
-      "sha256": "5376940bdf7369fd8bbc1622df2dba589276fc8606ffae353956a01638322fc4"
+      "bytes": 9986,
+      "sha256": "ef96a092e96f8049f316ed1a432b808c5d8b652a954a9cdf1304d3e4779ec49a"
     },
     {
       "name": "src/trap-lab.css",
@@ -1152,8 +1152,8 @@
     },
     {
       "name": "trap-lab.html",
-      "bytes": 5974,
-      "sha256": "b054ecd7130769cee52cd2e1555e078b5f84a651b44b9b763a098ff54c49f8a3"
+      "bytes": 6079,
+      "sha256": "04a9549d63bc3626e79495265a323d07de90ca098ab9995920c1e597368b80ba"
     },
     {
       "name": "vite.config.js",

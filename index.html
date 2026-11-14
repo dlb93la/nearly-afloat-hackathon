@@ -1,7 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="notranslate">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#101d25">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,6 +29,8 @@
         <button class="quiet square" id="mobile-tools-toggle" type="button" aria-label="More game controls" aria-expanded="false" aria-controls="header-extra" title="More controls"><span aria-hidden="true">⋯</span></button>
         <div id="header-extra" class="header-extra">
         <button class="quiet square" id="feature-help" type="button" aria-label="Show tutorial" title="Show tutorial">?</button>
+        </div>
+        <div class="display-controls" role="group" aria-label="Screen controls">
         <button class="quiet square" id="fullscreen" type="button" aria-label="Toggle fullscreen" title="Fullscreen"><span data-icon="fullscreen"></span></button>
         <button class="quiet square" id="rotate-screen" type="button" aria-label="Rotate screen" title="Rotate screen"><span data-icon="rotate"></span></button>
         </div>
@@ -43,6 +47,7 @@
         <button class="captain-trigger" id="captain-menu-open" type="button" aria-haspopup="dialog" aria-controls="captain-menu" aria-expanded="false"><span data-icon="person"></span><span id="captain-menu-label">Account</span><span class="captain-chevron" aria-hidden="true">⌄</span></button>
         <span id="header-gold" class="header-gold" hidden><span data-icon="coin"></span><b id="header-gold-value"></b><span class="visually-hidden">gold</span></span>
         </div>
+        <span class="display-hint" id="display-hint"><span aria-hidden="true">↑</span> For a better experience</span>
       </div>
     </header>
     <dialog id="captain-menu" class="captain-menu" aria-labelledby="captain-menu-title">
